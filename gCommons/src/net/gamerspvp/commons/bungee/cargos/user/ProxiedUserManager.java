@@ -44,7 +44,7 @@ public class ProxiedUserManager {
 		groups.putAll(ProxiedCargosManager.getGroupManager().getGroups());
 		Group group = groups.get(user.getGroup());
 		if (group == null) {
-			proxiedPlayer.disconnect(new TextComponent("[Cargos]\n §cAconteceu um problema, contate a equipe do servidor. (BuNotFoundG-Reload)"));
+			proxiedPlayer.disconnect(new TextComponent("[Cargos]\n Â§cAconteceu um problema, contate a equipe do servidor. (BuNotFoundG-Reload)"));
 			return;
 		}
 		for (String permission : group.getPermissions()) {
@@ -59,7 +59,7 @@ public class ProxiedUserManager {
 		}
 		Group group = ProxiedCargosManager.getGroupManager().getGroup(groupName);
 		if (group == null) {
-			proxiedPlayer.disconnect(new TextComponent("[Cargos]\n §cAconteceu um problema, contate a equipe do servidor. (BuNotFoundG-Load)"));
+			proxiedPlayer.disconnect(new TextComponent("[Cargos]\n Â§cAconteceu um problema, contate a equipe do servidor. (BuNotFoundG-Load)"));
 			return;
 		}
 		for (String permission : group.getPermissions()) {

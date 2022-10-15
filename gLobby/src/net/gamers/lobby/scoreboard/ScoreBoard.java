@@ -89,7 +89,7 @@ public class ScoreBoard {
 				if (!team.hasEntry("[NPC]")) {
 					team.addEntry("[NPC]");
 				}
-				team.setPrefix("ง8");
+				team.setPrefix("ยง8");
 				team.setNameTagVisibility(NameTagVisibility.NEVER);
 			}
 			lock.unlock();
@@ -99,7 +99,7 @@ public class ScoreBoard {
 	public static void loadTeamPlayer(Player player) {
 		GroupBukkit group = CargosAPI.getUserGroup(player);
 		String groupName = null;
-		String preffix = "ง7";
+		String preffix = "ยง7";
 		int rank = 999;
 		if (group != null) {
 			groupName = group.getName();

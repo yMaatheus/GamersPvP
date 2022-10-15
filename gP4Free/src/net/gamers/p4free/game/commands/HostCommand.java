@@ -46,19 +46,19 @@ public class HostCommand extends Command {
 		String processor = System.getenv("PROCESSOR_IDENTIFIER");
 		
 		// Exibindo os dados
-		sender.sendMessage("§eSistema Operacional: §6" + so + " §8-§6 " + soVersion);
-		sender.sendMessage("§eMemória RAM total do servidor: §6" + totalRuntimeMemory);
-		sender.sendMessage("§eMemória RAM livre do servidor: §6" + freeRuntimeMemory);
-		sender.sendMessage("§eMemória RAM usada no servidor: §6" + usedRuntimeMemory);
-		sender.sendMessage("§eMemória RAM total da máquina: §6" + totalComputerMemory);
-		sender.sendMessage("§eMemória RAM livre da máquina: §6" + freeComputerMemory);
-		sender.sendMessage("§eMemória RAM usada na máquina: §6" + usedComputerMemory);
-		sender.sendMessage("§eArmazenamento total da máquina: §6" + totalComputerSpace);
-		sender.sendMessage("§eArmazenamento livre da máquina: §6" + freeComputerSpace);
-		sender.sendMessage("§eArmazenamento usado na máquina: §6" + usedComputerSpace);
-		sender.sendMessage("§eNúmero de processadores (núcleos): §6" + availableProcessors);
-		sender.sendMessage("§eArquitetura do processador: §6" + processorArch);
-		sender.sendMessage("§eModelo do processador: §6" + (processor == null ? "Informação indisponivel! Veja o relatório avançado." : processor));
+		sender.sendMessage("Â§eSistema Operacional: Â§6" + so + " Â§8-Â§6 " + soVersion);
+		sender.sendMessage("Â§eMemÂ§ria RAM total do servidor: Â§6" + totalRuntimeMemory);
+		sender.sendMessage("Â§eMemÂ§ria RAM livre do servidor: Â§6" + freeRuntimeMemory);
+		sender.sendMessage("Â§eMemÂ§ria RAM usada no servidor: Â§6" + usedRuntimeMemory);
+		sender.sendMessage("Â§eMemÂ§ria RAM total da mÂ§quina: Â§6" + totalComputerMemory);
+		sender.sendMessage("Â§eMemÂ§ria RAM livre da mÂ§quina: Â§6" + freeComputerMemory);
+		sender.sendMessage("Â§eMemÂ§ria RAM usada na mÂ§quina: Â§6" + usedComputerMemory);
+		sender.sendMessage("Â§eArmazenamento total da mÂ§quina: Â§6" + totalComputerSpace);
+		sender.sendMessage("Â§eArmazenamento livre da mÂ§quina: Â§6" + freeComputerSpace);
+		sender.sendMessage("Â§eArmazenamento usado na mÂ§quina: Â§6" + usedComputerSpace);
+		sender.sendMessage("Â§eNÂ§mero de processadores (nÂ§cleos): Â§6" + availableProcessors);
+		sender.sendMessage("Â§eArquitetura do processador: Â§6" + processorArch);
+		sender.sendMessage("Â§eModelo do processador: Â§6" + (processor == null ? "InformaÂ§Â§o indisponivel! Veja o relatÂ§rio avanÂ§ado." : processor));
 		return false;
 	}
 }

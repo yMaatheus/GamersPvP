@@ -25,7 +25,7 @@ public class PlayerJoinListener implements Listener {
 	public void PlayerJoinEvent(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		event.setJoinMessage(null);
-		Tablist.setForPlayer(event.getPlayer(), "\n§2§lGAMERSPVP\n§f    mc.gamerspvp.net\n", "\n§2Discord: §fdiscord.gg/GAdvjxv\n\n§2Adquira pontos em nossa loja, acesse: §fgamerspvp.net");
+		Tablist.setForPlayer(event.getPlayer(), "\nÂ§2Â§lGAMERSPVP\nÂ§f    mc.gamerspvp.net\n", "\nÂ§2Discord: Â§fdiscord.gg/GAdvjxv\n\nÂ§2Adquira pontos em nossa loja, acesse: Â§fgamerspvp.net");
 		if (Arrays.invincible.contains(player) == false) {
 			Arrays.invincible.add(player);
 		}
@@ -44,8 +44,8 @@ public class PlayerJoinListener implements Listener {
 		player.getInventory().setLeggings(new ItemStack(Material.AIR));
 		player.getInventory().setChestplate(new ItemStack(Material.AIR));
 
-		ItemStack compass = new MakeItem(Material.COMPASS).setName("§eServidores").build();
-		ItemStack stick = new MakeItem(Material.STICK).setName("§cPAU DO PVP").build();
+		ItemStack compass = new MakeItem(Material.COMPASS).setName("Â§eServidores").build();
+		ItemStack stick = new MakeItem(Material.STICK).setName("Â§cPAU DO PVP").build();
 
 		player.getInventory().setItem(4, compass);
 		player.getInventory().setItem(2, stick);

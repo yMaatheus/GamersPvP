@@ -44,23 +44,23 @@ public class NpcServerCommand extends Command {
 						hand = player.getItemInHand();
 					}
 					npcManager.setNPC(serverName, location, hand, skin);
-					sender.sendMessage("§aNPC do servidor §f" + serverName + " §adefinido com sucesso!");
+					sender.sendMessage("Â§aNPC do servidor Â§f" + serverName + " Â§adefinido com sucesso!");
 					return true;
 				}
 			} else if (args[0].equalsIgnoreCase("remover")) {
 				if (npcManager.getCache(serverName) == null) {
-					sender.sendMessage("§cNão existe nenhum NPC desse servidor.");
+					sender.sendMessage("Â§cNÂ§o existe nenhum NPC desse servidor.");
 					return true;
 				}
 				npcManager.destroyNPC(serverName);
-				sender.sendMessage("§aNPC do servidor §f" + serverName + " §afoi destruido com sucesso!");
+				sender.sendMessage("Â§aNPC do servidor Â§f" + serverName + " Â§afoi destruido com sucesso!");
 				return true;
 			}
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Lobby] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a definir (server) (skin).");
-		sender.sendMessage("§7/" + arg + "§a remover (server).");
+		sender.sendMessage("Â§a[Lobby] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a definir (server) (skin).");
+		sender.sendMessage("Â§7/" + arg + "Â§a remover (server).");
 		sender.sendMessage("");
 		return false;
 	}

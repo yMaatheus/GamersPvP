@@ -53,11 +53,11 @@ public class VipCommand extends Command {
 					}
 					HashSet<VipKey> keys = vipController.getAllKeys();
 					if (keys.isEmpty()) {
-						sender.sendMessage(new TextComponent("§cNão foi encontrado nenhum resultado no banco de dados."));
+						sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhum resultado no banco de dados."));
 						return;
 					}
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Vips] Lista de chaves:"));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Lista de chaves:"));
 					int i = 0;
 					for (VipKey key : keys) {
 						i++;
@@ -69,8 +69,8 @@ public class VipCommand extends Command {
 						String keyName = key.getKey();
 						String author = key.getAuthor();
 						String group = key.getGroup();
-						TextComponent textComponent = new TextComponent("§f" + i + "§8. §a" + keyName + " §7(" + group  + ") §7- §aAutor:§f " + author + " §aAcaba em:§f " + timeText);
-						ComponentBuilder builder = new ComponentBuilder("§eClique aqui para digitar a chave!");
+						TextComponent textComponent = new TextComponent("Â§f" + i + "Â§8. Â§a" + keyName + " Â§7(" + group  + ") Â§7- Â§aAutor:Â§f " + author + " Â§aAcaba em:Â§f " + timeText);
+						ComponentBuilder builder = new ComponentBuilder("Â§eClique aqui para digitar a chave!");
 						HoverEvent hover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, builder.create());
 						textComponent.setHoverEvent(hover);
 						ClickEvent click = new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, keyName);
@@ -88,7 +88,7 @@ public class VipCommand extends Command {
 					int days = Integer.parseInt(args[2]);
 					Group group = proxiedGroupManager.getGroup(groupName);
 					if (group == null || !(group.isVip())) {
-						sender.sendMessage(new TextComponent("§cO grupo informado não encontrado ou não é §lVIP§c."));
+						sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o encontrado ou nÂ§o Â§ Â§lVIPÂ§c."));
 						return;
 					}
 					commons.runAsync(new Runnable() {
@@ -100,7 +100,7 @@ public class VipCommand extends Command {
 								int totalUsers = 0;
 								int affectedUsers = 0;
 								if (playersVips.isEmpty()) {
-									sender.sendMessage(new TextComponent("§cNão foi encontrado nenhuma informação no banco de dados."));
+									sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhuma informaÂ§Â§o no banco de dados."));
 									return;
 								}
 								for (PlayerVip playerVip : playersVips) {
@@ -119,14 +119,14 @@ public class VipCommand extends Command {
 									}
 								}
 								sender.sendMessage(new TextComponent(""));
-								sender.sendMessage(new TextComponent("§a[Vips] Informações:"));
+								sender.sendMessage(new TextComponent("Â§a[Vips] InformaÂ§Â§es:"));
 								sender.sendMessage(new TextComponent(""));
-								sender.sendMessage(new TextComponent("§aForam adicionados §f" + days + " §adias aos usuários afetados do §lVIP §f" + groupName + "§a."));
+								sender.sendMessage(new TextComponent("Â§aForam adicionados Â§f" + days + " Â§adias aos usuÂ§rios afetados do Â§lVIP Â§f" + groupName + "Â§a."));
 								sender.sendMessage(new TextComponent(""));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários carregados§8: §f" + totalUsers));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários afetados§8: §f" + affectedUsers));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios carregadosÂ§8: Â§f" + totalUsers));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios afetadosÂ§8: Â§f" + affectedUsers));
 							} catch (Exception e) {
-								sender.sendMessage(new TextComponent("§cNão foi possivel completar essa operação."));
+								sender.sendMessage(new TextComponent("Â§cNÂ§o foi possivel completar essa operaÂ§Â§o."));
 							}
 						}
 					});
@@ -145,14 +145,14 @@ public class VipCommand extends Command {
 								int totalUsers = 0;
 								int purgedUsers = 0;
 								if (playersVips.isEmpty()) {
-									sender.sendMessage(new TextComponent("§cNão foi encontrado nenhuma informação no banco de dados."));
+									sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhuma informaÂ§Â§o no banco de dados."));
 									return;
 								}
 								for (PlayerVip playerVip : playersVips) {
 									totalUsers++;
 									for (String vipName : playerVip.getVips().keySet()) {
 										long value = playerVip.getVips().get(vipName);
-										if (value > System.currentTimeMillis()) { //Tempo do vip não expirou ainda.
+										if (value > System.currentTimeMillis()) { //Tempo do vip nÂ§o expirou ainda.
 											continue;
 										}
 										vipController.purgePlayerVip(playerVip.getName());
@@ -160,11 +160,11 @@ public class VipCommand extends Command {
 									}
 								}
 								sender.sendMessage(new TextComponent(""));
-								sender.sendMessage(new TextComponent("§a[Vips] Informações:"));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários carregados§8: §f" + totalUsers));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários deletados§8: §f" + purgedUsers));
+								sender.sendMessage(new TextComponent("Â§a[Vips] InformaÂ§Â§es:"));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios carregadosÂ§8: Â§f" + totalUsers));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios deletadosÂ§8: Â§f" + purgedUsers));
 							} catch (Exception e) {
-								sender.sendMessage(new TextComponent("§cNão foi possivel completar essa operação."));
+								sender.sendMessage(new TextComponent("Â§cNÂ§o foi possivel completar essa operaÂ§Â§o."));
 							}
 						}
 					});
@@ -181,7 +181,7 @@ public class VipCommand extends Command {
 							try {
 								HashSet<PlayerVip> playersVips = vipController.getAllVips();
 								if (playersVips.isEmpty()) {
-									sender.sendMessage(new TextComponent("§cNão foi encontrado nenhuma informação no banco de dados."));
+									sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhuma informaÂ§Â§o no banco de dados."));
 									return;
 								}
 								StringBuilder builder = new StringBuilder();
@@ -214,18 +214,18 @@ public class VipCommand extends Command {
 									}
 									String playerName = playerVip.getPlayerName();
 									String activeVips = vipsNames.keySet().toString().replace("[", "").replace("]", "");
-									builder.append("§f" + activeUsers + "§8. §a" + playerName + " §7- §7(§f" + activeVips + "§7)\n");
+									builder.append("Â§f" + activeUsers + "Â§8. Â§a" + playerName + " Â§7- Â§7(Â§f" + activeVips + "Â§7)\n");
 								}
 								sender.sendMessage(new TextComponent(""));
-								sender.sendMessage(new TextComponent("§a[Vips] Lista de §lVIP§a(s):"));
+								sender.sendMessage(new TextComponent("Â§a[Vips] Lista de Â§lVIPÂ§a(s):"));
 								sender.sendMessage(new TextComponent(builder.toString()));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários carregados§8: §f" + totalUsers));
-								sender.sendMessage(new TextComponent("§e* §aTotal de usuários ativos§8: §f" + activeUsers));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios carregadosÂ§8: Â§f" + totalUsers));
+								sender.sendMessage(new TextComponent("Â§e* Â§aTotal de usuÂ§rios ativosÂ§8: Â§f" + activeUsers));
 								for (String vipName : vipUsersCount.keySet()) {
-									sender.sendMessage(new TextComponent("§e* §aUsuários ativos usando " + vipName + "§8: §f" + vipUsersCount.get(vipName)));
+									sender.sendMessage(new TextComponent("Â§e* Â§aUsuÂ§rios ativos usando " + vipName + "Â§8: Â§f" + vipUsersCount.get(vipName)));
 								}
 							} catch (Exception e) {
-								sender.sendMessage(new TextComponent("§cNão foi possivel completar essa operação."));
+								sender.sendMessage(new TextComponent("Â§cNÂ§o foi possivel completar essa operaÂ§Â§o."));
 							}
 						}
 					});
@@ -238,7 +238,7 @@ public class VipCommand extends Command {
 						return;
 					}
 					if (playerVip.getVips().isEmpty()) {
-						sender.sendMessage(new TextComponent("§cNão foi encontrado nenhum §lVIP §cnessa conta."));
+						sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhum Â§lVIP Â§cnessa conta."));
 						return;
 					}
 					StringBuilder builder = new StringBuilder();
@@ -249,16 +249,16 @@ public class VipCommand extends Command {
 							continue;
 						}
 						i++;
-						builder.append("§7* §a" + key + " §7- §fTermina em: §a" + DateUtils.formatDifference(value) + " §8(§f"+ DateUtils.longToDate(value) + "§8)\n");
+						builder.append("Â§7* Â§a" + key + " Â§7- Â§fTermina em: Â§a" + DateUtils.formatDifference(value) + " Â§8(Â§f"+ DateUtils.longToDate(value) + "Â§8)\n");
 					}
 					if (i == 0) {
-						sender.sendMessage(new TextComponent("§cNão foi encontrado nenhum §lVIP §cativo nessa conta."));
+						sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhum Â§lVIP Â§cativo nessa conta."));
 						return;
 					}
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Vips] Informações do jogador:"));
+					sender.sendMessage(new TextComponent("Â§a[Vips] InformaÂ§Â§es do jogador:"));
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§7* §aNome§8:§f " + playerVip.getPlayerName()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aNomeÂ§8:Â§f " + playerVip.getPlayerName()));
 					sender.sendMessage(new TextComponent(builder.toString()));
 					return;
 				} else if (args.length > 3 && args[0].equalsIgnoreCase("gerarkey")) {
@@ -270,27 +270,27 @@ public class VipCommand extends Command {
 					}
 					Group group = proxiedGroupManager.getGroup(groupName);
 					if (group == null) {
-						sender.sendMessage(new TextComponent("§cO grupo informado não foi encontrado."));
+						sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o foi encontrado."));
 						return;
 					}
 					if (!(group.isVip())) {
-						sender.sendMessage(new TextComponent("§cVocê informou um grupo cujo não é considerado vip."));
+						sender.sendMessage(new TextComponent("Â§cVocÂ§ informou um grupo cujo nÂ§o Â§ considerado vip."));
 						return;
 					}
 					
 					String key = vipController.generateKey();
 					vipController.computeKey(key, sender.getName(), groupName, days);
-					LogManager.log("Keys", sender.getName(), sender.getName() + " criou uma key " + key + " do vip " + groupName + " com duração de " + days + " dias", reason);
+					LogManager.log("Keys", sender.getName(), sender.getName() + " criou uma key " + key + " do vip " + groupName + " com duraÂ§Â§o de " + days + " dias", reason);
 					
-					TextComponent textComponent = new TextComponent("§a[Vips] Chave do grupo §f" + groupName + " §afoi gerada com sucesso.");
-					ComponentBuilder builder = new ComponentBuilder("§eClique aqui para vizualizar a chave!");
+					TextComponent textComponent = new TextComponent("Â§a[Vips] Chave do grupo Â§f" + groupName + " Â§afoi gerada com sucesso.");
+					ComponentBuilder builder = new ComponentBuilder("Â§eClique aqui para vizualizar a chave!");
 					HoverEvent hover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, builder.create());
 					textComponent.setHoverEvent(hover);
 					ClickEvent click = new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, key);
 					textComponent.setClickEvent(click);
 					
 					sender.sendMessage(textComponent);
-					sender.sendMessage(new TextComponent("§a[Vips] Sua justificativa dessa ação: §f" + reason));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Sua justificativa dessa aÂ§Â§o: Â§f" + reason));
 					return;
 				} else if (args.length > 2 && (args[0].equalsIgnoreCase("apagarkey"))) {
 					String key = args[1];
@@ -299,7 +299,7 @@ public class VipCommand extends Command {
 						reason = reason + args[i] + " ";
 					}
 					if (vipController.searchKey(key) == null) {
-						sender.sendMessage(new TextComponent("§cA chave informada não encontrada."));
+						sender.sendMessage(new TextComponent("Â§cA chave informada nÂ§o encontrada."));
 						return;
 					}
 					
@@ -307,8 +307,8 @@ public class VipCommand extends Command {
 					
 					LogManager.log("Keys", sender.getName(), sender.getName() + " apagou a key " + key, reason);
 					
-					sender.sendMessage(new TextComponent("§a[Vips] Chave §f" + key + " §afoi apagada com sucesso."));
-					sender.sendMessage(new TextComponent("§a[Vips] Sua justificativa dessa ação: §f" + reason));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Chave Â§f" + key + " Â§afoi apagada com sucesso."));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Sua justificativa dessa aÂ§Â§o: Â§f" + reason));
 					return;
 				} else if (args.length > 4 && (args[0].equalsIgnoreCase("dar"))) {
 					String playerName = args[1];
@@ -321,12 +321,12 @@ public class VipCommand extends Command {
 					}
 					Group group = proxiedGroupManager.getGroup(groupName);
 					if (group == null || !(group.isVip())) {
-						sender.sendMessage(new TextComponent("§cO grupo informado não encontrado ou não é §lVIP§c."));
+						sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o encontrado ou nÂ§o Â§ Â§lVIPÂ§c."));
 						return;
 					}
 					PlayerVip playerVip = ProxiedVipsManager.getPlayerVip(playerName, true);
 					if (playerVip.getVips().get(groupName) != null && playerVip.getVips().get(groupName) > System.currentTimeMillis()) {
-						sender.sendMessage(new TextComponent("§cVocê não pode usar essa chave pois já possui esse §lVIP §cativo."));
+						sender.sendMessage(new TextComponent("Â§cVocÂ§ nÂ§o pode usar essa chave pois jÂ§ possui esse Â§lVIP Â§cativo."));
 						return;
 					}
 					
@@ -337,8 +337,8 @@ public class VipCommand extends Command {
 					
 					LogManager.log("Vips", sender.getName(), playerName, sender.getName() + " deu VIP " + groupName + " para " + playerName, reason);
 					
-					sender.sendMessage(new TextComponent("§a[Vips] Você deu um §lVIP§f " + groupName + " §ade§f " + DateUtils.formatDifference(time) + " §apara§f " + playerName));
-					sender.sendMessage(new TextComponent("§a[Vips] Sua justificativa dessa ação: §f" + reason));
+					sender.sendMessage(new TextComponent("Â§a[Vips] VocÂ§ deu um Â§lVIPÂ§f " + groupName + " Â§adeÂ§f " + DateUtils.formatDifference(time) + " Â§aparaÂ§f " + playerName));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Sua justificativa dessa aÂ§Â§o: Â§f" + reason));
 					return;
 				} else if (args.length > 2 && (args[0].equalsIgnoreCase("remover") || args[0].equalsIgnoreCase("remove"))) {
 					String playerName = args[1];
@@ -354,8 +354,8 @@ public class VipCommand extends Command {
 					
 					LogManager.log("Vips", sender.getName(), playerName, sender.getName() + " removeu o VIP de " + playerName, reason);
 					
-					sender.sendMessage(new TextComponent("§a[Vips] Você removeu o(s) §lVIP(s) §ade§f " + playerName));
-					sender.sendMessage(new TextComponent("§a[Vips] Sua justificativa dessa ação: §f" + reason));
+					sender.sendMessage(new TextComponent("Â§a[Vips] VocÂ§ removeu o(s) Â§lVIP(s) Â§adeÂ§f " + playerName));
+					sender.sendMessage(new TextComponent("Â§a[Vips] Sua justificativa dessa aÂ§Â§o: Â§f" + reason));
 					return;
 				}
 			} catch (Exception e) {
@@ -363,18 +363,18 @@ public class VipCommand extends Command {
 			}
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Vips] Comandos disponíveis:"));
+		sender.sendMessage(new TextComponent("Â§a[Vips] Comandos disponÂ§veis:"));
 		if (coordenador) {
-			sender.sendMessage(new TextComponent("§7/Vip§a keys"));
-			sender.sendMessage(new TextComponent("§7/Vip§a addtempo (grupo) (dias)"));
-			sender.sendMessage(new TextComponent("§7/Vip§a purge"));
-			sender.sendMessage(new TextComponent("§7/Vip§a users"));
+			sender.sendMessage(new TextComponent("Â§7/VipÂ§a keys"));
+			sender.sendMessage(new TextComponent("Â§7/VipÂ§a addtempo (grupo) (dias)"));
+			sender.sendMessage(new TextComponent("Â§7/VipÂ§a purge"));
+			sender.sendMessage(new TextComponent("Â§7/VipÂ§a users"));
 		}
-		sender.sendMessage(new TextComponent("§7/Vip§a perfil (nick)"));
-		sender.sendMessage(new TextComponent("§7/Vip§a gerarkey (grupo) (dias) (justificativa)"));
-		sender.sendMessage(new TextComponent("§7/Vip§a apagarkey (chave) (justificativa)"));
-		sender.sendMessage(new TextComponent("§7/Vip§a dar (nick) (grupo) (dias) (justificativa)"));
-		sender.sendMessage(new TextComponent("§7/Vip§a remover (nick) (justificativa)"));
+		sender.sendMessage(new TextComponent("Â§7/VipÂ§a perfil (nick)"));
+		sender.sendMessage(new TextComponent("Â§7/VipÂ§a gerarkey (grupo) (dias) (justificativa)"));
+		sender.sendMessage(new TextComponent("Â§7/VipÂ§a apagarkey (chave) (justificativa)"));
+		sender.sendMessage(new TextComponent("Â§7/VipÂ§a dar (nick) (grupo) (dias) (justificativa)"));
+		sender.sendMessage(new TextComponent("Â§7/VipÂ§a remover (nick) (justificativa)"));
 		return;
 	}
 }

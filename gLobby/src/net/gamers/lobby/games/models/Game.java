@@ -73,7 +73,7 @@ public class Game {
 		this.npc = null;
 		this.queue = new HashMap<>();
 		
-		fancyName = "§2§l" + name.toUpperCase();
+		fancyName = "Â§2Â§l" + name.toUpperCase();
 	}
 	
 	public Game(String name, String skinName, ItemStack itemStack, Location location) {
@@ -88,7 +88,7 @@ public class Game {
 		this.npc = null;
 		this.queue = new HashMap<>();
 		
-		fancyName = "§2§l" + name.toUpperCase();
+		fancyName = "Â§2Â§l" + name.toUpperCase();
 	}
 	
 	public void update() throws Exception {
@@ -153,8 +153,8 @@ public class Game {
 	}
 	
 	public void joinVIPGame(Player player) {
-		player.sendMessage("§a[Lobby] Entrando na fila...");
-		String offline = "§cDesculpe, mas o modo de jogo encontra-se offline.";
+		player.sendMessage("Â§a[Lobby] Entrando na fila...");
+		String offline = "Â§cDesculpe, mas o modo de jogo encontra-se offline.";
 		if (status.getStatus() != gameStatus.ONLINE) {
 			player.sendMessage(offline);
 			return;
@@ -170,7 +170,7 @@ public class Game {
 			player.sendMessage(offline);
 			return;
 		}
-		player.sendMessage("§a[Lobby] Verifiquei aqui e você é §lVIP§a, Você acha mesmo que iriamos deixar você em uma fila?! Me Poupe!");
+		player.sendMessage("Â§a[Lobby] Verifiquei aqui e vocÂ§ Â§ Â§lVIPÂ§a, VocÂ§ acha mesmo que iriamos deixar vocÂ§ em uma fila?! Me Poupe!");
 		int n = ThreadLocalRandom.current().nextInt(0, serversBypass.size());
 		CommonsBukkit.getInstance().getBungeeChannelAPI().connect(player, serversBypass.get(n).getServerName());
 		player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
@@ -179,14 +179,14 @@ public class Game {
 	public void joinQueue(Player player) {
 		PlayerQueue pQueue = queue.get(player);
 		if (pQueue != null) {
-			player.sendMessage("§a[Lobby] Você já faz parte da fila do servidor, Bobinho!");
-			player.sendMessage("§a[Lobby] Hmmm, você é curioso(a) em! O seu lugar da fila é: §f#" + pQueue.getPosition());
+			player.sendMessage("Â§a[Lobby] VocÂ§ jÂ§ faz parte da fila do servidor, Bobinho!");
+			player.sendMessage("Â§a[Lobby] Hmmm, vocÂ§ Â§ curioso(a) em! O seu lugar da fila Â§: Â§f#" + pQueue.getPosition());
 			return;
 		}
-		player.sendMessage("§a[Lobby] Entrando na fila...");
+		player.sendMessage("Â§a[Lobby] Entrando na fila...");
 		int position = queue.size() + 1;
 		queue.put(player, new PlayerQueue(player, position));
-		player.sendMessage("§a[Lobby] Você é o §f#" + position + "§a na fila para conectar ao modo de jogo §f" + fancyName + "§a com sucesso.");
+		player.sendMessage("Â§a[Lobby] VocÂ§ Â§ o Â§f#" + position + "Â§a na fila para conectar ao modo de jogo Â§f" + fancyName + "Â§a com sucesso.");
 		player.playSound(player.getLocation(), Sound.CLICK, 5F, 5F);
 	}
 	
@@ -235,7 +235,7 @@ public class Game {
 			Inventory inventory = GamesManager.getInventory();
 			if (inventory != null && inventory.getItem(position) != null) {
 				ItemMeta itemMeta = inventory.getItem(position).getItemMeta();
-				if (itemMeta.getDisplayName().equalsIgnoreCase("§a" + name)) {
+				if (itemMeta.getDisplayName().equalsIgnoreCase("Â§a" + name)) {
 					GamesManager.getInventory().setItem(position, getIconMenu());
 				}
 			}
@@ -273,7 +273,7 @@ public class Game {
 	public ItemStack getIconMenu() {
 		List<String> lore = new ArrayList<>();
 		for (String description : description) {
-			lore.add("§7  " + description);
+			lore.add("Â§7  " + description);
 		}
 		ItemStack value = null;
 		MakeItem item = new MakeItem(itemStack.getType()).setName(fancyName);
@@ -281,27 +281,27 @@ public class Game {
 			item.addLore("");
 			item.addLore(lore);
 		}
-		item.addLore("", "§aClique para jogar!", getOnline(), "").addFlags(ItemFlag.HIDE_ATTRIBUTES);
+		item.addLore("", "Â§aClique para jogar!", getOnline(), "").addFlags(ItemFlag.HIDE_ATTRIBUTES);
 		value = item.build();
 		return value;
 	}
 	
 	public String getHologramStatus() {
-		String value = "§c§lOFFLINE";
+		String value = "Â§cÂ§lOFFLINE";
 		if (status != null)  {
 			if (status.getStatus() == gameStatus.ONLINE) {
-				value = "§a§lONLINE";
-			} else if (status.getStatus() == gameStatus.MANUTENÇÃO) {
-				value = "§e§lMANUTENÇÃO";
+				value = "Â§aÂ§lONLINE";
+			} else if (status.getStatus() == gameStatus.MANUTENÃ‡ÃƒO) {
+				value = "Â§eÂ§lMANUTENÃ‡ÃƒO";
 			}
 		}
 		return value;
 	}
 	
 	public String getOnline() {
-		String value = "§a0 §fJogando!";
+		String value = "Â§a0 Â§fJogando!";
 		if (status != null) {
-			value = "§a" + status.getOnline() + " §fJogando!";
+			value = "Â§a" + status.getOnline() + " Â§fJogando!";
 		}
 		return value;
 	}

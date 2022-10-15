@@ -48,9 +48,9 @@ public class DominarListener implements Listener {
 				event.setCancelled(true);
 				block.setType(Material.BEDROCK);
 				dominarManager.setBlock(block.getLocation());
-				player.sendMessage("§aBaú setado com sucesso.");
+				player.sendMessage("Â§aBaÂ§ setado com sucesso.");
 			} else {
-				player.sendMessage("§cBloco inválido, é uma BEDROCK.");
+				player.sendMessage("Â§cBloco invÂ§lido, Â§ uma BEDROCK.");
 			}
 			dominarManager.getChestSet().remove(playerName.toLowerCase());
 			return;
@@ -72,7 +72,7 @@ public class DominarListener implements Listener {
 			if (dominarManager.getInvencible() > System.currentTimeMillis()) {
 				event.setCancelled(true);
 				String timeFormat = TimeFormater.formatOfEnd(dominarManager.getInvencible());
-				player.sendMessage("§cOpaa! Perai rapaz, o clan dominante tem direito de 5 minutos de invencibilidade! Aguarde: §f" + timeFormat);
+				player.sendMessage("Â§cOpaa! Perai rapaz, o clan dominante tem direito de 5 minutos de invencibilidade! Aguarde: Â§f" + timeFormat);
 				return;
 			}
 			SimpleClans simpleClans = instance.getSimpleClans();
@@ -80,13 +80,13 @@ public class DominarListener implements Listener {
 			if (clanPlayer != null) {
 				if (clanPlayer.getClan() != null) {
 					if (clanPlayer.getClan() == dominarManager.getClan()) {
-						player.sendMessage("§cVocê não pode quebrar o dominio do seu clan, bobinho!");
+						player.sendMessage("Â§cVocÂ§ nÂ§o pode quebrar o dominio do seu clan, bobinho!");
 						return;
 					}
 				}
 			}
 			String clanTag = ClansAPI.getClanTag(dominarManager.getClan());
-			Bukkit.broadcastMessage("§8[§f§lMinaPvP§8] §f" + playerName + " §cDestruiu o bloco de ouro do dominio e acabou com a festa da " + clanTag + "§c. Vaporizou os caras!");
+			Bukkit.broadcastMessage("Â§8[Â§fÂ§lMinaPvPÂ§8] Â§f" + playerName + " Â§cDestruiu o bloco de ouro do dominio e acabou com a festa da " + clanTag + "Â§c. Vaporizou os caras!");
 			dominarManager.clearBuildArea(dominarManager.getProtectedRegion(player.getLocation()));
 			HashSet<Player> onlinePlayers = dominarManager.getPlayers();
 			if (!(onlinePlayers.isEmpty())) {
@@ -116,37 +116,37 @@ public class DominarListener implements Listener {
 		if ((block.getX() == x) && (block.getY() == y) && (block.getZ() == z)) {
 			if (!(dominarManager.isActive())) {
 				event.setCancelled(true);
-				player.sendMessage("§cO sistema de dominio está desativado no momento.");
+				player.sendMessage("Â§cO sistema de dominio estÂ§ desativado no momento.");
 				return;
 			}
 			if (blockPlaced.getType() != Material.GOLD_BLOCK) {
 				event.setCancelled(true);
-				player.sendMessage("§cO bloco precisa ser um bloco de ouro para iniciar o dominio!");
+				player.sendMessage("Â§cO bloco precisa ser um bloco de ouro para iniciar o dominio!");
 				return;
 			}
 			if (Bukkit.getOnlinePlayers().size() < 30) {
 				event.setCancelled(true);
-				player.sendMessage("§cOpaa! Para dominar a MinaPvP é necessário ter pelomenos 30 jogadores online. Server falido é assim mesmo!");
+				player.sendMessage("Â§cOpaa! Para dominar a MinaPvP Â§ necessÂ§rio ter pelomenos 30 jogadores online. Server falido Â§ assim mesmo!");
 				return;
 			}
 			SimpleClans simpleClans = instance.getSimpleClans();
 			ClanPlayer clanPlayer = simpleClans.getClanManager().getClanPlayer(player);
 			if (clanPlayer == null) {
 				event.setCancelled(true);
-				player.sendMessage("§cPara iniciar um dominio é necessário possuir um clan.");
+				player.sendMessage("Â§cPara iniciar um dominio Â§ necessÂ§rio possuir um clan.");
 				return;
 			}
 			Clan clan = clanPlayer.getClan();
 			if (clan == null) {
 				event.setCancelled(true);
-				player.sendMessage("§cPara iniciar um dominio é necessário possuir um clan.");
+				player.sendMessage("Â§cPara iniciar um dominio Â§ necessÂ§rio possuir um clan.");
 				return;
 			}
 			dominarManager.setClan(clan);
 			dominarManager.setInvencible(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(300));
 			dominarManager.updatePlayersClan();
 			String clanTag = ClansAPI.getClanTag(clan);
-			Bukkit.broadcastMessage("§8[§f§lMinaPvP§8] §cO clan " + clanTag + " §cestá dominando a §lMinaPvP§c! Destrua o bloco de ouro e conquiste a tag: §b[Dominador] §cou morra tentando!");
+			Bukkit.broadcastMessage("Â§8[Â§fÂ§lMinaPvPÂ§8] Â§cO clan " + clanTag + " Â§cestÂ§ dominando a Â§lMinaPvPÂ§c! Destrua o bloco de ouro e conquiste a tag: Â§b[Dominador] Â§cou morra tentando!");
 		}
 	}
 	
@@ -178,7 +178,7 @@ public class DominarListener implements Listener {
 		if (dominarManager.getClan() != clanPlayer.getClan()) {
 			if (dominarManager.isInRegion(player.getLocation(), "minapvp-dominar")) {
 				if (!(player.hasPotionEffect(PotionEffectType.SLOW_DIGGING))) {
-					player.sendMessage("§aTooodo cansadoo! Você recebeu cansaço por estar na área area de dominio.");
+					player.sendMessage("Â§aTooodo cansadoo! VocÂ§ recebeu cansaÂ§o por estar na Â§rea area de dominio.");
 				}
 				player.removePotionEffect(PotionEffectType.SLOW_DIGGING);
 				player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 10 * 20, 1));

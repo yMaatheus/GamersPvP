@@ -37,22 +37,22 @@ public class GameCommand extends Command {
 					if (args[0].equalsIgnoreCase("criar")) {
 						Game game = new Game(gameName, null, null, null);
 						if (game.exists()) {
-							sender.sendMessage("§cEsse modo de jogo já foi criado.");
+							sender.sendMessage("Â§cEsse modo de jogo jÂ§ foi criado.");
 							return;
 						}
 						game.update();
-						sender.sendMessage("§aVocê criou a opção do Modo de Jogo §f" + gameName + "§a com sucesso.");
+						sender.sendMessage("Â§aVocÂ§ criou a opÂ§Â§o do Modo de Jogo Â§f" + gameName + "Â§a com sucesso.");
 						return;
 					} else if (args.length > 2 && args[0].equalsIgnoreCase("setskin")) {
 						String skinName = args[2];
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.setSkinName(skinName);
 						game.update();
-						sender.sendMessage("§aFoi atualizada o nome da pele do NPC representante do modo de jogo §f" + gameName + "§a.");
+						sender.sendMessage("Â§aFoi atualizada o nome da pele do NPC representante do modo de jogo Â§f" + gameName + "Â§a.");
 						return;
 					} else if (args[0].equalsIgnoreCase("setitem")) {
 						if (!(sender instanceof Player)) {
@@ -61,29 +61,29 @@ public class GameCommand extends Command {
 						Player player = (Player) sender;
 						ItemStack itemInHand = player.getItemInHand();
 						if (itemInHand == null || player.getItemInHand().getType() == Material.AIR) {
-							sender.sendMessage("§cItem inválido.");
+							sender.sendMessage("Â§cItem invÂ§lido.");
 							return;
 						}
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.setItemStack(itemInHand);
 						game.update();
-						sender.sendMessage("§aFoi atualizado o item representante do modo de jogo §f" + gameName + "§a.");
+						sender.sendMessage("Â§aFoi atualizado o item representante do modo de jogo Â§f" + gameName + "Â§a.");
 						return;
 					} else if (args.length > 2 && args[0].equalsIgnoreCase("setPosition")) {
 						int position = 0;
 						try {
 							position = Integer.parseInt(args[2]);
 						} catch (NumberFormatException e) {
-							sender.sendMessage("§cValor inválido.");
+							sender.sendMessage("Â§cValor invÂ§lido.");
 							return;
 						}
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.setPosition(position);;
@@ -96,7 +96,7 @@ public class GameCommand extends Command {
 							GamesManager.loadChestGames();
 						}
 						
-						sender.sendMessage("§aFoi atualizado a posição do modo de jogo §f" + gameName + "§a no seletor geral de jogos.");
+						sender.sendMessage("Â§aFoi atualizado a posiÂ§Â§o do modo de jogo Â§f" + gameName + "Â§a no seletor geral de jogos.");
 						return;
 					} else if (args[0].equalsIgnoreCase("setlocation")) {
 						if (!(sender instanceof Player)) {
@@ -105,12 +105,12 @@ public class GameCommand extends Command {
 						Player player = (Player) sender;
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.setLocation(player);
 						game.update();
-						sender.sendMessage("§aFoi atualizado a localização do NPC representante do modo de jogo §f" + gameName + "§a.");
+						sender.sendMessage("Â§aFoi atualizado a localizaÂ§Â§o do NPC representante do modo de jogo Â§f" + gameName + "Â§a.");
 						return;
 					} else if (args.length > 2 && args[0].equalsIgnoreCase("addDesc")) {
 						String description = "";
@@ -123,7 +123,7 @@ public class GameCommand extends Command {
 						}
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.getDescription().add(description);
@@ -135,12 +135,12 @@ public class GameCommand extends Command {
 							GamesManager.put(gameCache);
 							GamesManager.loadChestGames();
 						}
-						sender.sendMessage("§aA descrição do modo de jogo §f" + gameName + "§a teve a linha §r" + description + "§a adicionada com sucesso.");
+						sender.sendMessage("Â§aA descriÂ§Â§o do modo de jogo Â§f" + gameName + "Â§a teve a linha Â§r" + description + "Â§a adicionada com sucesso.");
 						return;
 					} else if (args[0].equalsIgnoreCase("limparDesc") || args[0].equalsIgnoreCase("clearDesc")) {
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.setDescription(new ArrayList<>());
@@ -152,7 +152,7 @@ public class GameCommand extends Command {
 							GamesManager.put(gameCache);
 							GamesManager.loadChestGames();
 						}
-						sender.sendMessage("§aA descrição do modo de jogo §f" + gameName + "§a foi limpa com sucesso.");
+						sender.sendMessage("Â§aA descriÂ§Â§o do modo de jogo Â§f" + gameName + "Â§a foi limpa com sucesso.");
 						return;
 					} else if (args[0].equalsIgnoreCase("spawn")) {
 						Game gameCache = GamesManager.getCache(gameName);
@@ -169,11 +169,11 @@ public class GameCommand extends Command {
 					} else if (args[0].equalsIgnoreCase("deletar")) {
 						Game game = GamesManager.getGame(gameName);
 						if (game == null) {
-							sender.sendMessage("§cModo de jogo não encontrado.");
+							sender.sendMessage("Â§cModo de jogo nÂ§o encontrado.");
 							return;
 						}
 						game.delete();
-						sender.sendMessage("§aA opção de modo de jogo §f" + game.getName() + "§a foi deletada com sucesso.");
+						sender.sendMessage("Â§aA opÂ§Â§o de modo de jogo Â§f" + game.getName() + "Â§a foi deletada com sucesso.");
 						return;
 					}
 				} catch (Exception e) {
@@ -183,16 +183,16 @@ public class GameCommand extends Command {
 			return false;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Lobby] Comandos disponíveis:");
-		sender.sendMessage("§7/Game§a criar (nome)");
-		sender.sendMessage("§7/Game§a setSkin (modo de jogo) (skin)");
-		sender.sendMessage("§7/Game§a setItem (modo de jogo)");
-		sender.sendMessage("§7/Game§a setPosition (modo de jogo) (posição no baú)");
-		sender.sendMessage("§7/Game§a setLocation (modo de jogo)");
-		sender.sendMessage("§7/Game§a addDesc (modo de jogo) (descrição)");
-		sender.sendMessage("§7/Game§a limparDesc (modo de jogo)");
-		sender.sendMessage("§7/Game§a spawn (modo de jogo)");
-		sender.sendMessage("§7/Game§a deletar (modo de jogo)");
+		sender.sendMessage("Â§a[Lobby] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/GameÂ§a criar (nome)");
+		sender.sendMessage("Â§7/GameÂ§a setSkin (modo de jogo) (skin)");
+		sender.sendMessage("Â§7/GameÂ§a setItem (modo de jogo)");
+		sender.sendMessage("Â§7/GameÂ§a setPosition (modo de jogo) (posiÂ§Â§o no baÂ§)");
+		sender.sendMessage("Â§7/GameÂ§a setLocation (modo de jogo)");
+		sender.sendMessage("Â§7/GameÂ§a addDesc (modo de jogo) (descriÂ§Â§o)");
+		sender.sendMessage("Â§7/GameÂ§a limparDesc (modo de jogo)");
+		sender.sendMessage("Â§7/GameÂ§a spawn (modo de jogo)");
+		sender.sendMessage("Â§7/GameÂ§a deletar (modo de jogo)");
 		return false;
 	}
 }

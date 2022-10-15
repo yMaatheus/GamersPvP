@@ -31,7 +31,7 @@ public class PlayerInteractListener implements Listener {
 		if (player.getItemInHand().getType() == Material.STICK) {
 			LocAPI.ir(player, "pvp");
 			player.sendMessage("");
-			player.sendMessage("§aPara sair utilize: /sair.");
+			player.sendMessage("Â§aPara sair utilize: /sair.");
 			player.sendMessage("");
 			if (Arrays.invincible.contains(player)) {
 				Arrays.invincible.remove(player);

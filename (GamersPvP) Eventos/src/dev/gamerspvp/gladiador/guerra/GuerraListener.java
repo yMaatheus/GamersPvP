@@ -49,7 +49,7 @@ public class GuerraListener implements Listener {
 				String clanPlayerTag = ClansAPI.getClanTag(clanPlayer.getClan());
 				String clanKillerTag = ClansAPI.getClanTag(clanKiller.getClan());
 				int kills = guerra.getpKills().get(killerName.toLowerCase()) + 1;
-				event.setDeathMessage(prefix + clanPlayerTag + " §f" + playerName + " §7foi morto por " + clanKillerTag + " §f" + killerName + "§8(§f" + kills + "§8)");
+				event.setDeathMessage(prefix + clanPlayerTag + " Â§f" + playerName + " Â§7foi morto por " + clanKillerTag + " Â§f" + killerName + "Â§8(Â§f" + kills + "Â§8)");
 				guerra.getpKills().put(killerName.toLowerCase(), kills);
 			}
 		}
@@ -79,7 +79,7 @@ public class GuerraListener implements Listener {
 				}
 				if (!(find)) {
 					event.setCancelled(true);
-					player.sendMessage("§cComando bloqueado durante o Evento Guerra.");
+					player.sendMessage("Â§cComando bloqueado durante o Evento Guerra.");
 					return;
 				}
 			}
@@ -88,7 +88,7 @@ public class GuerraListener implements Listener {
 			for (String command : blockedGlobalCommands) {
 				if ((message.startsWith(command + " ") || (message.equalsIgnoreCase(command)))) {
 					event.setCancelled(true);
-					player.sendMessage("§cComando bloqueado durantea a realização o Evento Guerra.");
+					player.sendMessage("Â§cComando bloqueado durantea a realizaÂ§Â§o o Evento Guerra.");
 					break;
 				}
 			}

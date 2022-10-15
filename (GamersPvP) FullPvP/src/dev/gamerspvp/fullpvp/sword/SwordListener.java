@@ -26,7 +26,7 @@ public class SwordListener implements Listener {
 			ItemStack hand = damager.getItemInHand();
 			if (hand.getEnchantments().containsKey(Enchantment.KNOCKBACK)) {
 				hand.removeEnchantment(Enchantment.KNOCKBACK);
-				damager.sendMessage("§cO encantamento de Knockback não é permitido no servidor, o knockback foi retirado de sua espada!");
+				damager.sendMessage("Â§cO encantamento de Knockback nÂ§o Â§ permitido no servidor, o knockback foi retirado de sua espada!");
 			}
 		}
 		if (event.getEntity() instanceof Player) {
@@ -34,7 +34,7 @@ public class SwordListener implements Listener {
 			ItemStack hand = player.getItemInHand();
 			if (hand.getEnchantments().containsKey(Enchantment.KNOCKBACK)) {
 				hand.removeEnchantment(Enchantment.KNOCKBACK);
-				player.sendMessage("§cO encantamento de Knockback não é permitido no servidor, o knockback foi retirado de sua espada!");
+				player.sendMessage("Â§cO encantamento de Knockback nÂ§o Â§ permitido no servidor, o knockback foi retirado de sua espada!");
 			}
 		}
 	}

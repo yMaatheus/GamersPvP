@@ -20,7 +20,7 @@ public class MiniGladiadorCommandManager {
 			@Override
 			public boolean execute(CommandSender sender, String arg, String[] args) {
 				MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
-				sender.sendMessage("§fMiniGladiadores: §3" + miniGladiadorManager.getGanhadores());
+				sender.sendMessage("Â§fMiniGladiadores: Â§3" + miniGladiadorManager.getGanhadores());
 				return false;
 			}
 		}, "gladiadores");
@@ -30,30 +30,30 @@ public class MiniGladiadorCommandManager {
 		MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
 		MiniGladiador miniGladiador = miniGladiadorManager.getMiniGladiador();
 		if (!(miniGladiadorManager.hasLocations())) {
-			sender.sendMessage("§cDefina as localizações para iniciar o evento.");
+			sender.sendMessage("Â§cDefina as localizaÂ§Â§es para iniciar o evento.");
 			return;
 		}
 		if (!(miniGladiadorManager.hasSetedKit())) {
-			sender.sendMessage("§cDefina os itens que os jogadores irão receber.");
+			sender.sendMessage("Â§cDefina os itens que os jogadores irÂ§o receber.");
 			return;
 		}
 		if (miniGladiador != null) {
-			sender.sendMessage("§cO evento gladiador já está acontencendo.");
+			sender.sendMessage("Â§cO evento gladiador jÂ§ estÂ§ acontencendo.");
 			return;
 		}
 		miniGladiadorManager.executeStart();
-		sender.sendMessage("§7Iniciando evento MiniGladiador.");
+		sender.sendMessage("Â§7Iniciando evento MiniGladiador.");
 	}
 	
 	public void forceDeathmatch(CommandSender sender) {
 		MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
 		MiniGladiador miniGladiador = miniGladiadorManager.getMiniGladiador();
 		if (miniGladiador == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		if (miniGladiador.getStatus() != statusType.PVP) {
-			sender.sendMessage("§cSó é possivel forçar o deathmatch durante o PvP.");
+			sender.sendMessage("Â§cSÂ§ Â§ possivel forÂ§ar o deathmatch durante o PvP.");
 			return;
 		}
 		miniGladiadorManager.executeDeathmatch();
@@ -63,7 +63,7 @@ public class MiniGladiadorCommandManager {
 		MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
 		MiniGladiador miniGladiador = miniGladiadorManager.getMiniGladiador();
 		if (miniGladiador == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		miniGladiadorManager.executeCancel();
@@ -73,19 +73,19 @@ public class MiniGladiadorCommandManager {
 		MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
 		MiniGladiador miniGladiador = miniGladiadorManager.getMiniGladiador();
 		if (miniGladiador == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		statusType status = miniGladiador.getStatus();
 		sender.sendMessage("");
-		sender.sendMessage("§7Status§8: §f" + status);
-		sender.sendMessage("§7Tempo§8: §f" + getInfoTime(miniGladiador));
+		sender.sendMessage("Â§7StatusÂ§8: Â§f" + status);
+		sender.sendMessage("Â§7TempoÂ§8: Â§f" + getInfoTime(miniGladiador));
 		sender.sendMessage("");
-		sender.sendMessage("§7Clans vivos§8: §f" + miniGladiadorManager.getClans(miniGladiador));
-		sender.sendMessage("§7Jogadores vivos§8: §f" + miniGladiadorManager.getParticipants(miniGladiador));
+		sender.sendMessage("Â§7Clans vivosÂ§8: Â§f" + miniGladiadorManager.getClans(miniGladiador));
+		sender.sendMessage("Â§7Jogadores vivosÂ§8: Â§f" + miniGladiadorManager.getParticipants(miniGladiador));
 		sender.sendMessage("");
-		sender.sendMessage("§7Quantidade clans vivos§8: §f" + miniGladiadorManager.getClans());
-		sender.sendMessage("§7Quantidade jogadores vivos§8: §f" + miniGladiadorManager.getPlayers());
+		sender.sendMessage("Â§7Quantidade clans vivosÂ§8: Â§f" + miniGladiadorManager.getClans());
+		sender.sendMessage("Â§7Quantidade jogadores vivosÂ§8: Â§f" + miniGladiadorManager.getPlayers());
 		sender.sendMessage("");
 	}
 	
@@ -93,26 +93,26 @@ public class MiniGladiadorCommandManager {
 		String time = TimeFormater.formatOfEnd(miniGladiador.getTime());
 		statusType status = miniGladiador.getStatus();
 		if (status == statusType.CHAMANDO || status == statusType.FECHADO) {
-			return "Aguardando começo do Evento.";
+			return "Aguardando comeÂ§o do Evento.";
 		} else if (status.name().contains("DEATHMATCH")) {
-			return "Deathmatch já encontra-se em andamento.";
+			return "Deathmatch jÂ§ encontra-se em andamento.";
 		}
 		return time;
 	}
 	
 	public void sendHelpCommands(CommandSender sender, boolean permission, String arg) {
 		sender.sendMessage("");
-		sender.sendMessage("§3[MiniGladiador] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§3 sair");
-		sender.sendMessage("§7/" + arg + "§3 ajuda");
+		sender.sendMessage("Â§3[MiniGladiador] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§3 sair");
+		sender.sendMessage("Â§7/" + arg + "Â§3 ajuda");
 		if (permission) {
 			sender.sendMessage("");
-			sender.sendMessage("§7/" + arg + "§3 iniciar");
-			sender.sendMessage("§7/" + arg + "§3 forcedeathmatch");
-			sender.sendMessage("§7/" + arg + "§3 parar");
-			sender.sendMessage("§7/" + arg + "§3 set (spawn | saida | deathmatch)");
-			sender.sendMessage("§7/" + arg + "§3 info");
-			sender.sendMessage("§7/" + arg + "§3 setkit");
+			sender.sendMessage("Â§7/" + arg + "Â§3 iniciar");
+			sender.sendMessage("Â§7/" + arg + "Â§3 forcedeathmatch");
+			sender.sendMessage("Â§7/" + arg + "Â§3 parar");
+			sender.sendMessage("Â§7/" + arg + "Â§3 set (spawn | saida | deathmatch)");
+			sender.sendMessage("Â§7/" + arg + "Â§3 info");
+			sender.sendMessage("Â§7/" + arg + "Â§3 setkit");
 		}
 		sender.sendMessage("");
 	}

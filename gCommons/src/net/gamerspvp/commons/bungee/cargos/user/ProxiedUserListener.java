@@ -30,8 +30,8 @@ public class ProxiedUserListener implements Listener {
 			ProxiedCargosManager.getUserManager().loadUser(proxiedPlayer);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.err.println("[Cargos] Não foi possivel carregar do jogador: " + playerName + " ERROR: " + e.getMessage());
-			proxiedPlayer.disconnect(new TextComponent("§c[Cargos] \nNão é possivel conectar ao servidor momento, tente mais tarde."));
+			System.err.println("[Cargos] NÂ§o foi possivel carregar do jogador: " + playerName + " ERROR: " + e.getMessage());
+			proxiedPlayer.disconnect(new TextComponent("Â§c[Cargos] \nNÂ§o Â§ possivel conectar ao servidor momento, tente mais tarde."));
 		}
 	}
 	

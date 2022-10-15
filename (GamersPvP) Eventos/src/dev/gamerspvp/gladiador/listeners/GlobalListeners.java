@@ -51,26 +51,26 @@ public class GlobalListeners implements Listener {
 		MitoManager mitoManager = instance.getMitoManager();
 		DominarManager dominarManager = instance.getDominarManager();
 		if (eventoChatManager.isWinner(playerName)) {
-			event.setTagValue("genio", "§a[Gênio]");
+			event.setTagValue("genio", "Â§a[GÂ§nio]");
 		}
 		if (gladiadores.contains(playerName)) {
-			event.setTagValue("gladiador", "§6[Gladiador]");
+			event.setTagValue("gladiador", "Â§6[Gladiador]");
 		}
 		if (guerraGanhadores.contains(playerName)) {
-			event.setTagValue("guerra", "§a[Guerra]");
+			event.setTagValue("guerra", "Â§a[Guerra]");
 		}
 		if (killerManager.isWinner(playerName)) {
-			event.setTagValue("killer", "§c[Killer]");
+			event.setTagValue("killer", "Â§c[Killer]");
 		}
  		if (miniGladiadores.contains(playerName)) {
-			event.setTagValue("minigladiador", "§e[MiniGladiador]");
+			event.setTagValue("minigladiador", "Â§e[MiniGladiador]");
 		}
 		if (mitoManager.isMito(playerName)) {
-			event.setTagValue("mito", "§5[Mito]");
+			event.setTagValue("mito", "Â§5[Mito]");
 		}
 		if (dominarManager.isActive()) {
 			if (dominarManager.containsPlayer(player)) {
-				event.setTagValue("dominar", "§b[Dominador]");
+				event.setTagValue("dominar", "Â§b[Dominador]");
 			}
 		}
 	}

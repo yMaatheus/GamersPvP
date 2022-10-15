@@ -35,17 +35,17 @@ public class TPCommand extends Command {
 				return false;
 			}
 			if (target.getName().equals(sender.getName())) {
-				sender.sendMessage("§cVocê não pode teleporta-se até você mesmo.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode teleporta-se atÂ§ vocÂ§ mesmo.");
 				return false;
 			}
 			Player player = (Player) sender;
 			player.teleport(target, TeleportCause.COMMAND);
-			player.sendMessage("§aTeleportado até " + target.getName() + " com sucesso.");
+			player.sendMessage("Â§aTeleportado atÂ§ " + target.getName() + " com sucesso.");
 			return true;
 		}
 		if (args.length == 2) {
 			if (sender.getName().equals(args[0]) && sender.getName().equals(args[1])) {
-				sender.sendMessage("§cVocê não pode teleporta-se até você mesmo.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode teleporta-se atÂ§ vocÂ§ mesmo.");
 				return false;
 			}
 			Player player = Bukkit.getPlayer(args[0]);
@@ -59,11 +59,11 @@ public class TPCommand extends Command {
 				return false;
 			}
 			if (args[0].equals(args[1])) {
-				sender.sendMessage("§cOs jogadores informados são os mesmos.");
+				sender.sendMessage("Â§cOs jogadores informados sÂ§o os mesmos.");
 				return false;
 			}
 			player.teleport(target, TeleportCause.COMMAND);
-			sender.sendMessage("§a" + player.getName() + " teleportado até " + target.getName() + " com sucesso.");
+			sender.sendMessage("Â§a" + player.getName() + " teleportado atÂ§ " + target.getName() + " com sucesso.");
 			return true;
 		}
 		if (args.length == 3) {
@@ -76,13 +76,13 @@ public class TPCommand extends Command {
 				y = Double.parseDouble(args[1]);
 				z = Double.parseDouble(args[2]);
 			} catch (NumberFormatException e) {
-				sender.sendMessage("§cCoordenadas inválidas.");
+				sender.sendMessage("Â§cCoordenadas invÂ§lidas.");
 				return false;
 			}
 			Player player = (Player) sender;
 			Location location = new Location(player.getWorld(), x, y, z);
 			player.teleport(location, TeleportCause.COMMAND);
-			player.sendMessage("§aTeleportado até as coordenadas X:" + args[0] + " Y: " + args[1] + " Z: " + args[2] + " com sucesso.");
+			player.sendMessage("Â§aTeleportado atÂ§ as coordenadas X:" + args[0] + " Y: " + args[1] + " Z: " + args[2] + " com sucesso.");
 			return true;
 		}
 		if (args.length == 4) {
@@ -91,7 +91,7 @@ public class TPCommand extends Command {
 			}
 			World world = Bukkit.getWorld(args[0]);
 			if (world == null) {
-				sender.sendMessage("§cMundo inválido.");
+				sender.sendMessage("Â§cMundo invÂ§lido.");
 				return true;
 			}
 			double x, y, z;
@@ -100,21 +100,21 @@ public class TPCommand extends Command {
 				y = Double.parseDouble(args[2]);
 				z = Double.parseDouble(args[3]);
 			} catch (NumberFormatException e) {
-				sender.sendMessage("§cCoordenadas inválidas.");
+				sender.sendMessage("Â§cCoordenadas invÂ§lidas.");
 				return false;
 			}
 			Player player = (Player) sender;
 			Location location = new Location(world, x, y, z);
 			player.teleport(location, TeleportCause.COMMAND);
-			player.sendMessage("§aTeleportado até as coordenadas World:" + args[0] + " X: " + args[1] + " Y: " + args[2]+ " Z: " + args[3] + " com sucesso.");
+			player.sendMessage("Â§aTeleportado atÂ§ as coordenadas World:" + args[0] + " X: " + args[1] + " Y: " + args[2]+ " Z: " + args[3] + " com sucesso.");
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[P4Free] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (nick)");
-		sender.sendMessage("§7/" + arg + "§a (nick) (alvo)");
-		sender.sendMessage("§7/" + arg + "§a (x) (y) (z)");
-		sender.sendMessage("§7/" + arg + "§a (world) (x) (y) (z)");
+		sender.sendMessage("Â§a[P4Free] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick)");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick) (alvo)");
+		sender.sendMessage("Â§7/" + arg + "Â§a (x) (y) (z)");
+		sender.sendMessage("Â§7/" + arg + "Â§a (world) (x) (y) (z)");
 		return false;
 	}
 }

@@ -27,7 +27,7 @@ public class GameStatus {
 	}
 	
 	public enum gameStatus {
-		ONLINE, MANUTEN«√O, OFFLINE;
+		ONLINE, MANUTEN√á√ÉO, OFFLINE;
 	}
 	
 	@Getter @Setter

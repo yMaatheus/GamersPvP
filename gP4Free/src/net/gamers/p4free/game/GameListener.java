@@ -27,11 +27,11 @@ public class GameListener implements Listener {
 	
 	public static void onPlayerJoinEvent(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		player.sendMessage("§a§m-----------------------------------------");
-		player.sendMessage("§a§o> §7Salve Mano! Bem vindo ao servidor §a§lP4FREE§7, tamo testando as coisas tlgd? Então qualquer §a§lBUG§7 manda a call nos ticket's do discord!");
-		player.sendMessage("§a§o> §7Relaxa ai que isso aqui não é nada ainda! Tem muito código para ser escrito por aqui.");
-		player.sendMessage("§a§o> §7Tenha um ótimo jogo! Ah sim, já ia esquecendo, desliga o hack aí se não papai anticheat te pega!");
-		player.sendMessage("§a§m-----------------------------------------");
+		player.sendMessage("Â§aÂ§m-----------------------------------------");
+		player.sendMessage("Â§aÂ§o> Â§7Salve Mano! Bem vindo ao servidor Â§aÂ§lP4FREEÂ§7, tamo testando as coisas tlgd? EntÂ§o qualquer Â§aÂ§lBUGÂ§7 manda a call nos ticket's do discord!");
+		player.sendMessage("Â§aÂ§o> Â§7Relaxa ai que isso aqui nÂ§o Â§ nada ainda! Tem muito cÂ§digo para ser escrito por aqui.");
+		player.sendMessage("Â§aÂ§o> Â§7Tenha um Â§timo jogo! Ah sim, jÂ§ ia esquecendo, desliga o hack aÂ§ se nÂ§o papai anticheat te pega!");
+		player.sendMessage("Â§aÂ§m-----------------------------------------");
 		PlayerInventory playerInventory = player.getInventory();
 		playerInventory.clear();
 		playerInventory.setHelmet(null);
@@ -59,7 +59,7 @@ public class GameListener implements Listener {
 	public void onPlayerQuitEvent(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
 		if (instance.getGameManager().hasInScreenShare(player)) {
-			Bukkit.broadcast("§c" + player.getName()  + " deslogou na screenshare!", "gamers.moderador");
+			Bukkit.broadcast("Â§c" + player.getName()  + " deslogou na screenshare!", "gamers.moderador");
 		}
 	}
 	
@@ -83,7 +83,7 @@ public class GameListener implements Listener {
 		Player player = event.getEntity();
 		Player playerKiller = player.getKiller();
 		if (playerKiller != null) {
-			event.setDeathMessage("§7" + player.getName() + " foi morto por " + playerKiller.getName());
+			event.setDeathMessage("Â§7" + player.getName() + " foi morto por " + playerKiller.getName());
 		}
 	}
 	

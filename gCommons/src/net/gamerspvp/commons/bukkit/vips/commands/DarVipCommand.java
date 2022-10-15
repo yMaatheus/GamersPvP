@@ -37,7 +37,7 @@ public class DarVipCommand extends Command {
 			GroupManager groupManager = CargosManager.getGroupManager();
 			GroupBukkit group = groupManager.getGroup(groupName);
 			if (group == null || !(group.isVipGroup())) {
-				sender.sendMessage("§cO grupo informado não encontrado ou não é §lVIP§c.");
+				sender.sendMessage("Â§cO grupo informado nÂ§o encontrado ou nÂ§o Â§ Â§lVIPÂ§c.");
 				return false;
 			}
 			new BukkitRunnable() {
@@ -53,14 +53,14 @@ public class DarVipCommand extends Command {
 						
 						PlayerVip playerVip = VipsManager.getPlayerVip(playerName, true);
 						if (playerVip.getVips().get(groupName) > System.currentTimeMillis()) {
-							sender.sendMessage("§cVocê não pode usar essa chave pois já possui esse §lVIP §cativo.");
+							sender.sendMessage("Â§cVocÂ§ nÂ§o pode usar essa chave pois jÂ§ possui esse Â§lVIP Â§cativo.");
 							return;
 						}
 						playerVip.getVips().put(groupName, time);
 						
 						vipController.updatePlayerVip(playerVip);
 						userManager.defineUserGroup(playerName, groupName);
-						sender.sendMessage("§aO §lVIP§f " + groupName + " §ade§f " + playerName + " §acom duração de§f " + days + " dias §afoi definido com sucesso.");
+						sender.sendMessage("Â§aO Â§lVIPÂ§f " + groupName + " Â§adeÂ§f " + playerName + " Â§acom duraÂ§Â§o deÂ§f " + days + " dias Â§afoi definido com sucesso.");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -69,8 +69,8 @@ public class DarVipCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Cargos] Comandos disponíveis:");
-		sender.sendMessage("§7/DarVip §a (nick) (grupo) (dias)");
+		sender.sendMessage("Â§a[Cargos] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/DarVip Â§a (nick) (grupo) (dias)");
 		return true;
 	}
 }

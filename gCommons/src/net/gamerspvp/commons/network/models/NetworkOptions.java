@@ -125,23 +125,23 @@ public class NetworkOptions {
 	
 	public List<String> loadPlayerListPing() {
 		List<String> listPing = new ArrayList<String>();
-		listPing.add("§2§lGAMERSPVP §71.8.x");
-		listPing.add("§fClique duas vezes para se conectar.");
-		listPing.add("§a");
-		listPing.add("§2Informações:");
-		listPing.add("§6* Loja:§f loja.gamerspvp.net");
-		listPing.add("§6* Discord:§f https://discord.gg/GAdvjxv");
-		listPing.add("§6* Twitter:§f @GamersPvPServer");
+		listPing.add("Â§2Â§lGAMERSPVP Â§71.8.x");
+		listPing.add("Â§fClique duas vezes para se conectar.");
+		listPing.add("Â§a");
+		listPing.add("Â§2InformaÂ§Â§es:");
+		listPing.add("Â§6* Loja:Â§f loja.gamerspvp.net");
+		listPing.add("Â§6* Discord:Â§f https://discord.gg/GAdvjxv");
+		listPing.add("Â§6* Twitter:Â§f @GamersPvPServer");
 		listPing.add("mc.gamerspvp.net");
 		return listPing;
 	}
 	
 	public List<String> loadPlayerListPingMaintenance() {
 		List<String> listPingMaintenance = new ArrayList<String>();
-		listPingMaintenance.add("§2§lGAMERSPVP §71.8.x §eloja.gamerspvp.net");
-		listPingMaintenance.add("§a");
-		listPingMaintenance.add("§cManutenção!");
-		listPingMaintenance.add("§b");
+		listPingMaintenance.add("Â§2Â§lGAMERSPVP Â§71.8.x Â§eloja.gamerspvp.net");
+		listPingMaintenance.add("Â§a");
+		listPingMaintenance.add("Â§cManutenÂ§Â§o!");
+		listPingMaintenance.add("Â§b");
 		listPingMaintenance.add("mc.gamerspvp.net");
 		return listPingMaintenance;
 	}

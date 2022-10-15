@@ -20,7 +20,7 @@ public class AuthMeLoginListener implements Listener {
 	@EventHandler
 	public void onLoginEvent(LoginEvent event) {
 		Player player = event.getPlayer();
-		TitleAPI.sendFullTitle(player, 1, 5, 1, "§aAutenticado!", "§fSeja bem vindo!");
+		TitleAPI.sendFullTitle(player, 1, 5, 1, "Â§aAutenticado!", "Â§fSeja bem vindo!");
 		player.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 	}
 }

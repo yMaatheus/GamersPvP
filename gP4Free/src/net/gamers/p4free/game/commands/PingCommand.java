@@ -30,13 +30,13 @@ public class PingCommand extends Command {
 			}
 			int ping = targetEntityPlayer.ping;
 			if (ping > 300) {
-				sender.sendMessage("§aO ping de " + target.getName() + " é §4" + ping + "ms");
+				sender.sendMessage("Â§aO ping de " + target.getName() + " Â§ Â§4" + ping + "ms");
 			} else if (ping > 250) {
-				sender.sendMessage("§aO ping de " + target.getName() + " é §c" + ping + "ms");
+				sender.sendMessage("Â§aO ping de " + target.getName() + " Â§ Â§c" + ping + "ms");
 			} else if (ping > 200) {
-				sender.sendMessage("§aO ping de " + target.getName() + " é §e" + ping + "ms");
+				sender.sendMessage("Â§aO ping de " + target.getName() + " Â§ Â§e" + ping + "ms");
 			} else {
-				sender.sendMessage("§aO ping de " + target.getName() + " é §a" + ping + "ms");
+				sender.sendMessage("Â§aO ping de " + target.getName() + " Â§ Â§a" + ping + "ms");
 			}
 			return true;
 		}
@@ -50,13 +50,13 @@ public class PingCommand extends Command {
 		}
 		int ping = playerEntity.ping;
 		if (ping > 300) {
-			sender.sendMessage("§aSeu ping é §4" + ping + "ms");
+			sender.sendMessage("Â§aSeu ping Â§ Â§4" + ping + "ms");
 		} else if (ping > 250) {
-			sender.sendMessage("§aSeu ping é §c" + ping + "ms");
+			sender.sendMessage("Â§aSeu ping Â§ Â§c" + ping + "ms");
 		} else if (ping > 200) {
-			sender.sendMessage("§aSeu ping é §e" + ping + "ms");
+			sender.sendMessage("Â§aSeu ping Â§ Â§e" + ping + "ms");
 		} else {
-			sender.sendMessage("§aSeu ping é " + ping + "ms");
+			sender.sendMessage("Â§aSeu ping Â§ " + ping + "ms");
 		}
 		return true;
 	}

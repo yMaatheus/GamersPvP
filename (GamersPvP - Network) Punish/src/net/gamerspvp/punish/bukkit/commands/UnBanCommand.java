@@ -20,7 +20,7 @@ public class UnBanCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.unban"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 0) {
@@ -33,12 +33,12 @@ public class UnBanCommand extends Command {
 					public void run() {
 						try {
 							if (!(mysql.hasIpBanned(ip, true, false))) {
-								sender.sendMessage("§cEsse endereço de ip não está banido.");
+								sender.sendMessage("Â§cEsse endereÂ§o de ip nÂ§o estÂ§ banido.");
 								return;
 							}
 							mysql.executeUnbanIP(ip, false);
 						} catch (Exception e) {
-							sender.sendMessage("§cNão foi possivel completar a operação.");
+							sender.sendMessage("Â§cNÂ§o foi possivel completar a operaÂ§Â§o.");
 							e.printStackTrace();
 						}
 					}
@@ -52,13 +52,13 @@ public class UnBanCommand extends Command {
 					public void run() {
 						try {
 							if (!(mysql.hasBanned(target.toLowerCase(), true, false))) {
-								sender.sendMessage("§cEsse jogador não está banido.");
+								sender.sendMessage("Â§cEsse jogador nÂ§o estÂ§ banido.");
 								return;
 							}
 							mysql.executeUnban(target.toLowerCase(), false);
-							sender.sendMessage("§aPunição revogada com sucesso.");
+							sender.sendMessage("Â§aPuniÂ§Â§o revogada com sucesso.");
 						} catch (Exception e) {
-							sender.sendMessage("§cNão foi possivel completar a operação.");
+							sender.sendMessage("Â§cNÂ§o foi possivel completar a operaÂ§Â§o.");
 							e.printStackTrace();
 						}
 					}
@@ -68,8 +68,8 @@ public class UnBanCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " (nick).");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " (nick).");
 		sender.sendMessage("");
 		return false;
 	}

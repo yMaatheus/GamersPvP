@@ -42,17 +42,17 @@ public class RestartManager {
 	
 	public static void executeRestart() {
 		//Executar o restart
-		// * Servidor enviará todos os jogadores ao lobby e depois reiniciará
+		// * Servidor enviarÂ§ todos os jogadores ao lobby e depois reiniciarÂ§
 		// 
 		closed = true;
 		Bukkit.getPluginManager().callEvent(new PreServerShutdownEvent());
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§c[AVISO] O Servidor irá reiniciar em §f§l60 §csegundos!");
+		Bukkit.broadcastMessage("Â§c[AVISO] O Servidor irÂ§ reiniciar em Â§fÂ§l60 Â§csegundos!");
 		Bukkit.broadcastMessage("");
 		
 		Titles title = new Titles();
-		title.setTitle("§c§lSERVER REINICIANDO");
-		title.setSubtitle("§cReiniciando em §f60 §csegundos!");
+		title.setTitle("Â§cÂ§lSERVER REINICIANDO");
+		title.setSubtitle("Â§cReiniciando em Â§f60 Â§csegundos!");
 		title.broadcast();
 		
 		new BukkitRunnable() {
@@ -66,7 +66,7 @@ public class RestartManager {
 	public static void executeFastRestart() {
 		closed = true;
 		Bukkit.getPluginManager().callEvent(new PreServerShutdownEvent());
-		Bukkit.broadcastMessage("§cServidor reiniciando..");
+		Bukkit.broadcastMessage("Â§cServidor reiniciando..");
 		executeSendPlayersLobby();
 		Bukkit.shutdown();
 	}
@@ -132,7 +132,7 @@ public class RestartManager {
 			if (player == null || !player.isOnline()) {
 				continue;
 			}
-			player.kickPlayer("§cServidor reiniciando...");
+			player.kickPlayer("Â§cServidor reiniciando...");
 		}
 	}
 }

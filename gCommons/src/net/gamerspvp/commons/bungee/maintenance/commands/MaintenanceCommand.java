@@ -40,11 +40,11 @@ public class MaintenanceCommand extends Command {
 						try {
 							time = TimeManager.generateTime(args[3], Integer.parseInt(args[2]));
 						} catch (NumberFormatException e) {
-							sender.sendMessage(new TextComponent("§cHorário inválido."));
+							sender.sendMessage(new TextComponent("Â§cHorÂ§rio invÂ§lido."));
 							return;
 						}
 						if (time == 0) {
-							sender.sendMessage(new TextComponent("§cFormato de horário inválido."));
+							sender.sendMessage(new TextComponent("Â§cFormato de horÂ§rio invÂ§lido."));
 							return;
 						}
 						String reason = "";
@@ -54,14 +54,14 @@ public class MaintenanceCommand extends Command {
 						String estimatedTime = TimeManager.getTimeEnd(time);
 						networkOptions.setMaintenance(new Maintenance(reason, sender.getName(), System.currentTimeMillis(), estimatedTime));
 						networkOptions.publish(instance);
-						sender.sendMessage(new TextComponent("§aModo de segurança da network foi ativado com sucesso."));
+						sender.sendMessage(new TextComponent("Â§aModo de seguranÂ§a da network foi ativado com sucesso."));
 						return;
 					}
 				}
 				if (args[1].equalsIgnoreCase("desativar")) {
 					networkOptions.setMaintenance(null);
 					networkOptions.publish(instance);
-					sender.sendMessage(new TextComponent("§cModo de segurança da network foi desativado com sucesso."));
+					sender.sendMessage(new TextComponent("Â§cModo de seguranÂ§a da network foi desativado com sucesso."));
 				}
 				return;
 			}
@@ -70,31 +70,31 @@ public class MaintenanceCommand extends Command {
 			Gson gson = redis.getGson();
 			String key = "game_" + args[0];
 			if (!jedis.exists(key)) {
-				sender.sendMessage(new TextComponent("§cServidor não encontrado."));
+				sender.sendMessage(new TextComponent("Â§cServidor nÂ§o encontrado."));
 				return;
 			}
 			GameStatus game = instance.getGameStatus(key);
 			if (args[1].equalsIgnoreCase("ativar")) {
-				game.setStatus(gameStatus.MANUTENÇÃO);
+				game.setStatus(gameStatus.MANUTENÂ§Â§O);
 				String json = gson.toJson(game);
 				jedis.set(key, json);
 				jedis.publish("general", "maintenance;" + json);
-				sender.sendMessage(new TextComponent("§aModo de segurança foi ativado no servidor §f" + args[0] + " §acom sucesso."));
+				sender.sendMessage(new TextComponent("Â§aModo de seguranÂ§a foi ativado no servidor Â§f" + args[0] + " Â§acom sucesso."));
 				return;
 			} else if (args[1].equalsIgnoreCase("desativar")) {
 				game.setStatus(gameStatus.OFFLINE);
 				String json = gson.toJson(game);
 				jedis.set(key, json);
 				jedis.publish("general", "maintenance;" + json);
-				sender.sendMessage(new TextComponent("§aModo de segurança foi desativado no servidor §f" + args[0]  + " §acom sucesso."));
+				sender.sendMessage(new TextComponent("Â§aModo de seguranÂ§a foi desativado no servidor Â§f" + args[0]  + " Â§acom sucesso."));
 				return;
 			}
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Commons] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/maintenance§a (Modo de Jogo) (ativar/desativar)"));
-		sender.sendMessage(new TextComponent("§7/maintenance§a network ativar (tempo) (horas, dias, semanas, meses) (motivo)"));
-		sender.sendMessage(new TextComponent("§7/maintenance§a network desativar"));
+		sender.sendMessage(new TextComponent("Â§a[Commons] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/maintenanceÂ§a (Modo de Jogo) (ativar/desativar)"));
+		sender.sendMessage(new TextComponent("Â§7/maintenanceÂ§a network ativar (tempo) (horas, dias, semanas, meses) (motivo)"));
+		sender.sendMessage(new TextComponent("Â§7/maintenanceÂ§a network desativar"));
 		sender.sendMessage(new TextComponent(""));
 		
 	}

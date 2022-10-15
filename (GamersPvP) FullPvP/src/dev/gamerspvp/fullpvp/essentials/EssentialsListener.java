@@ -47,7 +47,7 @@ public class EssentialsListener implements Listener {
 				if (!(essentialsManager.isVipWorld(player.getWorld().getName()))) {
 					return;
 				}
-				player.sendMessage("§a[Fly] Fly ativado automaticamente por possuir acesso §a§lVIP§a!");
+				player.sendMessage("Â§a[Fly] Fly ativado automaticamente por possuir acesso Â§aÂ§lVIPÂ§a!");
 				player.setAllowFlight(true);
 			}
 		}
@@ -60,7 +60,7 @@ public class EssentialsListener implements Listener {
 		if (!essentialsManager.hasInScreenShare(player)) {
 			return;
 		}
-		Bukkit.broadcast("§c" + player.getName()  + " deslogou na screenshare!", "essentials.screenshare");
+		Bukkit.broadcast("Â§c" + player.getName()  + " deslogou na screenshare!", "essentials.screenshare");
 	}
 	
 	@EventHandler
@@ -74,13 +74,13 @@ public class EssentialsListener implements Listener {
 					return;
 				}
 				player.setAllowFlight(false);
-				player.sendMessage("§a[Fly] Fly desativado automaticamente neste mundo por ser de PvP.");
+				player.sendMessage("Â§a[Fly] Fly desativado automaticamente neste mundo por ser de PvP.");
 				return;
 			}
 			if (player.getAllowFlight()) {
 				return;
 			}
-			player.sendMessage("§a[Fly] Fly ativado automaticamente neste mundo por possuir §a§lVIP§a!");
+			player.sendMessage("Â§a[Fly] Fly ativado automaticamente neste mundo por possuir Â§aÂ§lVIPÂ§a!");
 			player.setAllowFlight(true);
 			return;
 		}
@@ -101,7 +101,7 @@ public class EssentialsListener implements Listener {
 			return;
 		}
 		player.setAllowFlight(false);
-		player.sendMessage("§a[Fly] Fly desativado automaticamente por você entrar em uma área de pvp.");
+		player.sendMessage("Â§a[Fly] Fly desativado automaticamente por vocÂ§ entrar em uma Â§rea de pvp.");
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -121,7 +121,7 @@ public class EssentialsListener implements Listener {
 		EssentialsManager essentialsManager = instance.getEssentialsManager();
 		if (essentialsManager.isDenyPlaceBlock(material.getId(), player.getWorld().getName())) {
 			event.setCancelled(true);
-			player.sendMessage("§cNão é permitido colocar esse bloco neste mundo!");
+			player.sendMessage("Â§cNÂ§o Â§ permitido colocar esse bloco neste mundo!");
 		}
 	}
 	
@@ -134,7 +134,7 @@ public class EssentialsListener implements Listener {
 			for (String cmd : blockedCommands) {
 				if ((message.startsWith(cmd + " ")) || (message.equalsIgnoreCase(cmd))) {
 					event.setCancelled(true);
-					player.sendMessage("§cVocê não pode definir homes nesse mundo.");
+					player.sendMessage("Â§cVocÂ§ nÂ§o pode definir homes nesse mundo.");
 					return;
 				}
 			}
@@ -144,7 +144,7 @@ public class EssentialsListener implements Listener {
 			return;
 		}
 		event.setCancelled(true);
-		player.sendMessage("§cVocê não pode executar comandos na ScreenShare!");
+		player.sendMessage("Â§cVocÂ§ nÂ§o pode executar comandos na ScreenShare!");
 	}
 	
 	@EventHandler
@@ -163,7 +163,7 @@ public class EssentialsListener implements Listener {
 		Player player = event.getEntity();
 		Player playerKiller = player.getKiller();
 		if (playerKiller != null) {
-			event.setDeathMessage("§7" + player.getName() + " foi morto por " + playerKiller.getName());
+			event.setDeathMessage("Â§7" + player.getName() + " foi morto por " + playerKiller.getName());
 		}
 	}
 	
@@ -176,7 +176,7 @@ public class EssentialsListener implements Listener {
 		EssentialsManager essentialsManager = instance.getEssentialsManager();
 		if (essentialsManager.getCloseTell(senderName.toLowerCase()) != null) {
 			event.setCancelled(true);
-			sender.sendMessage("§cVocê precisa ativar suas mensagens privadas para enviar mensagem para alguém.");
+			sender.sendMessage("Â§cVocÂ§ precisa ativar suas mensagens privadas para enviar mensagem para alguÂ§m.");
 			return;
 		}
 		String receiverReason = essentialsManager.getCloseTell(receiverName.toLowerCase());
@@ -184,7 +184,7 @@ public class EssentialsListener implements Listener {
 			return;
 		}
 		event.setCancelled(true);
-		sender.sendMessage("§cO jogador encontra-se com o recebimento de suas mensagens privadas desativadas pelo motivo: §f" + receiverReason);
+		sender.sendMessage("Â§cO jogador encontra-se com o recebimento de suas mensagens privadas desativadas pelo motivo: Â§f" + receiverReason);
 	}
 	
 	@EventHandler

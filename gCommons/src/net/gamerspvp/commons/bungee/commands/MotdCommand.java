@@ -20,7 +20,7 @@ public class MotdCommand extends Command {
 		super(name);
 		this.permission = permission;
 		this.instance = instance;
-		instance.getProxy().getConsole().sendMessage(new TextComponent("§a* " + name + " - " + permission));
+		instance.getProxy().getConsole().sendMessage(new TextComponent("Â§a* " + name + " - " + permission));
 	}
 	
 	@Override
@@ -32,7 +32,7 @@ public class MotdCommand extends Command {
 		if (args.length > 1) {
 			String motd = "";
 			for (int i = 1; i < args.length; i++) {
-				motd = MessageUtils.setStringReplaceLinhas(motd + args[i] + " ").replace("&", "§");
+				motd = MessageUtils.setStringReplaceLinhas(motd + args[i] + " ").replace("&", "Â§");
 			}
 			instance.getProxy().getConsole().sendMessage(new TextComponent(motd));
 			if (motd.contains("%linha%")) {
@@ -52,19 +52,19 @@ public class MotdCommand extends Command {
 				NetworkOptions networkOptions = instance.getNetworkOptions();
 				networkOptions.setMotd(motd);
 				networkOptions.publish(instance);
-				sender.sendMessage(new TextComponent("§aVocê definiu o motd normal para: §f" + motd));
+				sender.sendMessage(new TextComponent("Â§aVocÂ§ definiu o motd normal para: Â§f" + motd));
 				return;
 			} else if (args[0].equalsIgnoreCase("maintenance")) {
 				NetworkOptions networkOptions = instance.getNetworkOptions();
 				networkOptions.setMotdMaintenance(motd);
 				networkOptions.publish(instance);
-				sender.sendMessage(new TextComponent("§aVocê definiu o motd de manutenção para: §f" + motd));
+				sender.sendMessage(new TextComponent("Â§aVocÂ§ definiu o motd de manutenÂ§Â§o para: Â§f" + motd));
 				return;
 			}
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Commons] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/motd §a normal (motd)"));
-		sender.sendMessage(new TextComponent("§7/motd §a maintenance (motd)"));
+		sender.sendMessage(new TextComponent("Â§a[Commons] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/motd Â§a normal (motd)"));
+		sender.sendMessage(new TextComponent("Â§7/motd Â§a maintenance (motd)"));
 	}
 }

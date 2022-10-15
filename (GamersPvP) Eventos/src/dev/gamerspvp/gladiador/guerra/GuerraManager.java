@@ -42,7 +42,7 @@ public class GuerraManager {
 	
 	private double premio;
 	private HashSet<String> ganhadores;
-	public String prefix = "§a[Guerra] §r";
+	public String prefix = "Â§a[Guerra] Â§r";
 	
 	public GuerraManager(FileConfiguration config, Main instance) {
 		this.instance = instance;
@@ -66,9 +66,9 @@ public class GuerraManager {
 			public void run() {
 				if (guerra.getAlerts() >= alerts) {
 					if ((getClans() < settings.minClans) || (getPlayers() < settings.minPlayers)) {
-						Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado por insuficiência de participantes.");
+						Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado por insuficiÂ§ncia de participantes.");
 						guerra.setStatus(statusType.CANCELADO);
-						guerra.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+						guerra.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 						guerra.reset();
 						guerra = null;
 						return;
@@ -77,11 +77,11 @@ public class GuerraManager {
 				} else {
 					String tempo = String.valueOf((alerts - guerra.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fEvento §a§lGUERRA §fsendo iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fTempo restante: §a" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fPara participar digite: §a/Guerra");
-					Bukkit.broadcastMessage(prefix + "§fPremios: §2$§a" + premio + " + §fTags: §a[Guerra] §fe §5[Mito]");
-					Bukkit.broadcastMessage(prefix + "§fClans: §a" + getClans() + " §7- §fJogadores: §a" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fEvento Â§aÂ§lGUERRA Â§fsendo iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fTempo restante: Â§a" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fPara participar digite: Â§a/Guerra");
+					Bukkit.broadcastMessage(prefix + "Â§fPremios: Â§2$Â§a" + premio + " + Â§fTags: Â§a[Guerra] Â§fe Â§5[Mito]");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§a" + getClans() + " Â§7- Â§fJogadores: Â§a" + getPlayers());
 					Bukkit.broadcastMessage("");
 					guerra.setAlerts(guerra.getAlerts() + 1);
 				}
@@ -95,8 +95,8 @@ public class GuerraManager {
 		int alerts = settings.iniciando.alerts;
 		int time = settings.iniciando.time;
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §a§lGUERRA §ffechado!");
-		Bukkit.broadcastMessage(prefix + "§fClans: §a" + getClans() + " §7- §fJogadores: §a" + getPlayers());
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§aÂ§lGUERRA Â§ffechado!");
+		Bukkit.broadcastMessage(prefix + "Â§fClans: Â§a" + getClans() + " Â§7- Â§fJogadores: Â§a" + getPlayers());
 		Bukkit.broadcastMessage("");
 		guerra.setTask(new BukkitRunnable() {
 			
@@ -107,14 +107,14 @@ public class GuerraManager {
 					guerra.reset();
 					logReportClansMembers();
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fO PvP foi do Evento §a§lGUERRA §ffoi iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fClans: §a" + getClans() + " §7- §fJogadores: §a" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fO PvP foi do Evento Â§aÂ§lGUERRA Â§ffoi iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§a" + getClans() + " Â§7- Â§fJogadores: Â§a" + getPlayers());
 					Bukkit.broadcastMessage("");
 				} else {
 					String tempo = String.valueOf((alerts - guerra.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fIniciando PvP em: §a" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fClans: §a" + getClans() + " §7- §fJogadores: §a" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fIniciando PvP em: Â§a" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§a" + getClans() + " Â§7- Â§fJogadores: Â§a" + getPlayers());
 					Bukkit.broadcastMessage("");
 					guerra.setAlerts(guerra.getAlerts() + 1);
 				}
@@ -159,10 +159,10 @@ public class GuerraManager {
 		});
 		defineGanhadores(new ArrayList<String>(ganhadores));
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §a§lGUERRA §ffoi finalizado");
-		Bukkit.broadcastMessage(prefix + "§fClan ganhador: §a" + clanTag);
-		Bukkit.broadcastMessage(prefix + "§fMito: §a" + formatMitoKills);
-		Bukkit.broadcastMessage(prefix + "§fGanhadores: " + StringUtils.join(formatWinnersKills, "§a, "));
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§aÂ§lGUERRA Â§ffoi finalizado");
+		Bukkit.broadcastMessage(prefix + "Â§fClan ganhador: Â§a" + clanTag);
+		Bukkit.broadcastMessage(prefix + "Â§fMito: Â§a" + formatMitoKills);
+		Bukkit.broadcastMessage(prefix + "Â§fGanhadores: " + StringUtils.join(formatWinnersKills, "Â§a, "));
 		Bukkit.broadcastMessage("");
 		addWinToClanTop(clanWinnerTag);
 		new BukkitRunnable() {
@@ -171,7 +171,7 @@ public class GuerraManager {
 			public void run() {
 				guerra.getParticipantes().keySet().forEach(player -> {
 					player.teleport(getLocation("saida"));
-					player.sendMessage("§aVocê foi teleportado até a saida.");
+					player.sendMessage("Â§aVocÂ§ foi teleportado atÂ§ a saida.");
 				});
 				executeClearDrops();
 				guerra = null;
@@ -180,10 +180,10 @@ public class GuerraManager {
 	}
 	
 	public void executeCancel() {
-		Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado.");
+		Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado.");
 		guerra.setStatus(statusType.CANCELADO);
 		guerra.reset();
-		guerra.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+		guerra.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 		guerra = null;
 	}
 	
@@ -270,12 +270,12 @@ public class GuerraManager {
 	}
 	
 	public void depositPremio(Player player) {
-		player.sendMessage(prefix + "§eVocê recebeu §2$§f" + premio + " §ecomo prêmio.");
+		player.sendMessage(prefix + "Â§eVocÂ§ recebeu Â§2$Â§f" + premio + " Â§ecomo prÂ§mio.");
 		instance.getEconomy().depositPlayer(player, premio);
 	}
 	
 	public String killsFormat(Player player, int kills) {
-		return "§f" + player.getName() + "§8(§f" + kills + "§8)§r";
+		return "Â§f" + player.getName() + "Â§8(Â§f" + kills + "Â§8)Â§r";
 	}
 	
 	public HashSet<Guerra.Kills> kills(Clan clanVencedor) {

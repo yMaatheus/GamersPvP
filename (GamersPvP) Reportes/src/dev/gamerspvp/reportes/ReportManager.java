@@ -46,15 +46,15 @@ public class ReportManager {
 	public ReportManager(Main instance) {
 		this.instance = instance;
 		try {
-			JDABuilder jdaBuilder = JDABuilder.createDefault("NzY4Mzk1NDczMTM2Mzg2MDQ4.X4_2DA.2kK1yJcXP7iBCBxgOSQvo612hQE");
-			jdaBuilder.setActivity(Activity.of(ActivityType.STREAMING, "O yMatheus é um lindo!", "https://loja.gamerspvp.net/"));
+			JDABuilder jdaBuilder = JDABuilder.createDefault("");
+			jdaBuilder.setActivity(Activity.of(ActivityType.STREAMING, "O yMatheus Â§ um lindo!", "https://loja.gamerspvp.net/"));
 			this.jda = jdaBuilder.build();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}
 		this.cache = new HashMap<String, Report>();
 		this.cooldown = new HashMap<String, Long>();
-		this.inventory = Bukkit.createInventory(null, 6 * 9, "§7Reports");
+		this.inventory = Bukkit.createInventory(null, 6 * 9, "Â§7Reports");
 		new ReportListener(instance);
 		instance.registerCommand(new ReportCommand(instance), "report");
 		instance.registerCommand(new ReportsCommand(instance), "reports");
@@ -64,7 +64,7 @@ public class ReportManager {
 		String reporterName = reporter.getName().toLowerCase();
 		if (cooldown.get(reporterName) != null) {
 			if (cooldown.get(reporterName) < System.currentTimeMillis()) {
-				reporter.sendMessage("§cAcalme-se rapaz, aguarde §f" + TimeFormater.formatOfEnd(cooldown.get(reporterName))  + " §cpara efetuar uma nova denúncia.");
+				reporter.sendMessage("Â§cAcalme-se rapaz, aguarde Â§f" + TimeFormater.formatOfEnd(cooldown.get(reporterName))  + " Â§cpara efetuar uma nova denÂ§ncia.");
 				return;
 			}
 		}
@@ -76,7 +76,7 @@ public class ReportManager {
 		}
 		report = cache.get(name);
 		if (report.getReporters().get(reporter.getName()) != null) {
-			reporter.sendMessage("§cVocê já reportou esse jogador.");
+			reporter.sendMessage("Â§cVocÂ§ jÂ§ reportou esse jogador.");
 			return;
 		}
 		report.getReporters().put(reporter.getName(), reason);
@@ -87,21 +87,7 @@ public class ReportManager {
 		cache.put(name, report);
 		cooldown.put(reporterName, System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(120));
 		updateInventory();
-		reporter.sendMessage("§aDenúncia enviada com êxito!");
-		/*if (jda == null) {
-			return;
-		}
-		Guild guild = jda.getGuildById("368594399862587392");
-		if (guild == null) {
-			return;
-		}*/
-		//((PrivateChannel)guild.getMemberById("340753768620752897").getUser().openPrivateChannel().complete()).sendMessage("Olá Lucas K1ller, saudades de você, Lembra de mim? Então... Passei para dizer que voltei!").queue();
-		//((PrivateChannel)guild.getMemberById("322038284803112960").getUser().openPrivateChannel().complete()).sendMessage("Olá Lucas K1ller, saudades de você, Lembra de mim? Então... Passei para dizer que voltei!").queue();
-		//((PrivateChannel)guild.getMemberById("322038284803112960").getUser().openPrivateChannel().complete()).sendMessage("Agora vai ver o Discord do Gamers seu corno.").queue();
-		//((PrivateChannel)guild.getMemberById("340753768620752897").getUser().openPrivateChannel().complete()).sendMessage("Olá Lucas K1ller, sou o seu melhor amigo apartir de agora!").queue();
-		//((PrivateChannel)guild.getMemberById("340753768620752897").getUser().openPrivateChannel().complete()).sendMessage("Agora vai ver o Discord do Gamers seu corno.").queue();
-		// Create or add in report
-		// Load and update inventory
+		reporter.sendMessage("Â§aDenÂ§ncia enviada com exito!");
 	}
 	
 	public void warnReport(Report report) {
@@ -110,9 +96,9 @@ public class ReportManager {
 			if (onlinePlayer.hasPermission("reportes.moderador")) {
 				onlinePlayer.playSound(onlinePlayer.getLocation(), Sound.NOTE_BASS, 20, 1);
 				onlinePlayer.sendMessage("");
-				onlinePlayer.sendMessage("§c• Um jogador está recebendo muitas denúncias!");
-				onlinePlayer.sendMessage("§c• Jogador acusado: §f" + report.getPlayerName());
-				onlinePlayer.sendMessage("§c• Denúncias: §f" + reporters);
+				onlinePlayer.sendMessage("Â§cÂ§ Um jogador estÂ§ recebendo muitas denÂ§ncias!");
+				onlinePlayer.sendMessage("Â§cÂ§ Jogador acusado: Â§f" + report.getPlayerName());
+				onlinePlayer.sendMessage("Â§cÂ§ DenÂ§ncias: Â§f" + reporters);
 				onlinePlayer.sendMessage("");
 			}
 		}
@@ -129,7 +115,7 @@ public class ReportManager {
 		}
 		EmbedBuilder embedbuilder = new EmbedBuilder();
 		embedbuilder.setTitle("**NOVO REPORT**");
-		embedbuilder.addField("• Um jogador está recebendo muitas denúncias!", "Jogador acusado: " + report.getPlayerName(), false);
+		embedbuilder.addField("Â§ Um jogador estÂ§ recebendo muitas denÂ§ncias!", "Jogador acusado: " + report.getPlayerName(), false);
 		//embedbuilder.setFooter("Por: " + jda.getSelfUser().getName(), jda.getSelfUser().getAvatarUrl());
 		embedbuilder.setAuthor("GamersPvP", "https://loja.gamerspvp.net/", jda.getSelfUser().getAvatarUrl());
 		embedbuilder.setColor(Color.GREEN);
@@ -139,14 +125,14 @@ public class ReportManager {
 		if (lucasK1ller == null) {
 			return;
 		}
-		((PrivateChannel)lucasK1ller.openPrivateChannel().complete()).sendMessage(lucasK1ller.getAsMention() + " Um jogador está recebendo muitas denúncias, vai ver o Discord seu corno!").queue();
+		((PrivateChannel)lucasK1ller.openPrivateChannel().complete()).sendMessage(lucasK1ller.getAsMention() + " Um jogador estÂ§ recebendo muitas denÂ§ncias, vai ver o Discord seu corno!").queue();
 	}
 	
 	public void updateInventory() {
 		// Get all report's
 		// Adicionar reports em ordem de mairo quantidade de denuncias
 		if (inventory == null) {
-			inventory = Bukkit.createInventory(null, 6 * 9, "§7Reports");
+			inventory = Bukkit.createInventory(null, 6 * 9, "Â§7Reports");
 		}
 		inventory.clear();
 		if (cache.isEmpty()) {
@@ -169,8 +155,8 @@ public class ReportManager {
 			Report report = convert.get(a);
 			String reporters = report.getReporters().toString().replace("{", "").replace("}", "");
 			int totalReports = report.getReports();
-			String[] lore = new String[] {"","§a• §fDenúncias: " + reporters, "§a• §eTotal De Denúncias: " + totalReports, "", "§e• §fClique com o esquerdo para teleportar-se", "§e• §fClique com o direito para deletar"};
-			ItemStack skull = new MakeItem(Material.SKULL_ITEM).setName("§a" + report.getPlayerName()).setSkullOwner(report.getPlayerName()).addLore(lore).buildhead();
+			String[] lore = new String[] {"","Â§aÂ§ Â§fDenÂ§ncias: " + reporters, "Â§aÂ§ Â§eTotal De DenÂ§ncias: " + totalReports, "", "Â§eÂ§ Â§fClique com o esquerdo para teleportar-se", "Â§eÂ§ Â§fClique com o direito para deletar"};
+			ItemStack skull = new MakeItem(Material.SKULL_ITEM).setName("Â§a" + report.getPlayerName()).setSkullOwner(report.getPlayerName()).addLore(lore).buildhead();
 			inventory.addItem(skull);
 		}
 		if (!(inventory.getViewers().isEmpty())) {

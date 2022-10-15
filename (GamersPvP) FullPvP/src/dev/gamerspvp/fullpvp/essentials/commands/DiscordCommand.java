@@ -18,7 +18,7 @@ public class DiscordCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		EssentialsManager essentialsManager = instance.getEssentialsManager();
-		sender.sendMessage("§aEntre em nosso Discord: §f" + essentialsManager.getDiscord());
+		sender.sendMessage("Â§aEntre em nosso Discord: Â§f" + essentialsManager.getDiscord());
 		return false;
 	}
 }

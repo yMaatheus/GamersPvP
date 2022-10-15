@@ -37,11 +37,11 @@ public class AuthProxyListener implements Listener {
 				return;
 			}
 			try {
-				BungeeTitleAPI.sendTitle(proxiedPlayer, "§2§lGAMERSPVP", "§fAutenticado!", 20, 20, 20);
+				BungeeTitleAPI.sendTitle(proxiedPlayer, "Â§2Â§lGAMERSPVP", "Â§fAutenticado!", 20, 20, 20);
 				authProxyManager.getAuthQueueManager().add(proxiedPlayer);
 			} catch (Exception e) {
 				e.printStackTrace();
-				proxiedPlayer.disconnect(new TextComponent("§c[Auth] \nNão foi possivel processar o seu envio para o Saguão, contate um administrador."));
+				proxiedPlayer.disconnect(new TextComponent("Â§c[Auth] \nNÂ§o foi possivel processar o seu envio para o SaguÂ§o, contate um administrador."));
 			}
 		}
 	}
@@ -93,7 +93,7 @@ public class AuthProxyListener implements Listener {
 		}
 		if (blocked) {
 			event.setCancelled(true);
-			player.sendMessage(new TextComponent("§cVocè precisa estar autenticado para fazer isso."));
+			player.sendMessage(new TextComponent("Â§cVocÂ§ precisa estar autenticado para fazer isso."));
 		}
 	}
 }

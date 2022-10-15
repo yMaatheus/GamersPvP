@@ -74,7 +74,7 @@ public class Guerra {
 			GuerraManager guerraManager = instance.getGuerraManager();
 			clans.remove(clan);
 			if (!(status == statusType.CHAMANDO)) {
-				Bukkit.broadcastMessage(guerraManager.prefix + "§fClans restantes: §3" + guerraManager.getClans(this));
+				Bukkit.broadcastMessage(guerraManager.prefix + "Â§fClans restantes: Â§3" + guerraManager.getClans(this));
 				guerraManager.executeCheck();
 			}
 		}

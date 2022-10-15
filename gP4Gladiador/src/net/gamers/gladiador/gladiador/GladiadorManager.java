@@ -42,7 +42,7 @@ public class GladiadorManager {
 	private GladiadorCommandManager gladiadorCommandManager;
 	
 	private HashSet<String> gladiadores;
-	public String prefix = "§3[Gladiador] §r";
+	public String prefix = "Â§3[Gladiador] Â§r";
 	
 	public GladiadorManager(FileConfiguration config, Main instance) {
 		this.instance = instance;
@@ -65,9 +65,9 @@ public class GladiadorManager {
 			public void run() {
 				if (gladiador.getAlerts() >= alerts) {
 					if ((getClans() < settings.minClans) || (getPlayers() < settings.minPlayers)) {
-						Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado por insuficiência de participantes.");
+						Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado por insuficiÂ§ncia de participantes.");
 						gladiador.setStatus(statusType.CANCELADO);
-						gladiador.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+						gladiador.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 						gladiador.reset();
 						gladiador = null;
 						return;
@@ -76,13 +76,13 @@ public class GladiadorManager {
 				} else {
 					String tempo = String.valueOf((alerts - gladiador.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fEvento §3§lGLADIADOR §fsendo iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fTempo restante: §3" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fPara participar digite: §3/Gladiador");
-					Bukkit.broadcastMessage(prefix + "§fTags: §6[Gladiador] §3e §5[Mito]");
-					Bukkit.broadcastMessage(prefix + "§fKit setado: §3Não!");
-					Bukkit.broadcastMessage(prefix + "§fMáximo Membros por clan: §3" + settings.getMaxMembersPerClan());
-					Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fEvento Â§3Â§lGLADIADOR Â§fsendo iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fTempo restante: Â§3" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fPara participar digite: Â§3/Gladiador");
+					Bukkit.broadcastMessage(prefix + "Â§fTags: Â§6[Gladiador] Â§3e Â§5[Mito]");
+					Bukkit.broadcastMessage(prefix + "Â§fKit setado: Â§3NÂ§o!");
+					Bukkit.broadcastMessage(prefix + "Â§fMÂ§ximo Membros por clan: Â§3" + settings.getMaxMembersPerClan());
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 					Bukkit.broadcastMessage("");
 					gladiador.setAlerts(gladiador.getAlerts() + 1);
 				}
@@ -96,8 +96,8 @@ public class GladiadorManager {
 		int alerts = settings.iniciando.alerts;
 		int time = settings.iniciando.time;
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §3§lGLADIADOR §ffechado!");
-		Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§3Â§lGLADIADOR Â§ffechado!");
+		Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 		Bukkit.broadcastMessage("");
 		gladiador.setTask(new BukkitRunnable() {
 			
@@ -109,14 +109,14 @@ public class GladiadorManager {
 					gladiador.setTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(settings.forceDeathmatchTime));
 					logReportClansMembers();
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fO PvP foi do Evento §3§lGLADIADOR §ffoi iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fO PvP foi do Evento Â§3Â§lGLADIADOR Â§ffoi iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 					Bukkit.broadcastMessage("");
 				} else {
 					String tempo = String.valueOf((alerts - gladiador.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fIniciando PvP em: §3" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fIniciando PvP em: Â§3" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 					Bukkit.broadcastMessage("");
 					gladiador.setAlerts(gladiador.getAlerts() + 1);
 				}
@@ -139,7 +139,7 @@ public class GladiadorManager {
 			int players = getPlayers();
 			if ((System.currentTimeMillis() > gladiador.getTime()) || (clans <= settings.clansForStartDeathmatch)) {
 				if (players > 35) {
-					System.out.println("[Gladiador] Evento com mais de 35 membros, deathmatch não será acionada");
+					System.out.println("[Gladiador] Evento com mais de 35 membros, deathmatch nÂ§o serÂ§ acionada");
 					return;
 				}
 				executeDeathmatch();
@@ -157,7 +157,7 @@ public class GladiadorManager {
 				executeClearDrops();
 				gladiador.getParticipantes().keySet().forEach(player -> {
 					player.teleport(getLocation("deathmatch"));
-					player.sendMessage("§aVocê foi teleportado até a Arena Deathmatch.");
+					player.sendMessage("Â§aVocÂ§ foi teleportado atÂ§ a Arena Deathmatch.");
 				});
 			}
 		}.runTaskLater(instance, 20 * 20L);
@@ -170,16 +170,16 @@ public class GladiadorManager {
 				if (gladiador.getAlerts() >= alerts) {
 					gladiador.setStatus(statusType.DEATHMATCH_PVPON);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fO PvP foi do Evento §3§lGLADIADOR §ffoi iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fO PvP foi do Evento Â§3Â§lGLADIADOR Â§ffoi iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 					Bukkit.broadcastMessage("");
 					gladiador.reset();
 				} else {
 					String tempo = String.valueOf((alerts - gladiador.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fO PvP do evento §3§lGLADIADOR §ffoi desativado!");
-					Bukkit.broadcastMessage(prefix + "§fIniciando PvP em: §3" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fClans: §3" + getClans() + " §7- §fJogadores: §3" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fO PvP do evento Â§3Â§lGLADIADOR Â§ffoi desativado!");
+					Bukkit.broadcastMessage(prefix + "Â§fIniciando PvP em: Â§3" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fClans: Â§3" + getClans() + " Â§7- Â§fJogadores: Â§3" + getPlayers());
 					Bukkit.broadcastMessage("");
 					gladiador.setAlerts(gladiador.getAlerts() + 1);
 				}
@@ -214,10 +214,10 @@ public class GladiadorManager {
 		defineGladiadores(new ArrayList<String>(gladiadores));
 		logWinnersGladiador(clanWinnerTag, new ArrayList<String>(gladiadores));
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §3§lGLADIADOR §ffoi finalizado");
-		Bukkit.broadcastMessage(prefix + "§fClan ganhador: §3" + clanTag);
-		Bukkit.broadcastMessage(prefix + "§fMito: §3" + formatMitoKills);
-		Bukkit.broadcastMessage(prefix + "§fGladiadores: " + StringUtils.join(formatGladiadoresKills, "§3,"));
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§3Â§lGLADIADOR Â§ffoi finalizado");
+		Bukkit.broadcastMessage(prefix + "Â§fClan ganhador: Â§3" + clanTag);
+		Bukkit.broadcastMessage(prefix + "Â§fMito: Â§3" + formatMitoKills);
+		Bukkit.broadcastMessage(prefix + "Â§fGladiadores: " + StringUtils.join(formatGladiadoresKills, "Â§3,"));
 		Bukkit.broadcastMessage("");
 		new BukkitRunnable() {
 			
@@ -225,7 +225,7 @@ public class GladiadorManager {
 			public void run() {
 				gladiador.getParticipantes().keySet().forEach(player -> {
 					player.teleport(getLocation("saida"));
-					player.sendMessage("§aVocê foi teleportado até a saida.");
+					player.sendMessage("Â§aVocÂ§ foi teleportado atÂ§ a saida.");
 				});
 				executeClearDrops();
 				gladiador = null;
@@ -234,10 +234,10 @@ public class GladiadorManager {
 	}
 	
 	public void executeCancel() {
-		Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado.");
+		Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado.");
 		gladiador.setStatus(statusType.CANCELADO);
 		gladiador.reset();
-		gladiador.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+		gladiador.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 		gladiador = null;
 	}
 	
@@ -342,7 +342,7 @@ public class GladiadorManager {
 	}
 	
 	public String killsFormat(Player player, int kills) {
-		return "§f" + player.getName() + "§8(§f" + kills + "§8)§r";
+		return "Â§f" + player.getName() + "Â§8(Â§f" + kills + "Â§8)Â§r";
 	}
 	
 	public HashSet<Gladiador.Kills> getGladiadorKills(Clan clanVencedor) {

@@ -35,19 +35,19 @@ public class ChatMessage implements Listener {
 		if (System.currentTimeMillis() < mute.getTime()) {
 			if (mute.isMuteall()) {
 				player.sendMessage("");
-				player.sendMessage("§c(!) Você está silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
+				player.sendMessage("Â§c(!) VocÂ§ estÂ§ silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
 				player.sendMessage("");
-				player.sendMessage("§c(!) Autor: " + mute.getAuthor());
-				player.sendMessage("§c(!) Motivo: " + mute.getReason());
-				player.sendMessage("§c(!) Data: " + mute.getDate());
+				player.sendMessage("Â§c(!) Autor: " + mute.getAuthor());
+				player.sendMessage("Â§c(!) Motivo: " + mute.getReason());
+				player.sendMessage("Â§c(!) Data: " + mute.getDate());
 				player.sendMessage("");
 			} else {
 				player.sendMessage("");
-				player.sendMessage("§c(!) Você está silenciado nos chat's(global, local) por mais " + TimeManager.getTimeEnd(mute.getTime()));
+				player.sendMessage("Â§c(!) VocÂ§ estÂ§ silenciado nos chat's(global, local) por mais " + TimeManager.getTimeEnd(mute.getTime()));
 				player.sendMessage("");
-				player.sendMessage("§c(!) Autor: " + mute.getAuthor());
-				player.sendMessage("§c(!) Motivo: " + mute.getReason());
-				player.sendMessage("§c(!) Data: " + mute.getDate());
+				player.sendMessage("Â§c(!) Autor: " + mute.getAuthor());
+				player.sendMessage("Â§c(!) Motivo: " + mute.getReason());
+				player.sendMessage("Â§c(!) Data: " + mute.getDate());
 				player.sendMessage("");
 			}
 		} else {
@@ -73,11 +73,11 @@ public class ChatMessage implements Listener {
 			}
 			event.setCancelled(true);
 			player.sendMessage("");
-			player.sendMessage("§c(!) Você está silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
+			player.sendMessage("Â§c(!) VocÂ§ estÂ§ silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
 			player.sendMessage("");
-			player.sendMessage("§c(!) Autor: " + mute.getAuthor());
-			player.sendMessage("§c(!) Motivo: " + mute.getReason());
-			player.sendMessage("§c(!) Data: " + mute.getDate());
+			player.sendMessage("Â§c(!) Autor: " + mute.getAuthor());
+			player.sendMessage("Â§c(!) Motivo: " + mute.getReason());
+			player.sendMessage("Â§c(!) Data: " + mute.getDate());
 			player.sendMessage("");
 		}
 	}
@@ -97,11 +97,11 @@ public class ChatMessage implements Listener {
 		}
 		event.setCancelled(true);
 		player.sendMessage("");
-		player.sendMessage("§c(!) Você está silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
+		player.sendMessage("Â§c(!) VocÂ§ estÂ§ silenciado em todos os chat's por mais " + TimeManager.getTimeEnd(mute.getTime()));
 		player.sendMessage("");
-		player.sendMessage("§c(!) Autor: " + mute.getAuthor());
-		player.sendMessage("§c(!) Motivo: " + mute.getReason());
-		player.sendMessage("§c(!) Data: " + mute.getDate());
+		player.sendMessage("Â§c(!) Autor: " + mute.getAuthor());
+		player.sendMessage("Â§c(!) Motivo: " + mute.getReason());
+		player.sendMessage("Â§c(!) Data: " + mute.getDate());
 		player.sendMessage("");
 	}
 }

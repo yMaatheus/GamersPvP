@@ -34,16 +34,16 @@ public class TphereCommand extends Command {
 				return false;
 			}
 			if (target.getName().equals(sender.getName())) {
-				sender.sendMessage("§cVocê não pode teleporta-se até você mesmo.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode teleporta-se atÂ§ vocÂ§ mesmo.");
 				return false;
 			}
 			target.teleport(player, TeleportCause.COMMAND);
-			sender.sendMessage("§a " + target.getName() + " foi teleportado até você com sucesso.");
+			sender.sendMessage("Â§a " + target.getName() + " foi teleportado atÂ§ vocÂ§ com sucesso.");
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[P4Free] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (nick)");
+		sender.sendMessage("Â§a[P4Free] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick)");
 		return false;
 	}
 }

@@ -36,7 +36,7 @@ public class ScoreBoardListener implements Listener {
 		
 		Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective obj = sb.registerNewObjective("score", "dummy");
-		obj.setDisplayName("§2§lGAMERS");
+		obj.setDisplayName("Â§2Â§lGAMERS");
 		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 		
 		String cargo = CargosAPI.getUserGroup(player).getPreffix();
@@ -44,15 +44,15 @@ public class ScoreBoardListener implements Listener {
 		String serverIp = ScoreBoard.centerText(MessageUtils.SERVER_IP.getMessage(), 16);
 		
 		LineAdder la = new LineAdder(sb, obj);
-		la.addLine("", "§1", "", 8);
-		la.addLine("  ", " §f", playerName, 7);
-		la.addLine("", "§2", "", 6);
-		la.addLine("  §fCar", "go§8: §a", cargo, 5);
-		la.addLine("", "§3", "", 4);
-		la.addLine("  §fCa", "sh§8: §a", "§7Carregando", 3);
-		la.addLine("  §fOnli", "ne§8: §a", "§7Carregando", 2);
-		la.addLine("", "§4", "", 1);
-		la.addLine(" §7", " ", serverIp, 0);
+		la.addLine("", "Â§1", "", 8);
+		la.addLine("  ", " Â§f", playerName, 7);
+		la.addLine("", "Â§2", "", 6);
+		la.addLine("  Â§fCar", "goÂ§8: Â§a", cargo, 5);
+		la.addLine("", "Â§3", "", 4);
+		la.addLine("  Â§fCa", "shÂ§8: Â§a", "Â§7Carregando", 3);
+		la.addLine("  Â§fOnli", "neÂ§8: Â§a", "Â§7Carregando", 2);
+		la.addLine("", "Â§4", "", 1);
+		la.addLine(" Â§7", " ", serverIp, 0);
 		
 		player.setScoreboard(sb);
 		ScoreBoard.updateTeams();

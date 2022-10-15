@@ -29,45 +29,45 @@ public class SumoX1Command extends Command {
 			SumoX1Manager sumox1Manager = instance.getSumoX1Manager();
 			if (args[0].equalsIgnoreCase("iniciar")) {
 				if (!(permission)) {
-					sender.sendMessage("§cSem permissão.");
+					sender.sendMessage("Â§cSem permissÂ§o.");
 					return false;
 				}
 				SumoX1 sumox1 = sumox1Manager.getSumox1();
 				if (!(sumox1Manager.hasLocations())) {
-					sender.sendMessage("§cDefina as localizações para iniciar o evento.");
+					sender.sendMessage("Â§cDefina as localizaÂ§Â§es para iniciar o evento.");
 					return false;
 				}
 				if (sumox1 != null) {
-					sender.sendMessage("§cO evento já está acontencendo.");
+					sender.sendMessage("Â§cO evento jÂ§ estÂ§ acontencendo.");
 					return false;
 				}
 				sumox1Manager.executeStart();
-				sender.sendMessage("§7Iniciando evento SumoX1.");
+				sender.sendMessage("Â§7Iniciando evento SumoX1.");
 			} else if (args[0].equalsIgnoreCase("cancelar") || args[0].equalsIgnoreCase("parar")) {
 				if (!(permission)) {
-					sender.sendMessage("§cSem permissão.");
+					sender.sendMessage("Â§cSem permissÂ§o.");
 					return false;
 				}
 				SumoX1 sumox1 = sumox1Manager.getSumox1();
 				if (sumox1 == null) {
-					sender.sendMessage("§cO evento não está acontecendo.");
+					sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 					return false;
 				}
 				sumox1Manager.executeCancel();
 				return true;
 			} else if (args[0].equalsIgnoreCase("info")) {
 				if (!(permission)) {
-					sender.sendMessage("§cSem permissão.");
+					sender.sendMessage("Â§cSem permissÂ§o.");
 					return false;
 				}
 				
 			} else if (args[0].equalsIgnoreCase("set")) {
 				if (!(permission)) {
-					sender.sendMessage("§cSem permissão.");
+					sender.sendMessage("Â§cSem permissÂ§o.");
 					return false;
 				}
 				if (args.length < 2) {
-					sender.sendMessage("§cDefina a localização.");
+					sender.sendMessage("Â§cDefina a localizaÂ§Â§o.");
 					return false;
 				}
 				if (!(sender instanceof Player)) {
@@ -77,23 +77,23 @@ public class SumoX1Command extends Command {
 				String locationName = args[1].toLowerCase();
 				List<String> locations = Arrays.asList(new String[] {"spawn", "saida", "pos1", "pos2"});
 				if (!(locations.contains(locationName))) {
-					sender.sendMessage("§cVocê so pode definir as seguintes localizações: " + locations);
+					sender.sendMessage("Â§cVocÂ§ so pode definir as seguintes localizaÂ§Â§es: " + locations);
 					return false;
 				}
 				Location location = player.getLocation();
 				sumox1Manager.setLocation(locationName, location);
-				sender.sendMessage("§aLocalização §f" + locationName + " §adefinida com sucesso.");
+				sender.sendMessage("Â§aLocalizaÂ§Â§o Â§f" + locationName + " Â§adefinida com sucesso.");
 			} else if (args[0].equalsIgnoreCase("ajuda") || args[0].equalsIgnoreCase("help")) {
 				sender.sendMessage("");
-				sender.sendMessage("§a[SumoX1] Comandos disponíveis:");
-				sender.sendMessage("§7/" + arg + "§a sair");
-				sender.sendMessage("§7/" + arg + "§a ajuda");
+				sender.sendMessage("Â§a[SumoX1] Comandos disponÂ§veis:");
+				sender.sendMessage("Â§7/" + arg + "Â§a sair");
+				sender.sendMessage("Â§7/" + arg + "Â§a ajuda");
 				if (permission) {
 					sender.sendMessage("");
-					sender.sendMessage("§7/" + arg + "§a iniciar");
-					sender.sendMessage("§7/" + arg + "§a parar");
-					sender.sendMessage("§7/" + arg + "§a set (spawn | saida | pos1 | pos2)");
-					sender.sendMessage("§7/" + arg + "§a info");
+					sender.sendMessage("Â§7/" + arg + "Â§a iniciar");
+					sender.sendMessage("Â§7/" + arg + "Â§a parar");
+					sender.sendMessage("Â§7/" + arg + "Â§a set (spawn | saida | pos1 | pos2)");
+					sender.sendMessage("Â§7/" + arg + "Â§a info");
 				}
 				sender.sendMessage("");
 			}

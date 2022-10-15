@@ -35,9 +35,9 @@ public class MaintenanceListener implements Listener {
 			return;
 		}
 		StringBuilder builder = new StringBuilder();
-		builder.append("§c§lGAMERSPVP");
-		builder.append("\n\n§cModo de segurança ativado, pedimos desculpas pelo transtorno, mas estamos realizando uma manutenção. Estaremos de volta em breve!");
-		builder.append("\n§cAcompanhe o andamento da manutenção através do canal #avisos do nosso Discord.\n");
+		builder.append("Â§cÂ§lGAMERSPVP");
+		builder.append("\n\nÂ§cModo de seguranÂ§a ativado, pedimos desculpas pelo transtorno, mas estamos realizando uma manutenÂ§Â§o. Estaremos de volta em breve!");
+		builder.append("\nÂ§cAcompanhe o andamento da manutenÂ§Â§o atravÂ§s do canal #avisos do nosso Discord.\n");
 		
 		player.disconnect(new TextComponent(builder.toString()));
 	}

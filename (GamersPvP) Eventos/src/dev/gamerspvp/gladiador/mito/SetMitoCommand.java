@@ -19,20 +19,20 @@ public class SetMitoCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("mito.admin"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 0) {
 			Player target = Bukkit.getPlayer(args[0]);
 			if (target == null) {
-				sender.sendMessage("§cJogador inválido.");
+				sender.sendMessage("Â§cJogador invÂ§lido.");
 				return false;
 			}
 			MitoManager mitoManager = instance.getMitoManager();
 			mitoManager.setNewMito(target);
 			return true;
 		}
-		sender.sendMessage("§7/" + arg + " §a(player).");
+		sender.sendMessage("Â§7/" + arg + " Â§a(player).");
 		return false;
 	}
 }

@@ -20,10 +20,10 @@ public class SetPvPCommand extends Command {
 		Player player = (Player) sender;
 		if (player.isOp()) {
 			LocAPI.Set(player, "pvp");
-			player.sendMessage("§aO pvp foi setado");
+			player.sendMessage("Â§aO pvp foi setado");
 			return true;
 		}
-		sender.sendMessage("§cSem permissão.");
+		sender.sendMessage("Â§cSem permissÂ§o.");
 		return false;
 	}
 }

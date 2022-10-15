@@ -27,13 +27,13 @@ public class MuteAllCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.muteall"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length >= 4) {
 			String target = args[0];
 			if (target.equalsIgnoreCase(sender.getName())) {
-				sender.sendMessage("§cVocê não pode mutar-se.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode mutar-se.");
 				return false;
 			}
 			Player targetPlayer = Bukkit.getPlayer(target);
@@ -46,11 +46,11 @@ public class MuteAllCommand extends Command {
 			try {
 				Integer.parseInt(args[1]);
 			} catch (NumberFormatException e) {
-				sender.sendMessage("§cDesculpe, mas deve-se usar apenas números.");
+				sender.sendMessage("Â§cDesculpe, mas deve-se usar apenas nÂ§meros.");
 				return false;
 			}
 			if (time == 0) {
-				sender.sendMessage("§cFormato de horário inválido.");
+				sender.sendMessage("Â§cFormato de horÂ§rio invÂ§lido.");
 				return false;
 			}
 			String reason = "";
@@ -66,16 +66,16 @@ public class MuteAllCommand extends Command {
 					try {
 						if (muteTarget != null) {
 							if (System.currentTimeMillis() < muteTarget.getTime()) {
-								sender.sendMessage("§cEsse jogador já encontra-se silenciado.");
+								sender.sendMessage("Â§cEsse jogador jÂ§ encontra-se silenciado.");
 								return;
 							}
 							new DatabaseController().executeUnmute(muteTarget.getName(), instance);
 							instance.getMutes().remove(muteTarget.getName());
 						}
 						mute.execute(instance);
-						sender.sendMessage("§aJogador silenciado com sucesso.");
+						sender.sendMessage("Â§aJogador silenciado com sucesso.");
 					} catch (SQLException e) {
-						sender.sendMessage("§cNão foi possivel completar a operação.");
+						sender.sendMessage("Â§cNÂ§o foi possivel completar a operaÂ§Â§o.");
 						e.printStackTrace();
 					}
 				}
@@ -83,8 +83,8 @@ public class MuteAllCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " (nick) (tempo) (dias|horas|minutos|segundos) (motivo).");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " (nick) (tempo) (dias|horas|minutos|segundos) (motivo).");
 		sender.sendMessage("");
 		return false;
 	}

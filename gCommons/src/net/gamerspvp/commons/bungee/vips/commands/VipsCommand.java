@@ -31,7 +31,7 @@ public class VipsCommand extends Command {
 				return;
 			}
 			if (playerVip.getVips().isEmpty()) {
-				sender.sendMessage(new TextComponent("§cNão foi encontrado nenhum §lVIP §cnessa conta."));
+				sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhum Â§lVIP Â§cnessa conta."));
 				return;
 			}
 			StringBuilder builder = new StringBuilder();
@@ -42,14 +42,14 @@ public class VipsCommand extends Command {
 					continue;
 				}
 				i++;
-				builder.append("§7* §a" + key + " §7- §fTermina em: §a" + DateUtils.formatDifference(value) + " §8(§f"+ DateUtils.longToDate(value) + "§8)\n");
+				builder.append("Â§7* Â§a" + key + " Â§7- Â§fTermina em: Â§a" + DateUtils.formatDifference(value) + " Â§8(Â§f"+ DateUtils.longToDate(value) + "Â§8)\n");
 			}
 			if (i == 0) {
-				sender.sendMessage(new TextComponent("§cNão foi encontrado nenhum §lVIP §cativo nessa conta."));
+				sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhum Â§lVIP Â§cativo nessa conta."));
 				return;
 			}
 			sender.sendMessage(new TextComponent(""));
-			sender.sendMessage(new TextComponent("§a[Vips] Informações de seus §lVIP(s)§a:"));
+			sender.sendMessage(new TextComponent("Â§a[Vips] InformaÂ§Â§es de seus Â§lVIP(s)Â§a:"));
 			sender.sendMessage(new TextComponent(""));
 			sender.sendMessage(new TextComponent(builder.toString()));
 		} catch (Exception e) {

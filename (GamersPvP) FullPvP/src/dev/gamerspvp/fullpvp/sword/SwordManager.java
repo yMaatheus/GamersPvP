@@ -8,7 +8,7 @@ public class SwordManager {
 	
 	/*
 	 * comando de givar espada
-	 * sistema de bloquear utilização da espada
+	 * sistema de bloquear utilizaÂ§Â§o da espada
 	 * bloco de notas de nomes bloqueados
 	 */
 	

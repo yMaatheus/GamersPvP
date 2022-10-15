@@ -55,21 +55,10 @@ public class SumoX1Listener implements Listener {
 			sumox1.getParticipantes().remove(player);
 			sumox1.getDueling().remove(player);
 			player.teleport(sumoX1Manager.getLocation("saida"));
-			Titles title = new Titles("§c§lSumoX1");
-			title.setSubtitle("§cVocê perdeu!");
+			Titles title = new Titles("Â§cÂ§lSumoX1");
+			title.setSubtitle("Â§cVocÂ§ perdeu!");
 			title.send(player);
-			/*for (Player playerWinDuel : sumox1.getDueling()) {
-				
-			}*/
 		}
-		/*if ((Spleef.getJogadores().contains(player)) && (Spleef.fechado) && (player.getLocation().getY() <= -1.0D)) {
-			Spleef.removePlayer(player);
-			new Titles("§cVocê perdeu!", "", 1, 5, 1);
-			for (Player a : Spleef.getJogadores()) {
-				a.sendMessage("§f" + player.getName() + "§c perdeu");
-			}
-			Spleef.checkAndFinish();
-		}*/
 	}
 	
 	@EventHandler

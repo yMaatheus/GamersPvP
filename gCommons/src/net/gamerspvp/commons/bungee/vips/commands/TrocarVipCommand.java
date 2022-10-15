@@ -34,23 +34,23 @@ public class TrocarVipCommand extends Command {
 				ProxiedUserManager proxiedUserManager = ProxiedCargosManager.getUserManager();
 				Group group = proxiedGroupManager.getGroup(groupName);
 				if (group == null || !(group.isVip())) {
-					sender.sendMessage(new TextComponent("§cO grupo informado não encontrado ou não é §lVIP§c."));
+					sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o encontrado ou nÂ§o Â§ Â§lVIPÂ§c."));
 					return;
 				}
 				PlayerVip playerVip = ProxiedVipsManager.getPlayerVip(playerName, false);
 				if (playerVip == null || System.currentTimeMillis() > playerVip.getVips().get(groupName)) {
-					sender.sendMessage(new TextComponent("§cVocê não possui §lVIP §cou o tempo foi expirado."));
+					sender.sendMessage(new TextComponent("Â§cVocÂ§ nÂ§o possui Â§lVIP Â§cou o tempo foi expirado."));
 					return;
 				}
 				proxiedUserManager.defineUserGroup(playerName, groupName);
-				sender.sendMessage(new TextComponent("§aVocê trocou seu grupo para §f" + groupName + " §acom sucesso."));
+				sender.sendMessage(new TextComponent("Â§aVocÂ§ trocou seu grupo para Â§f" + groupName + " Â§acom sucesso."));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return;
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Vips] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/Trocarvip §a (vip)"));
+		sender.sendMessage(new TextComponent("Â§a[Vips] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/Trocarvip Â§a (vip)"));
 	}
 }

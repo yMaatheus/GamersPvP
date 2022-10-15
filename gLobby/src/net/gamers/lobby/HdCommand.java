@@ -20,8 +20,8 @@ public class HdCommand extends Command {
 		if (args.length > 0) {
 			Hologram hologram = new Hologram(player.getLocation());
 			if (args[0].equalsIgnoreCase("colado")) {
-				hologram.addLineColado("§aCOLADO 1");
-				hologram.addLineColado("§eCOLADO 2");
+				hologram.addLineColado("Â§aCOLADO 1");
+				hologram.addLineColado("Â§eCOLADO 2");
 				StringBuilder builder = new StringBuilder();
 				for (int key : hologram.getLines2().keySet()) {
 					String value = hologram.getLines2().get(key).getText();
@@ -29,8 +29,8 @@ public class HdCommand extends Command {
 				}
 				System.out.println(builder.toString());
 			} else if (args[0].equalsIgnoreCase("default")) {
-				hologram.addLineDefalt("§aDEFAULT 1");
-				hologram.addLineDefalt("§eDEFAULT 2");
+				hologram.addLineDefalt("Â§aDEFAULT 1");
+				hologram.addLineDefalt("Â§eDEFAULT 2");
 				hologram.reverseLines();
 				StringBuilder builder = new StringBuilder();
 				for (int key : hologram.getLines2().keySet()) {
@@ -39,8 +39,8 @@ public class HdCommand extends Command {
 				}
 				System.out.println(builder.toString());
 			} else if (args[0].equalsIgnoreCase("ordenado")) {
-				hologram.addLineOrdenado("§aORDENADO 1");
-				hologram.addLineOrdenado("§eORDENADO 2");
+				hologram.addLineOrdenado("Â§aORDENADO 1");
+				hologram.addLineOrdenado("Â§eORDENADO 2");
 				StringBuilder builder = new StringBuilder();
 				for (int key : hologram.getLines2().keySet()) {
 					String value = hologram.getLines2().get(key).getText();
@@ -48,7 +48,7 @@ public class HdCommand extends Command {
 				}
 				System.out.println(builder.toString());
 			} else if (args[0].equalsIgnoreCase("clans")) {
-				Hologram clans = new Hologram(player.getLocation(), 0.25, "§fO top atualiza em §1§l60 SEGUNDOS§f.", "2", "TOP-1", "TOP-2", "TOP-3","TOP-4", "TOP-5", "TOP-6", "TOP-7", "TOP-8", "TOP-9", "TOP-10", "13", "§fcom os clans com mais §9kills§f.","§fO top clans é ordenado de acordo", "§1§lTOP 10 CLAN");
+				Hologram clans = new Hologram(player.getLocation(), 0.25, "Â§fO top atualiza em Â§1Â§l60 SEGUNDOSÂ§f.", "2", "TOP-1", "TOP-2", "TOP-3","TOP-4", "TOP-5", "TOP-6", "TOP-7", "TOP-8", "TOP-9", "TOP-10", "13", "Â§fcom os clans com mais Â§9killsÂ§f.","Â§fO top clans Â§ ordenado de acordo", "Â§1Â§lTOP 10 CLAN");
 				clans.spawn();
 				StringBuilder builder = new StringBuilder();
 				for (int key : clans.getLines2().keySet()) {

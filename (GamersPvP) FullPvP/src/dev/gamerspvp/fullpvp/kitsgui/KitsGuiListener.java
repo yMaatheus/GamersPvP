@@ -19,7 +19,7 @@ public class KitsGuiListener implements Listener {
 	
 	@EventHandler
 	public void onInventoryClickEvent(InventoryClickEvent event) {
-		if (event.getInventory().getTitle().equalsIgnoreCase("ง7Kits")) {
+		if (event.getInventory().getTitle().equalsIgnoreCase("ยง7Kits")) {
 			event.setCancelled(true);
 			ItemStack currentItem = event.getCurrentItem();
 			if (currentItem == null) {

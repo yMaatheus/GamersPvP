@@ -28,7 +28,7 @@ public class MitoManager {
 		instance.registerCommand(new Command("mito") {
 			@Override
 			public boolean execute(CommandSender sender, String arg, String[] args) {
-				sender.sendMessage("§aMito atual: §f" + mito);
+				sender.sendMessage("Â§aMito atual: Â§f" + mito);
 				return false;
 			}
 		}, "mito");
@@ -39,7 +39,7 @@ public class MitoManager {
 		String playerName = player.getName();
 		Location location = player.getLocation();
 		World world = player.getWorld();
-		Bukkit.broadcastMessage("§5§l[MITO] §f" + playerName + "§7 é o novo mito do §c§lPVP!");
+		Bukkit.broadcastMessage("Â§5Â§l[MITO] Â§f" + playerName + "Â§7 Â§ o novo mito do Â§cÂ§lPVP!");
 		world.strikeLightningEffect(location);
 		mito = playerName;
 		config.set("mitoAtual", playerName);

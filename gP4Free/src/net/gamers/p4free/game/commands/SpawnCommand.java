@@ -32,7 +32,7 @@ public class SpawnCommand extends Command {
 		GameManager gameManager = instance.getGameManager();
 		World world = Bukkit.getWorld(gameManager.getSpawnWorld());
 		if (world == null) {
-			sender.sendMessage("§cNão foi possível completar a operação.");
+			sender.sendMessage("Â§cNÂ§o foi possÂ§vel completar a operaÂ§Â§o.");
 			return false;
 		}
 		KitManager kitManager = instance.getKitManager();
@@ -46,7 +46,7 @@ public class SpawnCommand extends Command {
 			kitManager.removeCachePlayer(player);
 		}
 		player.teleport(world.getSpawnLocation(), TeleportCause.COMMAND);
-		sender.sendMessage("§aTeleportado ao spawn com sucesso.");
+		sender.sendMessage("Â§aTeleportado ao spawn com sucesso.");
 		return false;
 	}
 }

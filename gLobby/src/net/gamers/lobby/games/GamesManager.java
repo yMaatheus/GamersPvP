@@ -54,9 +54,9 @@ public class GamesManager {
 	@SuppressWarnings("unchecked")
 	private void loadData() throws Exception {
 		//Criar a lista de Games disponiveis
-		//Criar inventário e por cada modo de jogo em uma posição
-        //Conforme for atualizando o status atualizar o inventário por demanda
-		inventory = Bukkit.createInventory(null, 3 * 9, "§7Modos de Jogo: ");
+		//Criar inventÂ§rio e por cada modo de jogo em uma posiÂ§Â§o
+        //Conforme for atualizando o status atualizar o inventÂ§rio por demanda
+		inventory = Bukkit.createInventory(null, 3 * 9, "Â§7Modos de Jogo: ");
 		
 		MySQL mysql = Main.getInstance().getCommons().getDataCenter().getMysql();
 		
@@ -166,7 +166,7 @@ public class GamesManager {
 					continue;
 				}
 				player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
-				player.sendMessage("§a[Lobby] Chegou sua vez! Estou conectando você agora mesmo.");
+				player.sendMessage("Â§a[Lobby] Chegou sua vez! Estou conectando vocÂ§ agora mesmo.");
 				int n = ThreadLocalRandom.current().nextInt(0, servers.size());
 				bungeeAPI.connect(player, servers.get(n).getServerName());
 				i++;

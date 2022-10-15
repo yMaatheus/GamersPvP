@@ -22,7 +22,7 @@ public class ReportsCommand extends Command {
 			return false;
 		}
 		if (!(sender.hasPermission("reportes.moderador"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		ReportManager reportManager = instance.getReportManager();

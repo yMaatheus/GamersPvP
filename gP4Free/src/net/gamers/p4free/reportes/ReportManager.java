@@ -31,7 +31,7 @@ public class ReportManager {
 		//this.instance = instance;
 		this.cache = new HashMap<Player, Report>();
 		this.cooldown = new HashMap<String, Long>();
-		this.inventory = Bukkit.createInventory(null, 6 * 9, "§7Reports");
+		this.inventory = Bukkit.createInventory(null, 6 * 9, "Â§7Reports");
 		new ReportCommand(instance);
 		new ReportsCommand(instance);
 		
@@ -42,7 +42,7 @@ public class ReportManager {
 		String reporterName = reporter.getName().toLowerCase();
 		if (cooldown.get(reporterName) != null) {
 			if (cooldown.get(reporterName) > System.currentTimeMillis()) {
-				reporter.sendMessage("§cAcalme-se rapaz, aguarde §f" + TimeManager.getTimeEnd(cooldown.get(reporterName))  + " §cpara efetuar uma nova denúncia.");
+				reporter.sendMessage("Â§cAcalme-se rapaz, aguarde Â§f" + TimeManager.getTimeEnd(cooldown.get(reporterName))  + " Â§cpara efetuar uma nova denÂ§ncia.");
 				return;
 			}
 		}
@@ -53,7 +53,7 @@ public class ReportManager {
 		}
 		report = cache.get(player);
 		if (report.getReporters().get(reporter.getName()) != null) {
-			reporter.sendMessage("§cVocê já reportou esse jogador.");
+			reporter.sendMessage("Â§cVocÂ§ jÂ§ reportou esse jogador.");
 			return;
 		}
 		report.getReporters().put(reporter.getName(), reason);
@@ -64,7 +64,7 @@ public class ReportManager {
 		cache.put(player, report);
 		cooldown.put(reporterName, System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(120));
 		updateInventory();
-		reporter.sendMessage("§aDenúncia enviada com êxito!");
+		reporter.sendMessage("Â§aDenÂ§ncia enviada com Â§xito!");
 	}
 	
 	public void warnReport(Report report) {
@@ -73,9 +73,9 @@ public class ReportManager {
 			if (onlinePlayer.hasPermission("reportes.moderador")) {
 				onlinePlayer.playSound(onlinePlayer.getLocation(), Sound.NOTE_BASS, 20, 1);
 				onlinePlayer.sendMessage("");
-				onlinePlayer.sendMessage("§c• Um jogador está recebendo muitas denúncias!");
-				onlinePlayer.sendMessage("§c• Jogador acusado: §f" + report.getPlayerName());
-				onlinePlayer.sendMessage("§c• Denúncias: §f" + reporters);
+				onlinePlayer.sendMessage("Â§cÂ§ Um jogador estÂ§ recebendo muitas denÂ§ncias!");
+				onlinePlayer.sendMessage("Â§cÂ§ Jogador acusado: Â§f" + report.getPlayerName());
+				onlinePlayer.sendMessage("Â§cÂ§ DenÂ§ncias: Â§f" + reporters);
 				onlinePlayer.sendMessage("");
 			}
 		}
@@ -85,7 +85,7 @@ public class ReportManager {
 		// Get all report's
 		// Adicionar reports em ordem de mairo quantidade de denuncias
 		if (inventory == null) {
-			inventory = Bukkit.createInventory(null, 6 * 9, "§7Reports");
+			inventory = Bukkit.createInventory(null, 6 * 9, "Â§7Reports");
 		}
 		inventory.clear();
 		if (cache.isEmpty()) {
@@ -108,8 +108,8 @@ public class ReportManager {
 			Report report = convert.get(a);
 			String reporters = report.getReporters().toString().replace("{", "").replace("}", "");
 			int totalReports = report.getReports();
-			String[] lore = new String[] {"","§a• §fDenúncias: " + reporters, "§a• §eTotal De Denúncias: " + totalReports, "", "§e• §fClique com o esquerdo para teleportar-se", "§e• §fClique com o direito para deletar"};
-			ItemStack skull = new MakeItem(Material.SKULL_ITEM).setName("§a" + report.getPlayerName()).setSkullOwner(report.getPlayerName()).addLore(lore).buildhead();
+			String[] lore = new String[] {"","Â§aÂ§ Â§fDenÂ§ncias: " + reporters, "Â§aÂ§ Â§eTotal De DenÂ§ncias: " + totalReports, "", "Â§eÂ§ Â§fClique com o esquerdo para teleportar-se", "Â§eÂ§ Â§fClique com o direito para deletar"};
+			ItemStack skull = new MakeItem(Material.SKULL_ITEM).setName("Â§a" + report.getPlayerName()).setSkullOwner(report.getPlayerName()).addLore(lore).buildhead();
 			inventory.addItem(skull);
 		}
 		if (!(inventory.getViewers().isEmpty())) {

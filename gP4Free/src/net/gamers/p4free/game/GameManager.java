@@ -74,7 +74,7 @@ public class GameManager {
 				online.hidePlayer(player);
 			}
 		}
-		player.sendMessage("§aVocê entrou do modo §5Admin");
+		player.sendMessage("Â§aVocÂ§ entrou do modo Â§5Admin");
 	}
 	
 	public void leaveAdminMode(Player player) {
@@ -86,7 +86,7 @@ public class GameManager {
 		for (Player online : Bukkit.getOnlinePlayers()) {
 			online.showPlayer(player);
 		}
-		player.sendMessage("§aVocê saiu do modo §5Admin");
+		player.sendMessage("Â§aVocÂ§ saiu do modo Â§5Admin");
 	}
 	
 	public boolean hasAdminMode(String playerName) {

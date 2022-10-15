@@ -40,13 +40,13 @@ public class GlobalListeners implements Listener {
 		HashSet<String> miniGladiadores = miniGladiadorManager.getGanhadores();
 		MitoManager mitoManager = instance.getMitoManager();
 		if (gladiadores.contains(playerName)) {
-			event.setTagValue("gladiador", "ง6[Gladiador]");
+			event.setTagValue("gladiador", "ยง6[Gladiador]");
 		}
  		if (miniGladiadores.contains(playerName)) {
-			event.setTagValue("minigladiador", "งe[MiniGladiador]");
+			event.setTagValue("minigladiador", "ยงe[MiniGladiador]");
 		}
 		if (mitoManager.isMito(playerName)) {
-			event.setTagValue("mito", "ง5[Mito]");
+			event.setTagValue("mito", "ยง5[Mito]");
 		}
 	}
 	

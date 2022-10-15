@@ -31,25 +31,25 @@ public class KillerCommand extends Command {
 			if (args.length >= 1) {
 				if (args[0].equalsIgnoreCase("iniciar")) {
 					if (!(permission)) {
-						sender.sendMessage("§cSem permissão.");
+						sender.sendMessage("Â§cSem permissÂ§o.");
 						return false;
 					}
 					killerCommand.start(sender);
 					return true;
 				} else if (args[0].equalsIgnoreCase("parar") || args[0].equalsIgnoreCase("cancelar")) {
 					if (!(permission)) {
-						sender.sendMessage("§cSem permissão.");
+						sender.sendMessage("Â§cSem permissÂ§o.");
 						return false;
 					}
 					killerCommand.cancel(sender);
 					return true;
 				} else if (args[0].equalsIgnoreCase("set")) {
 					if (!(permission)) {
-						sender.sendMessage("§cSem permissão.");
+						sender.sendMessage("Â§cSem permissÂ§o.");
 						return false;
 					}
 					if (args.length < 2) {
-						sender.sendMessage("§cDefina a localização.");
+						sender.sendMessage("Â§cDefina a localizaÂ§Â§o.");
 						return false;
 					}
 					if (!(sender instanceof Player)) {
@@ -59,16 +59,16 @@ public class KillerCommand extends Command {
 					String locationName = args[1].toLowerCase();
 					List<String> locations = Arrays.asList(new String[] {"spawn", "saida"});
 					if (!(locations.contains(locationName))) {
-						sender.sendMessage("§cVocê so pode definir as seguintes localizações: " + locations);
+						sender.sendMessage("Â§cVocÂ§ so pode definir as seguintes localizaÂ§Â§es: " + locations);
 						return false;
 					}
 					Location location = player.getLocation();
 					killerManager.setLocation(locationName, location);
-					sender.sendMessage("§aLocalização definida com sucesso.");
+					sender.sendMessage("Â§aLocalizaÂ§Â§o definida com sucesso.");
 					return true;
 				} else if (args[0].equalsIgnoreCase("info")) {
 					if (!(permission)) {
-						sender.sendMessage("§cSem permissão.");
+						sender.sendMessage("Â§cSem permissÂ§o.");
 						return false;
 					}
 					killerCommand.info(sender);	
@@ -82,18 +82,18 @@ public class KillerCommand extends Command {
 		    	Player player = (Player) sender;
 		    	Killer killer = killerManager.getKiller();
 				if (killer == null) {
-					sender.sendMessage("§cO evento não está acontecendo.");
+					sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 					return false;
 				}
 				String participant = killer.getParticipantes().get(player);
 				if (participant == null) {
-					sender.sendMessage("§cVocê não está no evento!");
+					sender.sendMessage("Â§cVocÂ§ nÂ§o estÂ§ no evento!");
 					return false;
 				}
 				killer.getParticipantes().remove(player);
 				killerManager.executeCheck();
 				player.teleport(killerManager.getLocation("saida"));
-				player.sendMessage("§aVocê saiu do evento Gladiador.");
+				player.sendMessage("Â§aVocÂ§ saiu do evento Gladiador.");
 				return true;
 			}
 		    killerCommand.sendHelpCommands(sender, arg);
@@ -106,11 +106,11 @@ public class KillerCommand extends Command {
 		String playerName = player.getName();
 		Killer killer = killerManager.getKiller();
 		if (killer == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return false;
 		}
 		if (killer.getStatus() != statusType.CHAMANDO) {
-			sender.sendMessage("§cO evento já encontra-se fechado.");
+			sender.sendMessage("Â§cO evento jÂ§ encontra-se fechado.");
 			return false;
 		}
 		SimpleClans simpleClans = instance.getSimpleClans();
@@ -119,13 +119,13 @@ public class KillerCommand extends Command {
 			clanPlayer.setFriendlyFire(true);
 		}
 		if (killer.getParticipantes().get(player) != null) {
-			sender.sendMessage("§cVocê já está participando do evento!");
+			sender.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ participando do evento!");
 			return false;
 		}
 		player.setAllowFlight(false);
 		player.teleport(killerManager.getLocation("spawn"));
 		killer.getParticipantes().put(player, playerName);
-		sender.sendMessage("§aVocê entrou no evento Killer!");
+		sender.sendMessage("Â§aVocÂ§ entrou no evento Killer!");
  		return false;
 	}
 }

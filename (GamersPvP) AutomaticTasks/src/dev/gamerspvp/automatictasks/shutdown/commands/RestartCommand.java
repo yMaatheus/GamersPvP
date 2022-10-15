@@ -19,7 +19,7 @@ public class RestartCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("gamerspvp.restart"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return true;
 		}
 		ShutdownManager shutdownManager = instance.getShutdownManager();

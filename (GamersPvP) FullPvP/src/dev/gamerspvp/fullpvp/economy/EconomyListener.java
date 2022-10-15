@@ -35,7 +35,7 @@ public class EconomyListener implements Listener {
 		EconomyManager economyManager = instance.getEconomyManager();
 		if (economyManager.getMagnata().equalsIgnoreCase(player.getName())) {
 			if (event.getTags().contains("magnata")){
-				event.setTagValue("magnata", "ง2[$$$] ");
+				event.setTagValue("magnata", "ยง2[$$$] ");
 			}
 		}
 	}

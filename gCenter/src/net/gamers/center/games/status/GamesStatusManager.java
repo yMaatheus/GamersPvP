@@ -24,7 +24,7 @@ public class GamesStatusManager {
 		cache = new HashMap<>();
 		FileConfiguration config = Main.getInstance().getConfig();
 		if (config == null) {
-			throw new Exception("Falha ao pegar informações da config.");
+			throw new Exception("Falha ao pegar informaï¿½ï¿½es da config.");
 		}
 		for (String gameName : config.getConfigurationSection("games").getKeys(false)) {
 			int gameMaxPlayers = 0;
@@ -65,7 +65,7 @@ public class GamesStatusManager {
 				}
 			}
 			game.setOnline(gameOnline);
-			if (game.getStatus() != gameStatus.MANUTENÇÃO && offline) {
+			if (game.getStatus() != gameStatus.MANUTENÃ‡ÃƒO && offline) {
 				game.setStatus(gameStatus.OFFLINE);
 				//System.out.println("[INFO] Game: " + game.getName() + " is " + game.getStatus() + "!");
 			} else if (game.getStatus() != gameStatus.ONLINE && (!offline)) {
@@ -86,7 +86,7 @@ public class GamesStatusManager {
 	}
 	
 	public static void executeMaintenance(GameStatus game) {
-		game.setStatus(gameStatus.MANUTENÇÃO);
+		game.setStatus(gameStatus.MANUTENÃ‡ÃƒO);
 		cache.put(game.getName(), game);
 	}
 	

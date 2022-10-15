@@ -32,7 +32,7 @@ public class UsarKeyCommand extends Command {
 				VipController vipController = ProxiedVipsManager.getController();
 				VipKey vipKey = vipController.searchKey(key);
 				if (vipKey == null || System.currentTimeMillis() > vipKey.getTime()) {
-					sender.sendMessage(new TextComponent("§cChave com tempo expirado ou inexistente."));
+					sender.sendMessage(new TextComponent("Â§cChave com tempo expirado ou inexistente."));
 					return;
 				}
 				ProxiedUserManager proxiedUserManager = ProxiedCargosManager.getUserManager();
@@ -41,13 +41,13 @@ public class UsarKeyCommand extends Command {
 				long time = vipKey.getTime();
 				Group group = ProxiedCargosManager.getGroupManager().getGroup(groupName);
 				if (group == null || !(group.isVip())) {
-					sender.sendMessage(new TextComponent("§cO grupo informado não encontrado ou não é §lVIP§c."));
+					sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o encontrado ou nÂ§o Â§ Â§lVIPÂ§c."));
 					return;
 				}
 				
 				PlayerVip playerVip = ProxiedVipsManager.getPlayerVip(sender.getName(), true);
 				if (playerVip.getVips().get(groupName) != null && playerVip.getVips().get(groupName) > System.currentTimeMillis()) {
-					sender.sendMessage(new TextComponent("§cVocê não pode usar essa chave pois já possui esse §lVIP §cativo."));
+					sender.sendMessage(new TextComponent("Â§cVocÂ§ nÂ§o pode usar essa chave pois jÂ§ possui esse Â§lVIP Â§cativo."));
 					return;
 				}
 				playerVip.getVips().put(groupName, time);
@@ -55,14 +55,14 @@ public class UsarKeyCommand extends Command {
 				
 				vipController.updatePlayerVip(playerVip);
 				vipController.purgeKey(key);
-				sender.sendMessage(new TextComponent("§aVocê usou a chave§f " + key + " §ado grupo§f " + groupName + " §acom tempo de:§f" + DateUtils.formatDifference(time)));
+				sender.sendMessage(new TextComponent("Â§aVocÂ§ usou a chaveÂ§f " + key + " Â§ado grupoÂ§f " + groupName + " Â§acom tempo de:Â§f" + DateUtils.formatDifference(time)));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return;
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Vips] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/Usarkey §a (chave)"));
+		sender.sendMessage(new TextComponent("Â§a[Vips] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/Usarkey Â§a (chave)"));
 	}
 }

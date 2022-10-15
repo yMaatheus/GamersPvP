@@ -32,11 +32,11 @@ public class LobbyCommand extends Command {
 		ProxiedPlayer player = (ProxiedPlayer) sender;
 		GameStatus game = instance.getGameStatus("lobby");
 		if (game.getServers().containsKey(player.getServer().getInfo().getName())) {
-			sender.sendMessage(new TextComponent("§cVocê já está conectado a um Saguão."));
+			sender.sendMessage(new TextComponent("Â§cVocÂ§ jÂ§ estÂ§ conectado a um SaguÂ§o."));
 			return;
 		}
 		if (game.getStatus() != gameStatus.ONLINE) {
-			player.sendMessage(new TextComponent("§cNo momento não é possivel enviar ninguém aos Saguões."));
+			player.sendMessage(new TextComponent("Â§cNo momento nÂ§o Â§ possivel enviar ninguÂ§m aos SaguÂ§es."));
 			return;
 		}
 		List<Server> values = new ArrayList<Server>();
@@ -61,7 +61,7 @@ public class LobbyCommand extends Command {
 				break;
 			}
 			if (!find) {
-				sender.sendMessage(new TextComponent("§cNão foi possivel efetuar o envio para nenhum de nossos Saguões pois estão lotados."));
+				sender.sendMessage(new TextComponent("Â§cNÂ§o foi possivel efetuar o envio para nenhum de nossos SaguÂ§es pois estÂ§o lotados."));
 			}
 			return;
 		}

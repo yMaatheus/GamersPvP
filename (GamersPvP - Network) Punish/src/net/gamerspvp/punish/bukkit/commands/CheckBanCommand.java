@@ -25,11 +25,11 @@ public class CheckBanCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.check"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 0) {
-			sender.sendMessage(" §2* §aVerificando " + args[0]);
+			sender.sendMessage(" Â§2* Â§aVerificando " + args[0]);
 			if (args[0].contains(".")) {
 				String ip = args[0];
 				new BukkitRunnable() {
@@ -44,9 +44,9 @@ public class CheckBanCommand extends Command {
 									return;
 								}
 							}
-							sender.sendMessage(" §2* §aBanido§8: §7Não.");
+							sender.sendMessage(" Â§2* Â§aBanidoÂ§8: Â§7NÂ§o.");
 						} catch (SQLException e) {
-							sender.sendMessage("§cNão foi possivel completar a operação.");
+							sender.sendMessage("Â§cNÂ§o foi possivel completar a operaÂ§Â§o.");
 							e.printStackTrace();
 						}
 					}
@@ -55,18 +55,18 @@ public class CheckBanCommand extends Command {
 				String target = args[0];
 				Mute mute = instance.getMutes().get(target.toLowerCase());
 				if (mute != null && System.currentTimeMillis() < mute.getTime()) {
-					sender.sendMessage(" §2* §aMutado§8: §7Sim.");
+					sender.sendMessage(" Â§2* Â§aMutadoÂ§8: Â§7Sim.");
 					if (mute.isMuteall()) {
-						sender.sendMessage("   §a- Chat's Mutados§8: §7Todos");
+						sender.sendMessage("   Â§a- Chat's MutadosÂ§8: Â§7Todos");
 					} else {
-						sender.sendMessage("   §a- Chat's Mutados§8: §7Global e Local");
+						sender.sendMessage("   Â§a- Chat's MutadosÂ§8: Â§7Global e Local");
 					}
-					sender.sendMessage("   §a- Tempo§8: §7" + TimeManager.getTimeEnd(mute.getTime()));
-					sender.sendMessage("   §a- Por§8: §7" + mute.getAuthor());
-					sender.sendMessage("   §a- Motivo§8: §7" + mute.getReason());
-					sender.sendMessage("   §a- Data§8: §7" + mute.getDate());
+					sender.sendMessage("   Â§a- TempoÂ§8: Â§7" + TimeManager.getTimeEnd(mute.getTime()));
+					sender.sendMessage("   Â§a- PorÂ§8: Â§7" + mute.getAuthor());
+					sender.sendMessage("   Â§a- MotivoÂ§8: Â§7" + mute.getReason());
+					sender.sendMessage("   Â§a- DataÂ§8: Â§7" + mute.getDate());
 				} else {
-					sender.sendMessage(" §2* §aMutado§8: §7Não.");
+					sender.sendMessage(" Â§2* Â§aMutadoÂ§8: Â§7NÂ§o.");
 				}
 				new BukkitRunnable() {
 					
@@ -78,13 +78,13 @@ public class CheckBanCommand extends Command {
 								if (banned.getType().equalsIgnoreCase("PERMANENTE") || System.currentTimeMillis() < banned.getTime()) {
 									sendCheckBan(banned, sender);
 								} else {
-									sender.sendMessage(" §2* §aBanido§8: §7Não.");
+									sender.sendMessage(" Â§2* Â§aBanidoÂ§8: Â§7NÂ§o.");
 								}
 							} else {
-								sender.sendMessage(" §2* §aBanido§8: §7Não.");
+								sender.sendMessage(" Â§2* Â§aBanidoÂ§8: Â§7NÂ§o.");
 							}
 						} catch (Exception e) {
-							sender.sendMessage("§cNão foi possivel completar a operação.");
+							sender.sendMessage("Â§cNÂ§o foi possivel completar a operaÂ§Â§o.");
 							e.printStackTrace();
 						}
 					}
@@ -93,31 +93,31 @@ public class CheckBanCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " (nick|ip).");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " (nick|ip).");
 		sender.sendMessage("");
 		return false;
 	}
 
 	public void sendCheckBanIP(Banip banip, CommandSender sender) {
-		sender.sendMessage(" §2* §aBanido§8: §7Sim.");
-		sender.sendMessage("   §a- Tipo§8: §7" + banip.getType());
-		if (banip.getType().equalsIgnoreCase("TEMPORÁRIO")) {
-			sender.sendMessage("   §a- Tempo§8: §7" + TimeManager.getTimeEnd(banip.getTime()));
+		sender.sendMessage(" Â§2* Â§aBanidoÂ§8: Â§7Sim.");
+		sender.sendMessage("   Â§a- TipoÂ§8: Â§7" + banip.getType());
+		if (banip.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
+			sender.sendMessage("   Â§a- TempoÂ§8: Â§7" + TimeManager.getTimeEnd(banip.getTime()));
 		}
-		sender.sendMessage("   §a- Por§8: §7" + banip.getAuthor());
-		sender.sendMessage("   §a- Motivo§8: §7" + banip.getReason());
-		sender.sendMessage("   §a- Data§8: §7" + banip.getDate());
+		sender.sendMessage("   Â§a- PorÂ§8: Â§7" + banip.getAuthor());
+		sender.sendMessage("   Â§a- MotivoÂ§8: Â§7" + banip.getReason());
+		sender.sendMessage("   Â§a- DataÂ§8: Â§7" + banip.getDate());
 	}
 
 	public void sendCheckBan(Ban ban, CommandSender sender) {
-		sender.sendMessage(" §2* §aBanido§8: §7Sim.");
-		sender.sendMessage("   §a- Tipo§8: §7" + ban.getType());
-		if (ban.getType().equalsIgnoreCase("TEMPORÁRIO")) {
-			sender.sendMessage("   §a- Tempo§8: §7" + TimeManager.getTimeEnd(ban.getTime()));
+		sender.sendMessage(" Â§2* Â§aBanidoÂ§8: Â§7Sim.");
+		sender.sendMessage("   Â§a- TipoÂ§8: Â§7" + ban.getType());
+		if (ban.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
+			sender.sendMessage("   Â§a- TempoÂ§8: Â§7" + TimeManager.getTimeEnd(ban.getTime()));
 		}
-		sender.sendMessage("   §a- Por§8: §7" + ban.getAuthor());
-		sender.sendMessage("   §a- Motivo§8: §7" + ban.getReason());
-		sender.sendMessage("   §a- Data§8: §7" + ban.getDate());
+		sender.sendMessage("   Â§a- PorÂ§8: Â§7" + ban.getAuthor());
+		sender.sendMessage("   Â§a- MotivoÂ§8: Â§7" + ban.getReason());
+		sender.sendMessage("   Â§a- DataÂ§8: Â§7" + ban.getDate());
 	}
 }

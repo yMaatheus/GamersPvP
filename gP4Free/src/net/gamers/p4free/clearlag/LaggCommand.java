@@ -42,7 +42,7 @@ public class LaggCommand extends Command {
 						}
 					}
 				}
-				sender.sendMessage("§aVocê limpou §f" + cleared + "§a mobs.");
+				sender.sendMessage("Â§aVocÂ§ limpou Â§f" + cleared + "Â§a mobs.");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("unloadchunks")) {
@@ -56,7 +56,7 @@ public class LaggCommand extends Command {
 						chunks++;
 					}
 				}
-				sender.sendMessage("§aVocê limpou §f" + chunks + "§a chunks.");
+				sender.sendMessage("Â§aVocÂ§ limpou Â§f" + chunks + "Â§a chunks.");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("clear")) {
@@ -70,15 +70,15 @@ public class LaggCommand extends Command {
 						entity.remove();
 					}
 				}
-				sender.sendMessage("§aVocê limpou §f" + cleared + "§a itens do chão.");
+				sender.sendMessage("Â§aVocÂ§ limpou Â§f" + cleared + "Â§a itens do chÂ§o.");
 				return true;
 			}
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[P4Free] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a killmobs");
-		sender.sendMessage("§7/" + arg + "§a unloadchunks");
-		sender.sendMessage("§7/" + arg + "§a clear");
+		sender.sendMessage("Â§a[P4Free] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a killmobs");
+		sender.sendMessage("Â§7/" + arg + "Â§a unloadchunks");
+		sender.sendMessage("Â§7/" + arg + "Â§a clear");
 		return false;
 	}
 }

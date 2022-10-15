@@ -27,7 +27,7 @@ public class SumoX1Manager {
 	
 	private double premio;
 	private String ganhador;
-	public String prefix = "§c[SumoX1] §r";
+	public String prefix = "Â§c[SumoX1] Â§r";
 	
 	public SumoX1Manager(FileConfiguration config, Main instance) {
 		this.instance = instance;
@@ -48,9 +48,9 @@ public class SumoX1Manager {
 			public void run() {
 				if (sumox1.getAlerts() >= alerts) {
 					if (getPlayers() < settings.minPlayers) {
-						Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado por insuficiência de participantes.");
+						Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado por insuficiÂ§ncia de participantes.");
 						sumox1.setStatus(statusType.CANCELADO);
-						sumox1.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+						sumox1.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 						sumox1.reset();
 						sumox1 = null;
 						return;
@@ -59,11 +59,11 @@ public class SumoX1Manager {
 				} else {
 					String tempo = String.valueOf((alerts - sumox1.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fEvento §c§lSUMOX1 §fsendo iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fTempo restante: §c" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fPara participar digite: §c/SumoX1");
-					Bukkit.broadcastMessage(prefix + "§fPremios: §2$§c" + premio + " + §fTags: §c[SumoX1]");
-					Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lSUMOX1 Â§fsendo iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fTempo restante: Â§c" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fPara participar digite: Â§c/SumoX1");
+					Bukkit.broadcastMessage(prefix + "Â§fPremios: Â§2$Â§c" + premio + " + Â§fTags: Â§c[SumoX1]");
+					Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 					Bukkit.broadcastMessage("");
 					sumox1.setAlerts(sumox1.getAlerts() + 1);
 				}
@@ -75,8 +75,8 @@ public class SumoX1Manager {
 		sumox1.setStatus(statusType.FECHADO);
 		sumox1.reset();
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §c§lSUMOX1 §ffechado!");
-		Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lSUMOX1 Â§ffechado!");
+		Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 		Bukkit.broadcastMessage("");
 		executeCheck();
 	}
@@ -116,8 +116,8 @@ public class SumoX1Manager {
 	private void executeDuel(Player player1, Player player2, HashMap<Player, Participant> participantes) {
 		Participant participant1 = participantes.get(player1);
 		Participant participant2 = participantes.get(player2);
-		Bukkit.broadcastMessage(prefix + "§fDuelo entre §c" + player1.getName() + " §fx §c" + player2.getName());
-		Bukkit.broadcastMessage(prefix + "§fEnviando jogadores para PvP em §c5 §fsegundos.");
+		Bukkit.broadcastMessage(prefix + "Â§fDuelo entre Â§c" + player1.getName() + " Â§fx Â§c" + player2.getName());
+		Bukkit.broadcastMessage(prefix + "Â§fEnviando jogadores para PvP em Â§c5 Â§fsegundos.");
 		new BukkitRunnable() {
 			
 			@Override
@@ -126,7 +126,7 @@ public class SumoX1Manager {
 					executeCheck();
 					return;
 				}
-				//teleportar jogadores para as localizações de pvp
+				//teleportar jogadores para as localizaÂ§Â§es de pvp
 				player1.teleport(getLocation("pos1"));
 				player2.teleport(getLocation("pos2"));
 				participant1.setDueling(true);
@@ -151,8 +151,8 @@ public class SumoX1Manager {
 		config.set("ganhador", ganhador);
 		saveConfig();
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §c§lKILLER §ffoi finalizado");
-		Bukkit.broadcastMessage(prefix + "§fVencedor: §c" + playerName);
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lKILLER Â§ffoi finalizado");
+		Bukkit.broadcastMessage(prefix + "Â§fVencedor: Â§c" + playerName);
 		Bukkit.broadcastMessage("");
 		new BukkitRunnable() {
 			
@@ -160,7 +160,7 @@ public class SumoX1Manager {
 			public void run() {
 				sumox1.getParticipantes().keySet().forEach(player -> {
 					player.teleport(getLocation("saida"));
-					player.sendMessage("§aVocê foi teleportado até a saida.");
+					player.sendMessage("Â§aVocÂ§ foi teleportado atÂ§ a saida.");
 				});
 				sumox1 = null;
 			}
@@ -168,10 +168,10 @@ public class SumoX1Manager {
 	}
 	
 	public void executeCancel() {
-		Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado.");
+		Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado.");
 		sumox1.setStatus(statusType.CANCELADO);
 		sumox1.reset();
-		sumox1.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+		sumox1.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 		sumox1 = null;
 	}
 	
@@ -204,7 +204,7 @@ public class SumoX1Manager {
 	}
 	
 	public void depositPremio(Player player) {
-		player.sendMessage(prefix + "§eVocê recebeu §2$§f" + premio + " §ecomo prêmio.");
+		player.sendMessage(prefix + "Â§eVocÂ§ recebeu Â§2$Â§f" + premio + " Â§ecomo prÂ§mio.");
 		instance.getEconomy().depositPlayer(player, premio);
 	}
 	

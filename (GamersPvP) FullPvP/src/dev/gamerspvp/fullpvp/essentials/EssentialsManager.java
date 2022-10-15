@@ -53,13 +53,13 @@ public class EssentialsManager {
 		this.site = config.getString("site");
 		this.discord = config.getString("discord");
 		this.spawnWorld = config.getString("spawnWorld");
-		this.eventos = StringUtils.join(config.getStringList("eventos"), "\n").replace("&", "ง");
-		this.messageJoin = StringUtils.join(config.getStringList("mensagemEntrar"), "\n").replace("&", "ง");
-		this.motd = StringUtils.join(config.getStringList("motd"), "\n").replace("&", "ง");
-		this.maintanceMotd = StringUtils.join(config.getStringList("maintanceMotd"), "\n").replace("&", "ง");
+		this.eventos = StringUtils.join(config.getStringList("eventos"), "\n").replace("&", "ยง");
+		this.messageJoin = StringUtils.join(config.getStringList("mensagemEntrar"), "\n").replace("&", "ยง");
+		this.motd = StringUtils.join(config.getStringList("motd"), "\n").replace("&", "ยง");
+		this.maintanceMotd = StringUtils.join(config.getStringList("maintanceMotd"), "\n").replace("&", "ยง");
 		this.vipWorlds = new HashSet<String>(config.getStringList("Fly.vipWorlds"));
-		this.tablistHeader = StringUtils.join(config.getStringList("Tablist.header"), "\n").replace("&", "ง");
-		this.tablistFooter = StringUtils.join(config.getStringList("Tablist.footer"), "\n").replace("&", "ง");
+		this.tablistHeader = StringUtils.join(config.getStringList("Tablist.header"), "\n").replace("&", "ยง");
+		this.tablistFooter = StringUtils.join(config.getStringList("Tablist.footer"), "\n").replace("&", "ยง");
 		this.blockPlaceWorld = new HashMap<String, HashSet<Integer>>();
 		for (String worldName : config.getConfigurationSection("BlockPlaceInWorld").getKeys(false)) {
 			HashSet<Integer> id = new HashSet<Integer>(config.getIntegerList("BlockPlaceInWorld." + worldName));
@@ -80,10 +80,10 @@ public class EssentialsManager {
 	public void fly(Player player) {
 		if (player.getAllowFlight()) {
 			player.setAllowFlight(false);
-			player.sendMessage("งa[Fly] Fly desativado");
+			player.sendMessage("ยงa[Fly] Fly desativado");
 			return;
 		}
-		player.sendMessage("งa[Fly] Fly ativado");
+		player.sendMessage("ยงa[Fly] Fly ativado");
 		player.setAllowFlight(true);
 	}
 	

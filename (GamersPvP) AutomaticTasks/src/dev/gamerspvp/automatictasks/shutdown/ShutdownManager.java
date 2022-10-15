@@ -27,11 +27,11 @@ public class ShutdownManager {
 		this.closed = true;
 		Bukkit.getPluginManager().callEvent(new PreServerShutdownEvent());
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§c[AVISO] O Servidor irá reiniciar em §f§l60 §csegundos!");
+		Bukkit.broadcastMessage("Â§c[AVISO] O Servidor irÂ§ reiniciar em Â§fÂ§l60 Â§csegundos!");
 		Bukkit.broadcastMessage("");
 		Titles title = new Titles();
-		title.setTitle("§c§lSERVER REINICIANDO");
-		title.setSubtitle("§cReiniciando em §f60 §csegundos!");
+		title.setTitle("Â§cÂ§lSERVER REINICIANDO");
+		title.setSubtitle("Â§cReiniciando em Â§f60 Â§csegundos!");
 		for (Player online : Bukkit.getOnlinePlayers()) {
 			online.playSound(online.getLocation(), Sound.ORB_PICKUP, 10.0F, 1.0F);
 			title.send(online);
@@ -46,7 +46,7 @@ public class ShutdownManager {
 	public void executeFastRestart() {
 		this.closed = true;
 		Bukkit.getPluginManager().callEvent(new PreServerShutdownEvent());
-		Bukkit.broadcastMessage("§cServidor reiniciando..");
+		Bukkit.broadcastMessage("Â§cServidor reiniciando..");
 		new BukkitRunnable() {
 			public void run() {
 				Bukkit.shutdown();

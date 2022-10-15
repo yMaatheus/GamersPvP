@@ -40,14 +40,14 @@ public class EventoChatListener implements Listener {
 		String resultado = eventoChat.getResultado() + "";
 		double premio = eventoChatManager.getPremio();
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§8-=-=-=-=-=-=-=- §eEvento Chat§8 -=-=-=-=-=-=-=-");
-		Bukkit.broadcastMessage("§eO Vencedor foi: §f" + playerName);
-		Bukkit.broadcastMessage("§eO Resultado era: §f" + resultado);
-		Bukkit.broadcastMessage("§ePremio: §2$§f" + premio);
-		Bukkit.broadcastMessage("§8-=-=-=-=-=-=-=- §eEvento Chat§8 -=-=-=-=-=-=-=-");
+		Bukkit.broadcastMessage("Â§8-=-=-=-=-=-=-=- Â§eEvento ChatÂ§8 -=-=-=-=-=-=-=-");
+		Bukkit.broadcastMessage("Â§eO Vencedor foi: Â§f" + playerName);
+		Bukkit.broadcastMessage("Â§eO Resultado era: Â§f" + resultado);
+		Bukkit.broadcastMessage("Â§ePremio: Â§2$Â§f" + premio);
+		Bukkit.broadcastMessage("Â§8-=-=-=-=-=-=-=- Â§eEvento ChatÂ§8 -=-=-=-=-=-=-=-");
 		Bukkit.broadcastMessage("");
 		player.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
-		player.sendMessage("§aParabens! Foram adicionados §2$§f" + premio + " em sua conta.");
+		player.sendMessage("Â§aParabens! Foram adicionados Â§2$Â§f" + premio + " em sua conta.");
 		instance.getEconomy().depositPlayer(player, premio);
 	}
 }

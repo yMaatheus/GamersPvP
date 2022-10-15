@@ -44,7 +44,7 @@ public class ClearLagManager {
 			}
 		}
 		if (announce) {
-			Bukkit.broadcastMessage("งc[!] ง7Foram removidos งcงl" + cleared + " ง7itens do chใo.");
+			Bukkit.broadcastMessage("ยงc[!] ยง7Foram removidos ยงcยงl" + cleared + " ยง7itens do chยงo.");
 		}
 		drop = 0;
 		closed = false;
@@ -57,18 +57,18 @@ public class ClearLagManager {
 		this.drop = drop + drops;
 		if (drop >= 500) {
 			this.closed = true;
-			Bukkit.broadcastMessage("งc[!] ง7O Chใo serแ limpo em งcงl60ง7 segundos!");
+			Bukkit.broadcastMessage("ยงc[!] ยง7O Chยงo serยง limpo em ยงcยงl60ยง7 segundos!");
 			new BukkitRunnable() {
 				
 				@Override
 				public void run() {
 					
-					Bukkit.broadcastMessage("งc[!] ง7O Chใo serแ limpo em งcงl30ง7 segundos!");
+					Bukkit.broadcastMessage("ยงc[!] ยง7O Chยงo serยง limpo em ยงcยงl30ยง7 segundos!");
 					new BukkitRunnable() {
 						
 						@Override
 						public void run() {
-							Bukkit.broadcastMessage("งc[!] ง7O Chใo serแ limpo em งcงl10ง7 segundos!");
+							Bukkit.broadcastMessage("ยงc[!] ยง7O Chยงo serยง limpo em ยงcยงl10ยง7 segundos!");
 							new BukkitRunnable() {
 								
 								@Override

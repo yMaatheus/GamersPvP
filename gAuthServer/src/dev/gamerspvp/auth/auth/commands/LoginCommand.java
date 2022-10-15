@@ -34,24 +34,24 @@ public class LoginCommand extends Command {
 				return false;
 			}
 			if (authPlayer.isAuthenticated()) {
-				player.sendMessage("§cVocê já está autenticado, bobinho!");
+				player.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ autenticado, bobinho!");
 				return false;
 			}
 			if (!(authPlayer.isRegistered())) {
-				player.sendMessage("§cVocê precisa registra-se antes.");
+				player.sendMessage("Â§cVocÂ§ precisa registra-se antes.");
 				return false;
 			}
 			if (!(authManager.checkPassword(authPlayer, password))) {
 				if (authPlayer.getAttempts() > 3) {
-					player.kickPlayer("§cVocê errou muitas vezes a sua senha!");
+					player.kickPlayer("Â§cVocÂ§ errou muitas vezes a sua senha!");
 					return false;
 				}
 				authPlayer.setAttempts(authPlayer.getAttempts() + 1);
 				authManager.authInfo(playerName, " Errou a senha!");
-				player.sendMessage("§cSenha errada. Tente novamente!");
+				player.sendMessage("Â§cSenha errada. Tente novamente!");
 				return true;
 			}
-			sender.sendMessage("§aAnalisando...");
+			sender.sendMessage("Â§aAnalisando...");
 			new BukkitRunnable() {
 				
 				@Override
@@ -62,14 +62,14 @@ public class LoginCommand extends Command {
 					
 					authManager.cache(authPlayer);
 					authManager.sendMessageAuth(player);
-					player.sendMessage("§aVocê foi autenticado com sucesso. Tenha um ótimo jogo!");
+					player.sendMessage("Â§aVocÂ§ foi autenticado com sucesso. Tenha um Â§timo jogo!");
 					authPlayer.update(instance);
 					authManager.authInfo(playerName, " Efetuou login!");
 				}
 			}.runTaskAsynchronously(instance);
 			return true;
 		}
-		sender.sendMessage("§aEfetue login utilizando: §f/" + arg + " (senha).");
+		sender.sendMessage("Â§aEfetue login utilizando: Â§f/" + arg + " (senha).");
 		return false;
 	}
 }

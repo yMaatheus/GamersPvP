@@ -24,7 +24,7 @@ public class RestartListener implements Listener {
 	@EventHandler
 	public void onBukkitMessageEvent(BukkitMessageEvent event) {
 		if (event.getChannel().equalsIgnoreCase("backup_restartbukkit")) {
-			//Habilitar enviar mensagem após o servidor reiniciar
+			//Habilitar enviar mensagem apÂ§s o servidor reiniciar
 			FileConfiguration config = instance.getConfig();
 			try {
 				config.set("startBackup", true);
@@ -41,7 +41,7 @@ public class RestartListener implements Listener {
 		if (!(RestartManager.isClosed())) {
 			return;
 		}
-		event.setKickMessage("§cServidor está reiniciando, Aguarde iniciar para jogar!");
+		event.setKickMessage("Â§cServidor estÂ§ reiniciando, Aguarde iniciar para jogar!");
 		event.setLoginResult(Result.KICK_OTHER);
 	}
 }

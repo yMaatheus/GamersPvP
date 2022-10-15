@@ -31,13 +31,13 @@ public class FlyCommand extends Command {
 				return true;
 			}
 			if (!(adminPermission)) {
-				player.sendMessage("§cO fly neste mundo está desativado para você.");
+				player.sendMessage("Â§cO fly neste mundo estÂ§ desativado para vocÂ§.");
 				return false;
 			}
 			essentialsManager.fly(player);
 			return true;
 		}
-		sender.sendMessage("§cSem permissão.");
+		sender.sendMessage("Â§cSem permissÂ§o.");
 		return false;
 	}
 }

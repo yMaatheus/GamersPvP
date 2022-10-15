@@ -26,7 +26,7 @@ public class ReportCommand extends Command {
 		if (args.length > 1) {
 			Player target = Bukkit.getPlayer(args[0]);
 			if (target == null) {
-				sender.sendMessage("§cJogador offline.");
+				sender.sendMessage("Â§cJogador offline.");
 				return false;
 			}
 			StringBuilder reason = new StringBuilder();
@@ -37,7 +37,7 @@ public class ReportCommand extends Command {
 			reportManager.executeReport(target, player, reason.toString());
 			return true;
 		}
-		sender.sendMessage("§7/" + arg + " §a(player) (motivo).");
+		sender.sendMessage("Â§7/" + arg + " Â§a(player) (motivo).");
 		return false;
 	}
 }

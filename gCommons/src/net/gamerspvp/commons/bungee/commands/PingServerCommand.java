@@ -17,7 +17,7 @@ public class PingServerCommand extends Command {
 		super(name);
 		this.permission = permission;
 		//this.instance = instance;
-		instance.getProxy().getConsole().sendMessage(new TextComponent("§a* " + name + " - " + permission));
+		instance.getProxy().getConsole().sendMessage(new TextComponent("Â§a* " + name + " - " + permission));
 	}
 	
 	@Override
@@ -32,8 +32,8 @@ public class PingServerCommand extends Command {
 			return;
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Commons] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/pingserver §a (address) (port)"));
+		sender.sendMessage(new TextComponent("Â§a[Commons] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/pingserver Â§a (address) (port)"));
 		sender.sendMessage(new TextComponent(""));
 		return;
 	}

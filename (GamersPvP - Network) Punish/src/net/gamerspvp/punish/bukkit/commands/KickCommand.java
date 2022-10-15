@@ -22,13 +22,13 @@ public class KickCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.kick"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 1) {
 			String target = args[0];
 			if (target.equalsIgnoreCase(sender.getName())) {
-				sender.sendMessage("§cVocê não pode expulsar-se.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode expulsar-se.");
 				return false;
 			}
 			Player targetPlayer = Bukkit.getPlayer(target);
@@ -46,8 +46,8 @@ public class KickCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " (nick) (motivo).");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " (nick) (motivo).");
 		sender.sendMessage("");
 		return false;
 	}

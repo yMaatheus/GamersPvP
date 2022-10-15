@@ -42,11 +42,11 @@ public class GamemodeCommand extends Command {
 					return false;
 				}
 				String targetName = target.getName();
-				StringBuilder sb = new StringBuilder("§aVocê atualizou o gamemode de §f");
-				sb.append(targetName + "§a para §f" + target.getGameMode() + "§a com sucesso.");
+				StringBuilder sb = new StringBuilder("Â§aVocÂ§ atualizou o gamemode de Â§f");
+				sb.append(targetName + "Â§a para Â§f" + target.getGameMode() + "Â§a com sucesso.");
 				if (args[0].equalsIgnoreCase("0")) {
 					if (target.getGameMode() == GameMode.SURVIVAL) {
-						player.sendMessage("§cO jogador já está no " + target.getGameMode().toString());
+						player.sendMessage("Â§cO jogador jÂ§ estÂ§ no " + target.getGameMode().toString());
 						return false;
 					}
 					target.setGameMode(GameMode.SURVIVAL);
@@ -57,21 +57,21 @@ public class GamemodeCommand extends Command {
 						return false;
 					}
 					if (target.getGameMode() == GameMode.CREATIVE) {
-						player.sendMessage("§cO jogador já está no " + target.getGameMode().toString());
+						player.sendMessage("Â§cO jogador jÂ§ estÂ§ no " + target.getGameMode().toString());
 						return false;
 					}
 					target.setGameMode(GameMode.CREATIVE);
 					player.sendMessage(sb.toString());
 				} else if (args[0].equalsIgnoreCase("2")) {
 					if (target.getGameMode() == GameMode.ADVENTURE) {
-						player.sendMessage("§cO jogador já está no " + target.getGameMode().toString());
+						player.sendMessage("Â§cO jogador jÂ§ estÂ§ no " + target.getGameMode().toString());
 						return false;
 					}
 					target.setGameMode(GameMode.ADVENTURE);
 					player.sendMessage(sb.toString());
 				} else if (args[0].equalsIgnoreCase("3")) {
 					if (target.getGameMode() == GameMode.SPECTATOR) {
-						player.sendMessage("§cO jogador já está no " + target.getGameMode().toString());
+						player.sendMessage("Â§cO jogador jÂ§ estÂ§ no " + target.getGameMode().toString());
 						return false;
 					}
 					target.setGameMode(GameMode.SPECTATOR);
@@ -81,11 +81,11 @@ public class GamemodeCommand extends Command {
 			}
 			if (args[0].equalsIgnoreCase("0")) {
 				if (player.getGameMode() == GameMode.SURVIVAL) {
-					player.sendMessage("§cVocê já está no " + player.getGameMode().toString());
+					player.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ no " + player.getGameMode().toString());
 					return false;
 				}
 				player.setGameMode(GameMode.SURVIVAL);
-				player.sendMessage("§aSeu modo de jogo foi atualizado para: §2" + player.getGameMode());
+				player.sendMessage("Â§aSeu modo de jogo foi atualizado para: Â§2" + player.getGameMode());
 			}
 			if (args[0].equalsIgnoreCase("1")) {
 				if (!(player.isOp())) {
@@ -93,35 +93,35 @@ public class GamemodeCommand extends Command {
 					return false;
 				}
 				if (player.getGameMode() == GameMode.CREATIVE) {
-					player.sendMessage("§cVocê já está no " + player.getGameMode().toString());
+					player.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ no " + player.getGameMode().toString());
 					return false;
 				}
 				player.setGameMode(GameMode.CREATIVE);
-				player.sendMessage("§aSeu modo de jogo foi atualizado para: §2" + player.getGameMode());
+				player.sendMessage("Â§aSeu modo de jogo foi atualizado para: Â§2" + player.getGameMode());
 			}
 			if (args[0].equalsIgnoreCase("2")) {
 				if (player.getGameMode() == GameMode.ADVENTURE) {
-					player.sendMessage("§cVocê já está no " + player.getGameMode().toString());
+					player.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ no " + player.getGameMode().toString());
 					return false;
 				}
 				player.setGameMode(GameMode.ADVENTURE);
-				player.sendMessage("§aSeu modo de jogo foi atualizado para: §2" + player.getGameMode());
+				player.sendMessage("Â§aSeu modo de jogo foi atualizado para: Â§2" + player.getGameMode());
 			}
 			if (args[0].equalsIgnoreCase("3")) {
 				if (player.getGameMode() == GameMode.SPECTATOR) {
-					player.sendMessage("§cVocê já está no " + player.getGameMode().toString());
+					player.sendMessage("Â§cVocÂ§ jÂ§ estÂ§ no " + player.getGameMode().toString());
 					return false;
 				}
 				player.setGameMode(GameMode.SPECTATOR);
-				player.sendMessage("§aSeu modo de jogo foi atualizado para: §2" + player.getGameMode());
+				player.sendMessage("Â§aSeu modo de jogo foi atualizado para: Â§2" + player.getGameMode());
 			}
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[P4Free] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (0,1,2,3)");
+		sender.sendMessage("Â§a[P4Free] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (0,1,2,3)");
 		if (isOp)
-			sender.sendMessage("§7/" + arg + "§a (0,1,2,3) (nick)");
+			sender.sendMessage("Â§7/" + arg + "Â§a (0,1,2,3) (nick)");
 		return false;
 	}
 }

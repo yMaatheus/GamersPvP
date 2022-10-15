@@ -52,7 +52,7 @@ public class AuthQueueManager {
 					Server server = values.get(a);
 					int maxPlayers = server.getMaxPlayers() + 30; //Adicionando um maxPlayers para +30 por lobby
 					ServerInfo serverInfo = instance.getProxy().getServerInfo(server.getServerName());
-					if (server.getOnline() >= maxPlayers || serverInfo == null) { //Verificando se o servidor está super lotado.
+					if (server.getOnline() >= maxPlayers || serverInfo == null) { //Verificando se o servidor estÂ§ super lotado.
 						continue;
 					}
 					if (!PingServer.hasOnlineServer(server.getAddress(), server.getPort())) {
@@ -86,7 +86,7 @@ public class AuthQueueManager {
 	public void add(ProxiedPlayer proxiedPlayer) throws Exception {
 		boolean vip = proxiedPlayer.hasPermission("gamers.staff") || proxiedPlayer.hasPermission("gamers.vip");
 		queue.put(proxiedPlayer, new UserQueue(proxiedPlayer, System.currentTimeMillis(), vip));
-		proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§aEstamos enviando você até o §fSaguão§a do servidor!"));
+		proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("Â§aEstamos enviando vocÂ§ atÂ§ o Â§fSaguÂ§oÂ§a do servidor!"));
 	}
 	
 	public void remove(ProxiedPlayer proxiedPlayer) {
@@ -94,7 +94,7 @@ public class AuthQueueManager {
 			return;
 		}
 		queue.remove(proxiedPlayer);
-		proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§aEnvio ao §fSaguão §aconcluido com sucesso!"));
+		proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("Â§aEnvio ao Â§fSaguÂ§o Â§aconcluido com sucesso!"));
 	}
 	
 	public List<UserQueue> formatQueue(Collection<UserQueue> collection) {

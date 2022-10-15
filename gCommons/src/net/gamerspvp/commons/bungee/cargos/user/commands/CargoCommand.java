@@ -52,10 +52,10 @@ public class CargoCommand extends Command {
 					    }
 					});
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Cargos] Lista de grupos: "));
+					sender.sendMessage(new TextComponent("Â§a[Cargos] Lista de grupos: "));
 					for (int a = 0; a < values.size(); a++) {
 						Group group = values.get(a);
-						sender.sendMessage(new TextComponent("§7" + (a + 1) + "§8.§r " + group.getPreffix() + "§f(" + group.getName() + ")"));
+						sender.sendMessage(new TextComponent("Â§7" + (a + 1) + "Â§8.Â§r " + group.getPreffix() + "Â§f(" + group.getName() + ")"));
 					}
 					return;
 				} else if (args.length > 1 && (args[0].equalsIgnoreCase("purge") || args[0].equalsIgnoreCase("deletar"))) {
@@ -65,7 +65,7 @@ public class CargoCommand extends Command {
 					}
 					String userName = args[1];
 					proxiedUserManager.purgeUser(userName);
-					sender.sendMessage(new TextComponent("§aO usuário §f" + userName + " §afoi totalmente deletado do banco de dados de cargos."));
+					sender.sendMessage(new TextComponent("Â§aO usuÂ§rio Â§f" + userName + " Â§afoi totalmente deletado do banco de dados de cargos."));
 					return;
 				} else if (args.length > 1 && (args[0].equalsIgnoreCase("profile") || args[0].equalsIgnoreCase("perfil"))) {
 					String userName = args[1];
@@ -75,48 +75,48 @@ public class CargoCommand extends Command {
 						return;
 					}
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Cargos] Informações do jogador:"));
+					sender.sendMessage(new TextComponent("Â§a[Cargos] InformaÂ§Â§es do jogador:"));
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§7* §aNome§8:§f " + user.getPlayerName()));
-					sender.sendMessage(new TextComponent("§7* §aGrupo§8:§f " + user.getGroup()));
-					sender.sendMessage(new TextComponent("§7* §aPrimeiro Login§8:§f " + DateUtils.longToDate(user.getFirstLogin())));
-					sender.sendMessage(new TextComponent("§7* §aÚltimo Login§8:§f " + DateUtils.longToDate(user.getLastLogin())));
+					sender.sendMessage(new TextComponent("Â§7* Â§aNomeÂ§8:Â§f " + user.getPlayerName()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aGrupoÂ§8:Â§f " + user.getGroup()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aPrimeiro LoginÂ§8:Â§f " + DateUtils.longToDate(user.getFirstLogin())));
+					sender.sendMessage(new TextComponent("Â§7* Â§aÂ§ltimo LoginÂ§8:Â§f " + DateUtils.longToDate(user.getLastLogin())));
 					return;
 				} else if (args.length > 1 && args[0].equalsIgnoreCase("info")) {
 					String groupName = args[1].substring(0,1).toUpperCase().concat(args[1].toLowerCase().substring(1));
 					Group group = proxiedGroupManager.getGroup(groupName);
 					if (group == null) {
-						sender.sendMessage(new TextComponent("§cO grupo informado não foi encontrado."));
+						sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o foi encontrado."));
 						return;
 					}
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Cargos] Informações do Grupo:"));
+					sender.sendMessage(new TextComponent("Â§a[Cargos] InformaÂ§Â§es do Grupo:"));
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§7* §aNome§8:§f " + group.getName()));
-					sender.sendMessage(new TextComponent("§7* §aPrefixo§8:§f " + group.getPreffix()));
-					sender.sendMessage(new TextComponent("§7* §aRank§8:§f " + group.getRank()));
-					sender.sendMessage(new TextComponent("§7* §aPermissions§8: "));
+					sender.sendMessage(new TextComponent("Â§7* Â§aNomeÂ§8:Â§f " + group.getName()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aPrefixoÂ§8:Â§f " + group.getPreffix()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aRankÂ§8:Â§f " + group.getRank()));
+					sender.sendMessage(new TextComponent("Â§7* Â§aPermissionsÂ§8: "));
 					for (String permission : group.getPermissions()) {
-						sender.sendMessage(new TextComponent("  §7-§f " + permission));
+						sender.sendMessage(new TextComponent("  Â§7-Â§f " + permission));
 					}
 					return;
 				} else if (args.length > 1 && args[0].equalsIgnoreCase("users")) {
 					String groupName = args[1].substring(0,1).toUpperCase().concat(args[1].toLowerCase().substring(1));
 					HashSet<User> users = databaseController.searchGroupUsers(groupName);
 					if (users.isEmpty()) {
-						sender.sendMessage(new TextComponent("§cNão foi encontrado nenhuma informação no banco de dados."));
+						sender.sendMessage(new TextComponent("Â§cNÂ§o foi encontrado nenhuma informaÂ§Â§o no banco de dados."));
 						return;
 					}
 					if (users.size() > 150) {
-						sender.sendMessage(new TextComponent("§aA lista de usuários é muito extensa, devido a isso será informado apenas a quantidade total a qual é: §f" + users.size()));
+						sender.sendMessage(new TextComponent("Â§aA lista de usuÂ§rios Â§ muito extensa, devido a isso serÂ§ informado apenas a quantidade total a qual Â§: Â§f" + users.size()));
 						return;
 					}
 					sender.sendMessage(new TextComponent(""));
-					sender.sendMessage(new TextComponent("§a[Cargos] Lista de usuários do grupo " + groupName + ":"));
+					sender.sendMessage(new TextComponent("Â§a[Cargos] Lista de usuÂ§rios do grupo " + groupName + ":"));
 					int i = 0;
 					for (User user : users) {
 						i++;
-						sender.sendMessage(new TextComponent("§a" + i + "§8. §f" + user.getPlayerName() + " §8- §7Último Login§8: §a" + DateUtils.longToDate(user.getLastLogin())));
+						sender.sendMessage(new TextComponent("Â§a" + i + "Â§8. Â§f" + user.getPlayerName() + " Â§8- Â§7Â§ltimo LoginÂ§8: Â§a" + DateUtils.longToDate(user.getLastLogin())));
 					}
 					return;
 				} else if (args.length > 2 && (args[0].equalsIgnoreCase("definir") || args[0].equalsIgnoreCase("set"))) {
@@ -124,21 +124,21 @@ public class CargoCommand extends Command {
 					String groupName = args[2].substring(0,1).toUpperCase().concat(args[2].toLowerCase().substring(1));
 					Group group = proxiedGroupManager.getGroup(groupName);
 					if (group == null) {
-						sender.sendMessage(new TextComponent("§cO grupo informado não foi encontrado."));
+						sender.sendMessage(new TextComponent("Â§cO grupo informado nÂ§o foi encontrado."));
 						return;
 					}
 					if (sender instanceof ProxiedPlayer) {
 						User senderUser = databaseController.getUser(sender.getName());
 						Group senderGroup = proxiedGroupManager.getGroup(senderUser.getGroup());
 						if (senderGroup != null && senderGroup.getRank() > group.getRank()) {
-							sender.sendMessage(new TextComponent("§cVocê não tem autorização para definir um jogador ao grupo."));
+							sender.sendMessage(new TextComponent("Â§cVocÂ§ nÂ§o tem autorizaÂ§Â§o para definir um jogador ao grupo."));
 							return;
 						}
 						User user = databaseController.getUser(userName);
 						if (user != null) {
 							Group userGroup = proxiedGroupManager.getGroup(user.getGroup());
 							if (userGroup != null && senderGroup.getRank() >= userGroup.getRank()) {
-								sender.sendMessage(new TextComponent("§cVocê não tem autorização para definir um grupo ao jogador."));
+								sender.sendMessage(new TextComponent("Â§cVocÂ§ nÂ§o tem autorizaÂ§Â§o para definir um grupo ao jogador."));
 								return;
 							}
 						}
@@ -146,7 +146,7 @@ public class CargoCommand extends Command {
 					proxiedUserManager.defineUserGroup(userName, groupName);
 					LogManager.log("Cargos", sender.getName(), userName, sender.getName() + " definiu o grupo de " + userName + " para " + groupName, "");
 					
-					sender.sendMessage(new TextComponent("§aO usuário §f" + userName + "§a teve o grupo definido para §f" + groupName));
+					sender.sendMessage(new TextComponent("Â§aO usuÂ§rio Â§f" + userName + "Â§a teve o grupo definido para Â§f" + groupName));
 					return;
 				}
 			} catch (Exception e) {
@@ -154,14 +154,14 @@ public class CargoCommand extends Command {
 			}
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Cargos] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/Cargo§a listar"));
-		sender.sendMessage(new TextComponent("§7/Cargo§a definir (nick) (grupo)"));
+		sender.sendMessage(new TextComponent("Â§a[Cargos] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/CargoÂ§a listar"));
+		sender.sendMessage(new TextComponent("Â§7/CargoÂ§a definir (nick) (grupo)"));
 		if (diretor) {
-			sender.sendMessage(new TextComponent("§7/Cargo§a deletar (nick)"));
+			sender.sendMessage(new TextComponent("Â§7/CargoÂ§a deletar (nick)"));
 		}
-		sender.sendMessage(new TextComponent("§7/Cargo§a perfil (nick)"));
-		sender.sendMessage(new TextComponent("§7/Cargo§a info (grupo)"));
-		sender.sendMessage(new TextComponent("§7/Cargo§a users (grupo)"));
+		sender.sendMessage(new TextComponent("Â§7/CargoÂ§a perfil (nick)"));
+		sender.sendMessage(new TextComponent("Â§7/CargoÂ§a info (grupo)"));
+		sender.sendMessage(new TextComponent("Â§7/CargoÂ§a users (grupo)"));
 	}
 }

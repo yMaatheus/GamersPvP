@@ -53,7 +53,7 @@ public class GlobalListeners implements Listener {
 		player.setFoodLevel(20);
 		player.getInventory().clear();
 		player.setGameMode(GameMode.ADVENTURE);
-		MakeItem item = new MakeItem(Material.COMPASS).setName("§aServidores");
+		MakeItem item = new MakeItem(Material.COMPASS).setName("Â§aServidores");
 		player.getInventory().setItem(4, item.build());
 	}
 	

@@ -29,7 +29,7 @@ public class KillerManager {
 	
 	private double premio;
 	private String ganhador;
-	public String prefix = "§c[Killer] §r";
+	public String prefix = "Â§c[Killer] Â§r";
 	
 	public KillerManager(FileConfiguration config, Main instance) {
 		this.instance = instance;
@@ -52,9 +52,9 @@ public class KillerManager {
 			public void run() {
 				if (killer.getAlerts() >= alerts) {
 					if (getPlayers() < settings.minPlayers) {
-						Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado por insuficiência de participantes.");
+						Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado por insuficiÂ§ncia de participantes.");
 						killer.setStatus(statusType.CANCELADO);
-						killer.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+						killer.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 						killer.reset();
 						killer = null;
 						return;
@@ -63,11 +63,11 @@ public class KillerManager {
 				} else {
 					String tempo = String.valueOf((alerts - killer.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fEvento §c§lKILLER §fsendo iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fTempo restante: §c" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fPara participar digite: §c/Killer");
-					Bukkit.broadcastMessage(prefix + "§fPremios: §2$§c" + premio + " + §fTags: §c[Killer] §ce §5[Mito]");
-					Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lKILLER Â§fsendo iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fTempo restante: Â§c" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fPara participar digite: Â§c/Killer");
+					Bukkit.broadcastMessage(prefix + "Â§fPremios: Â§2$Â§c" + premio + " + Â§fTags: Â§c[Killer] Â§ce Â§5[Mito]");
+					Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 					Bukkit.broadcastMessage("");
 					killer.setAlerts(killer.getAlerts() + 1);
 				}
@@ -81,8 +81,8 @@ public class KillerManager {
 		int alerts = settings.iniciando.alerts;
 		int time = settings.iniciando.time;
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §c§lKILLER §ffechado!");
-		Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lKILLER Â§ffechado!");
+		Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 		Bukkit.broadcastMessage("");
 		killer.setTask(new BukkitRunnable() {
 			
@@ -92,14 +92,14 @@ public class KillerManager {
 					killer.setStatus(statusType.PVP);
 					killer.reset();
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fO PvP foi do Evento §c§lKILLER §ffoi iniciado!");
-					Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fO PvP foi do Evento Â§cÂ§lKILLER Â§ffoi iniciado!");
+					Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 					Bukkit.broadcastMessage("");
 				} else {
 					String tempo = String.valueOf((alerts - killer.getAlerts()) * time);
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage(prefix + "§fIniciando PvP em: §c" + tempo + " §fsegundos");
-					Bukkit.broadcastMessage(prefix + "§fJogadores: §c" + getPlayers());
+					Bukkit.broadcastMessage(prefix + "Â§fIniciando PvP em: Â§c" + tempo + " Â§fsegundos");
+					Bukkit.broadcastMessage(prefix + "Â§fJogadores: Â§c" + getPlayers());
 					Bukkit.broadcastMessage("");
 					killer.setAlerts(killer.getAlerts() + 1);
 				}
@@ -138,8 +138,8 @@ public class KillerManager {
 			mitoManager.setNewMito(player);
 		}
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(prefix + "§fEvento §c§lKILLER §ffoi finalizado");
-		Bukkit.broadcastMessage(prefix + "§fVencedor: §c" + playerName);
+		Bukkit.broadcastMessage(prefix + "Â§fEvento Â§cÂ§lKILLER Â§ffoi finalizado");
+		Bukkit.broadcastMessage(prefix + "Â§fVencedor: Â§c" + playerName);
 		Bukkit.broadcastMessage("");
 		new BukkitRunnable() {
 			
@@ -147,7 +147,7 @@ public class KillerManager {
 			public void run() {
 				killer.getParticipantes().keySet().forEach(player -> {
 					player.teleport(getLocation("saida"));
-					player.sendMessage("§aVocê foi teleportado até a saida.");
+					player.sendMessage("Â§aVocÂ§ foi teleportado atÂ§ a saida.");
 				});
 				executeClearDrops();
 				killer = null;
@@ -156,10 +156,10 @@ public class KillerManager {
 	}
 	
 	public void executeCancel() {
-		Bukkit.broadcastMessage(prefix + "§cO Evento foi cancelado.");
+		Bukkit.broadcastMessage(prefix + "Â§cO Evento foi cancelado.");
 		killer.setStatus(statusType.CANCELADO);
 		killer.reset();
-		killer.teleportAll("saida", "§aVocê foi teleportado até a saida.", 0, instance);
+		killer.teleportAll("saida", "Â§aVocÂ§ foi teleportado atÂ§ a saida.", 0, instance);
 		killer = null;
 	}
 	
@@ -205,7 +205,7 @@ public class KillerManager {
 	}
 	
 	public void depositPremio(Player player) {
-		player.sendMessage(prefix + "§eVocê recebeu §2$§f" + premio + " §ecomo prêmio.");
+		player.sendMessage(prefix + "Â§eVocÂ§ recebeu Â§2$Â§f" + premio + " Â§ecomo prÂ§mio.");
 		instance.getEconomy().depositPlayer(player, premio);
 	}
 	

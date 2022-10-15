@@ -48,10 +48,10 @@ public class ScoreboardManager {
 				if (sb.getTeam("line1") != null) {
 					sb.getTeam("line1").unregister();
 				}
-				la.addLine(" §a", clan_name, "", 4);
-				la.addLine("  §f", "Membros: §7", SC.getOnlineMembers(player) + "/" + SC.getMaxMembers(player), 3);
-				la.addLine("  §f", "Tag: §7", SC.getTag(player), 2);
-				la.addLine("", "§4", "", 1);
+				la.addLine(" Â§a", clan_name, "", 4);
+				la.addLine("  Â§f", "Membros: Â§7", SC.getOnlineMembers(player) + "/" + SC.getMaxMembers(player), 3);
+				la.addLine("  Â§f", "Tag: Â§7", SC.getTag(player), 2);
+				la.addLine("", "Â§4", "", 1);
 				cachePlayerClan.put(player, clan_name);
 				return;
 			}
@@ -60,9 +60,9 @@ public class ScoreboardManager {
 		} else {
 			if (playerClan != null) {
 				sb.resetScores(cachePlayerClan.get(player));
-				sb.resetScores("Membros: §7");
-				sb.resetScores("Tag: §7");
-				sb.resetScores("§4");
+				sb.resetScores("Membros: Â§7");
+				sb.resetScores("Tag: Â§7");
+				sb.resetScores("Â§4");
 				sb.getTeam("line1").unregister();
 				cachePlayerClan.remove(player);
 			}
@@ -73,17 +73,17 @@ public class ScoreboardManager {
 	public void build(Player player) {
 		Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective obj = sb.registerNewObjective("score", "dummy");
-		obj.setDisplayName("§2§lP4FREE");
+		obj.setDisplayName("Â§2Â§lP4FREE");
 		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 		LineAdder la = new LineAdder(sb, obj);
-		la.addLine("", "§1", "", 7);
-		la.addLine(" §aOnli", "ne: §f", "Carregando", 6);
-		la.addLine("", "§0", "", 5);
+		la.addLine("", "Â§1", "", 7);
+		la.addLine(" Â§aOnli", "ne: Â§f", "Carregando", 6);
+		la.addLine("", "Â§0", "", 5);
 		// 4
 		// 3
 		// 2
 		// 1
-		la.addLine(" §f", "br.mc-gamers.net", "", 0);
+		la.addLine(" Â§f", "br.mc-gamers.net", "", 0);
 		player.setScoreboard(sb);
 	}
 	

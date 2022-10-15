@@ -22,8 +22,8 @@ public class ProxiedVipsListeners implements Listener {
 			ProxiedVipsManager.loadPlayerVip(proxiedPlayer);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.err.println("[Vips] Não foi possivel carregar do jogador: " + playerName + " ERROR: " + e.getMessage());
-			proxiedPlayer.disconnect(new TextComponent("§c[Vips] \nNão é possivel conectar ao servidor momento, tente mais tarde."));
+			System.err.println("[Vips] NÂ§o foi possivel carregar do jogador: " + playerName + " ERROR: " + e.getMessage());
+			proxiedPlayer.disconnect(new TextComponent("Â§c[Vips] \nNÂ§o Â§ possivel conectar ao servidor momento, tente mais tarde."));
 		}
 	}
 }

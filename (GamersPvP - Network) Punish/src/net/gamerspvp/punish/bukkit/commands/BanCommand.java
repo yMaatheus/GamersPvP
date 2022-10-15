@@ -23,13 +23,13 @@ public class BanCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.ban"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 1) {
 			String target = args[0];
 			if (target.equalsIgnoreCase(sender.getName())) {
-				sender.sendMessage("§cVocê não pode banir-se.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o pode banir-se.");
 				return false;
 			}
 			Player targetPlayer = Bukkit.getPlayer(target);
@@ -43,20 +43,20 @@ public class BanCommand extends Command {
 				try {
 					time = TimeManager.generateTime(args[2], Integer.parseInt(args[1]));
 				} catch (NumberFormatException e) {
-					sender.sendMessage("§cDesculpe, mas deve-se usar apenas números.");
+					sender.sendMessage("Â§cDesculpe, mas deve-se usar apenas nÂ§meros.");
 					return false;
 				}
 				if (time == 0) {
-					sender.sendMessage("§cFormato de horário inválido.");
+					sender.sendMessage("Â§cFormato de horÂ§rio invÂ§lido.");
 					return false;
 				}
 				String reason = "";
 				for (int i = 3; i < args.length; i++) {
 					reason = reason + args[i] + " ";
 				}
-				Ban ban = new Ban(target, reason, author, "TEMPORÁRIO", time, date);
+				Ban ban = new Ban(target, reason, author, "TEMPORÂ§RIO", time, date);
 				ban.execute(instance);
-				sender.sendMessage("§aA publicação do banimento foi enviada.");
+				sender.sendMessage("Â§aA publicaÂ§Â§o do banimento foi enviada.");
 				return false;
 			}
 			String reason = "";
@@ -65,13 +65,13 @@ public class BanCommand extends Command {
 			}
 			Ban ban = new Ban(target, reason, author, "PERMANENTE", System.currentTimeMillis(), date);
 			ban.execute(instance);
-			sender.sendMessage("§aA publicação do banimento foi enviada.");
+			sender.sendMessage("Â§aA publicaÂ§Â§o do banimento foi enviada.");
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (nick) (motivo)");
-		sender.sendMessage("§7/" + arg + "§a (nick) (tempo) (horas, dias, semanas, meses) (motivo)");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick) (motivo)");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick) (tempo) (horas, dias, semanas, meses) (motivo)");
 		sender.sendMessage("");
 		return false;
 	}

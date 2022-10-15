@@ -39,7 +39,7 @@ public class KillerListener implements Listener {
 		if (player.getKiller() != null) {
 			killerPlayer = player.getKiller();
 			String killerName = killerPlayer.getName();
-			event.setDeathMessage(prefix + "§f" + playerName + " §7foi morto por §f" + killerName);
+			event.setDeathMessage(prefix + "Â§f" + playerName + " Â§7foi morto por Â§f" + killerName);
 		}
 		killer.getParticipantes().remove(player);
 		killerManager.executeCheck();
@@ -65,7 +65,7 @@ public class KillerListener implements Listener {
 				}
 				if (!(find)) {
 					event.setCancelled(true);
-					player.sendMessage("§cComando bloqueado durante o Evento Killer.");
+					player.sendMessage("Â§cComando bloqueado durante o Evento Killer.");
 					return;
 				}
 			}

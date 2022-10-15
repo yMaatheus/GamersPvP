@@ -74,7 +74,7 @@ public class Gladiador {
 			GladiadorManager gladiadorManager = instance.getGladiadorManager();
 			clans.remove(clan);
 			if (!(status == statusType.CHAMANDO)) {
-				Bukkit.broadcastMessage(gladiadorManager.prefix + "§fClans restantes: §3" + gladiadorManager.getClans(this));
+				Bukkit.broadcastMessage(gladiadorManager.prefix + "Â§fClans restantes: Â§3" + gladiadorManager.getClans(this));
 				gladiadorManager.executeCheck();
 			}
 		}

@@ -33,7 +33,7 @@ public class ServerManager {
 		this.instance = instance;
 		this.servers = new HashMap<String, ServerQueue>();
 		this.statusServers = new HashMap<String, ServerStatus>();
-		this.inventoryServers = Bukkit.createInventory(null, InventoryType.CHEST, "§7Servidores:");
+		this.inventoryServers = Bukkit.createInventory(null, InventoryType.CHEST, "Â§7Servidores:");
 		load();
 	}
 	
@@ -75,13 +75,13 @@ public class ServerManager {
 			}
 		});
 		MakeItem fullpvp = new MakeItem(Material.SKULL_ITEM).setSkullOwner("RagnarLodbrok");
-		fullpvp.setName("§aFullPvP");
-		fullpvp.addLore("", "§7Servidor FullPvP Clássico com Economia OP", "");
+		fullpvp.setName("Â§aFullPvP");
+		fullpvp.addLore("", "Â§7Servidor FullPvP ClÂ§ssico com Economia OP", "");
 		fullpvp.addFlags(ItemFlag.HIDE_ATTRIBUTES);
 		inventoryServers.setItem(11, fullpvp.buildhead());
 		MakeItem p4free = new MakeItem(Material.SKULL_ITEM).setSkullOwner("dropeyMARTELO");
-		p4free.setName("§aP4Free");
-		p4free.addLore("", "§7Servidor P4Free, em fase de testes §e§lBETA", "");
+		p4free.setName("Â§aP4Free");
+		p4free.addLore("", "Â§7Servidor P4Free, em fase de testes Â§eÂ§lBETA", "");
 		p4free.addFlags(ItemFlag.HIDE_ATTRIBUTES);
 		inventoryServers.setItem(13, p4free.buildhead());
 		new NpcServerCommand(instance);
@@ -110,14 +110,14 @@ public class ServerManager {
 				}
 				serverInfo.getQueue().remove(player);
 				player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
-				player.sendMessage("§aChegou sua vez! Estamos enviando você para o servidor §f" + serverName);
+				player.sendMessage("Â§aChegou sua vez! Estamos enviando vocÂ§ para o servidor Â§f" + serverName);
 				i++;
 				bungeeChannel.connect(player, serverName.toLowerCase());
 				continue;
 			}
 			serverInfo.getQueue().put(player, position -1);
 			servers.put(serverInfo.getServerName(), serverInfo);
-			player.sendMessage("§aVocê está na posição §f#" + value.toString());
+			player.sendMessage("Â§aVocÂ§ estÂ§ na posiÂ§Â§o Â§f#" + value.toString());
 		}
 	}
 	

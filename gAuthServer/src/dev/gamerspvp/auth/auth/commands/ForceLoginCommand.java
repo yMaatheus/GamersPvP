@@ -31,22 +31,22 @@ public class ForceLoginCommand extends Command {
 			AuthPlayer authPlayer = authBukkitManager.getCache(playerName.toLowerCase());
 			Player player = Bukkit.getPlayer(playerName);
 			if (authPlayer == null) {
-				sender.sendMessage("§cJogador offline.");
+				sender.sendMessage("Â§cJogador offline.");
 				return false;
 			}
 			if (player == null) {
-				sender.sendMessage("§cAutenticação inválida.");
+				sender.sendMessage("Â§cAutenticaÂ§Â§o invÂ§lida.");
 				return false;
 			}
 			authPlayer.setAuthenticated(true);
 			authBukkitManager.cache(authPlayer);
 			authBukkitManager.sendMessageAuth(player);
-			player.sendMessage("§aVocê foi autenticado com sucesso. Tenha um ótimo jogo!");
-			authBukkitManager.authInfo(playerName, " Efetuou login! (Forçado por " + sender.getName() + ")");
+			player.sendMessage("Â§aVocÂ§ foi autenticado com sucesso. Tenha um Â§timo jogo!");
+			authBukkitManager.authInfo(playerName, " Efetuou login! (ForÂ§ado por " + sender.getName() + ")");
 			return false;
 		}
-		sender.sendMessage("§aComandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " §a (jogador).");
+		sender.sendMessage("Â§aComandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " Â§a (jogador).");
 		return false;
 	}
 }

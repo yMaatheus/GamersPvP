@@ -19,22 +19,22 @@ public class KillerCommandManager {
 		KillerManager killerManager = instance.getKillerManager();
 		Killer killer = killerManager.getKiller();
 		if (!(killerManager.hasLocations())) {
-			sender.sendMessage("§cDefina as localizações para iniciar o evento.");
+			sender.sendMessage("Â§cDefina as localizaÂ§Â§es para iniciar o evento.");
 			return;
 		}
 		if (killer != null) {
-			sender.sendMessage("§cO evento killer já está acontencendo.");
+			sender.sendMessage("Â§cO evento killer jÂ§ estÂ§ acontencendo.");
 			return;
 		}
 		killerManager.executeStart();
-		sender.sendMessage("§7Iniciando evento killer.");
+		sender.sendMessage("Â§7Iniciando evento killer.");
 	}
 	
 	public void cancel(CommandSender sender) {
 		KillerManager killerManager = instance.getKillerManager();
 		Killer killer = killerManager.getKiller();
 		if (killer == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		killerManager.executeCancel();
@@ -44,28 +44,28 @@ public class KillerCommandManager {
 		KillerManager killerManager = instance.getKillerManager();
 		Killer killer = killerManager.getKiller();
 		if (killer == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		statusType status = killer.getStatus();
 		String alivePlayers = StringUtils.join(killer.getParticipantes().values(), ",");
 		sender.sendMessage("");
-		sender.sendMessage("§7Status§8: §f" + status);
-		sender.sendMessage("§7Jogadores vivos§8: §f" + alivePlayers);
+		sender.sendMessage("Â§7StatusÂ§8: Â§f" + status);
+		sender.sendMessage("Â§7Jogadores vivosÂ§8: Â§f" + alivePlayers);
 		sender.sendMessage("");
 	}
 	
 	public void sendHelpCommands(CommandSender sender, String arg) {
 		sender.sendMessage("");
-		sender.sendMessage("§a[Killer] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a sair");
-		sender.sendMessage("§7/" + arg + "§a ajuda");
+		sender.sendMessage("Â§a[Killer] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a sair");
+		sender.sendMessage("Â§7/" + arg + "Â§a ajuda");
 		if (sender.hasPermission("killer.admin")) {
 			sender.sendMessage("");
-			sender.sendMessage("§7/" + arg + "§a iniciar");
-			sender.sendMessage("§7/" + arg + "§a parar");
-			sender.sendMessage("§7/" + arg + "§a set (spawn | saida)");
-			sender.sendMessage("§7/" + arg + "§a info");
+			sender.sendMessage("Â§7/" + arg + "Â§a iniciar");
+			sender.sendMessage("Â§7/" + arg + "Â§a parar");
+			sender.sendMessage("Â§7/" + arg + "Â§a set (spawn | saida)");
+			sender.sendMessage("Â§7/" + arg + "Â§a info");
 		}
 		sender.sendMessage("");
 	}

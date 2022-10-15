@@ -33,7 +33,7 @@ public class GamesListener implements Listener {
 		Player player = event.getPlayer();
 		PlayerInventory inventory = player.getInventory();
 		inventory.setHeldItemSlot(4);
-		inventory.setItem(4, new MakeItem(Material.COMPASS).setName("§aModos de Jogo").build());
+		inventory.setItem(4, new MakeItem(Material.COMPASS).setName("Â§aModos de Jogo").build());
 	}
 	
 	@EventHandler
@@ -46,7 +46,7 @@ public class GamesListener implements Listener {
 			if (item.getItemMeta() == null || item.getItemMeta().getDisplayName() == null) {
 				return;
 			}
-			if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§aModos de Jogo")) {
+			if (item.getItemMeta().getDisplayName().equalsIgnoreCase("Â§aModos de Jogo")) {
 				event.setCancelled(true);
 			}
 			return;
@@ -80,7 +80,7 @@ public class GamesListener implements Listener {
 			return;
 		}
 		String itemName = itemHand.getItemMeta().getDisplayName();
-		if (itemName == null || !itemName.contains("§aModos de Jogo")) {
+		if (itemName == null || !itemName.contains("Â§aModos de Jogo")) {
 			return;
 		}
 		player.openInventory(GamesManager.getInventory());

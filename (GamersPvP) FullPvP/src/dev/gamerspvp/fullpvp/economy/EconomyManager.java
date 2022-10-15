@@ -51,7 +51,7 @@ public class EconomyManager {
 	public void loadData() {
 		SQLite sqlite = instance.getSQLite();
 		ConsoleCommandSender console = instance.getServer().getConsoleSender();
-		console.sendMessage("§a[Economy] Carregando contas...");
+		console.sendMessage("Â§a[Economy] Carregando contas...");
 		try {
 			sqlite.execute("CREATE TABLE IF NOT EXISTS money (name TEXT, playerName TEXT, money DOUBLE PRECISION, reciveMoney BOOL)", false);
 			Statement stmt = sqlite.getConnection().createStatement();
@@ -67,12 +67,12 @@ public class EconomyManager {
 				cache.put(playerMoney.getName(), playerMoney);
 				i++;
 			}
-			console.sendMessage("§a[Economy] Foram carregadas §f" + i + " §acontas.");
+			console.sendMessage("Â§a[Economy] Foram carregadas Â§f" + i + " Â§acontas.");
 			rs.close();
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			console.sendMessage("§c[Economy] NÃO FOI POSSÍVEL CARREGAR AS CONTAS, DESABILITANDO...");
+			console.sendMessage("Â§c[Economy] NÂ§O FOI POSSÂ§VEL CARREGAR AS CONTAS, DESABILITANDO...");
 			instance.getServer().getPluginManager().disablePlugin(instance);
 		}
 		executeUpdateMoneyTop();
@@ -118,8 +118,8 @@ public class EconomyManager {
 				config.set("magnata", newMagnata);
 				config.save(new File(instance.getDataFolder(), "economy.yml"));
 				Titles title = new Titles();
-				title.setTitle("§2" + newMagnata);
-				title.setSubtitle("§aÉ o novo Magnata!");
+				title.setTitle("Â§2" + newMagnata);
+				title.setSubtitle("Â§aÂ§ o novo Magnata!");
 				title.broadcast();
 			}
 		} catch (Exception e) {
@@ -180,11 +180,11 @@ public class EconomyManager {
 	}
 	
 	public String getBalance(PlayerMoney playerMoney) {
-		return "§2$§f" + format(playerMoney.getMoney());
+		return "Â§2$Â§f" + format(playerMoney.getMoney());
 	}
 	
 	public String getBalance(double value) {
-		return "§2$§f" + format(value);
+		return "Â§2$Â§f" + format(value);
 	}
 	
 	private String formatValue(double value) {

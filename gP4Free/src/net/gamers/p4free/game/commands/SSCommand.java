@@ -41,7 +41,7 @@ public class SSCommand extends Command {
 				}
 				Player player = (Player) sender;
 				locationsManager.setLocation("Game", "ScreenShare", player.getLocation(), instance);
-				player.sendMessage("§aLocalização definida com sucesso.");
+				player.sendMessage("Â§aLocalizaÂ§Â§o definida com sucesso.");
 				return true;
 			}
 			Player player = Bukkit.getPlayer(args[0]);
@@ -59,10 +59,10 @@ public class SSCommand extends Command {
 				}
 				player.teleport(world.getSpawnLocation());
 				player.sendMessage("");
-				player.sendMessage("§c(!) Você foi retirado da ScreenShare! Agora poderá voltar a jogar no servidor.");
-				player.sendMessage("§c(!) Caso tenha tido alguma problema você pode contar a sua experiência em um ticket em nosso discord.");
+				player.sendMessage("Â§c(!) VocÂ§ foi retirado da ScreenShare! Agora poderÂ§ voltar a jogar no servidor.");
+				player.sendMessage("Â§c(!) Caso tenha tido alguma problema vocÂ§ pode contar a sua experiÂ§ncia em um ticket em nosso discord.");
 				player.sendMessage("");
-				sender.sendMessage("§f" + player.getName() + " §afoi removido da screenshare com sucesso.");
+				sender.sendMessage("Â§f" + player.getName() + " Â§afoi removido da screenshare com sucesso.");
 				return true;
 			}
 			if (sender instanceof Player) {
@@ -72,17 +72,17 @@ public class SSCommand extends Command {
 			gameManager.addScreenShare(player);
 			player.teleport(locationsManager.get("Game", "ScreenShare"));
 			player.sendMessage("");
-			player.sendMessage("§c(!) Você foi teleportado até a ScreenShare, a staff do servidor irá verificar se você está com algo ilegal, siga as instruções.");
-			player.sendMessage("§c(!) Você tem direito de pedir para ficar em chamada de voz com a equipe do servidor no discord.");
+			player.sendMessage("Â§c(!) VocÂ§ foi teleportado atÂ§ a ScreenShare, a staff do servidor irÂ§ verificar se vocÂ§ estÂ§ com algo ilegal, siga as instruÂ§Â§es.");
+			player.sendMessage("Â§c(!) VocÂ§ tem direito de pedir para ficar em chamada de voz com a equipe do servidor no discord.");
 			player.sendMessage("");
 			player.playSound(player.getLocation(), Sound.EXPLODE, 20F, 20F);
-			sender.sendMessage("§f" + player.getName() + " §afoi adicionado da screenshare com sucesso.");
+			sender.sendMessage("Â§f" + player.getName() + " Â§afoi adicionado da screenshare com sucesso.");
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Essentials] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (nick)");
-		sender.sendMessage("§7/" + arg + "§a definir");
+		sender.sendMessage("Â§a[Essentials] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick)");
+		sender.sendMessage("Â§7/" + arg + "Â§a definir");
 		return false;
 	}
 }

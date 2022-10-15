@@ -19,7 +19,7 @@ public class LogCommand extends Command {
 	public LogCommand(String name, String permission) {
 		super(name, permission);
 		this.permission = permission;
-		ProxyServer.getInstance().getConsole().sendMessage(new TextComponent("§a* " + name + " - " + permission));
+		ProxyServer.getInstance().getConsole().sendMessage(new TextComponent("Â§a* " + name + " - " + permission));
 	}
 	
 	@Override
@@ -40,7 +40,7 @@ public class LogCommand extends Command {
 						//query = "SELECT * FROM `logs` WHERE `flagTime` BETWEEN '" + lastDays + "' AND '" + currentMillis + "';";
 						type = "1";
 						logReport = new LogReport(type, sender.getName(), "", "", days);
-						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatório GERAL dos últimos " + days + " dias");
+						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatÂ§rio GERAL dos Â§ltimos " + days + " dias");
 					} else if (args.length > 3 && args[1].equalsIgnoreCase("key")) {
 						String key = args[2];
 						int days = Integer.valueOf(args[3]);
@@ -49,7 +49,7 @@ public class LogCommand extends Command {
 						//query = "SELECT * FROM `logs` WHERE `flagTime` BETWEEN '" + lastDays + "' AND '" + currentMillis + "' AND `key`='" + key + "';";
 						type = "2";
 						logReport = new LogReport(type, sender.getName(), key, "", days);
-						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatório dos últimos " + days + " dias buscando a key " + key, "");
+						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatÂ§rio dos Â§ltimos " + days + " dias buscando a key " + key, "");
 					} else if (args.length > 3 && args[1].equalsIgnoreCase("nick")) {
 						String playerName = args[2].toLowerCase();
 						int days = Integer.valueOf(args[3]);
@@ -58,7 +58,7 @@ public class LogCommand extends Command {
 						//query = "SELECT * FROM `logs` WHERE `flagTime` BETWEEN '" + lastDays + "' AND '" + currentMillis + "' AND `playerName`='" + playerName + "';";
 						type = "3";
 						logReport = new LogReport(type, sender.getName(), "", playerName, days);
-						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatório dos últimos " + days + " dias buscando o jogador " + playerName, "");
+						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatÂ§rio dos Â§ltimos " + days + " dias buscando o jogador " + playerName, "");
 					} else if (args.length > 3) {
 						String key = args[2];
 						String playerName = args[3].toLowerCase();
@@ -68,17 +68,17 @@ public class LogCommand extends Command {
 						//query = "SELECT * FROM `logs` WHERE `flagTime` BETWEEN '" + lastDays + "' AND '" + currentMillis + "' AND `key`='" + key + "' AND `playerName`='" + playerName + "';";
 						type = "4";
 						logReport = new LogReport(type, sender.getName(), key, playerName, days);
-						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatório dos últimos " + days + " dias buscando a key " + key + " e jogador " + playerName, "");
+						LogManager.log("Compliance", sender.getName(), sender.getName() + " criou um relatÂ§rio dos Â§ltimos " + days + " dias buscando a key " + key + " e jogador " + playerName, "");
 					}
 					if (type != null) {
 						Redis redis = ProxiedCommons.getInstance().getDataCenter().getRedis();
 						redis.publish("log_report;" + redis.getGson().toJson(logReport, LogReport.class));
-						sender.sendMessage(new TextComponent("§aRelatório enviado para central e será baixado com sucesso."));
+						sender.sendMessage(new TextComponent("Â§aRelatÂ§rio enviado para central e serÂ§ baixado com sucesso."));
 						return;
 					}
 				} else if (args[0].equalsIgnoreCase("keys")) {
 					HashSet<String> keys = LogManager.getController().getKeys();
-					sender.sendMessage(new TextComponent("§aAs keys encontradas para busca são: §f" + keys.toString().replace("[", "").replace("]", "")));
+					sender.sendMessage(new TextComponent("Â§aAs keys encontradas para busca sÂ§o: Â§f" + keys.toString().replace("[", "").replace("]", "")));
 					return;
 				}
 			} catch (Exception e) {
@@ -86,11 +86,11 @@ public class LogCommand extends Command {
 			}
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Commons] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/log §areport all (lastDays)"));
-		sender.sendMessage(new TextComponent("§7/log §areport key (key) (lastDays)"));
-		sender.sendMessage(new TextComponent("§7/log §areport nick (playerName) (lastDays)"));
-		sender.sendMessage(new TextComponent("§7/log §areport (key) (playerName) (lastDays)"));
-		sender.sendMessage(new TextComponent("§7/log §akeys"));
+		sender.sendMessage(new TextComponent("Â§a[Commons] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/log Â§areport all (lastDays)"));
+		sender.sendMessage(new TextComponent("Â§7/log Â§areport key (key) (lastDays)"));
+		sender.sendMessage(new TextComponent("Â§7/log Â§areport nick (playerName) (lastDays)"));
+		sender.sendMessage(new TextComponent("Â§7/log Â§areport (key) (playerName) (lastDays)"));
+		sender.sendMessage(new TextComponent("Â§7/log Â§akeys"));
 	}
 }

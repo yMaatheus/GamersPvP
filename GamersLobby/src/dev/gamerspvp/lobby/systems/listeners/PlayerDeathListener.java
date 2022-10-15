@@ -24,7 +24,7 @@ public class PlayerDeathListener implements Listener {
 			if (event.getEntity().getKiller() instanceof Player) {
 				Player player = event.getEntity();
 				Player killer = event.getEntity().getKiller();
-				event.setDeathMessage("ง7" + player.getName() + " morreu para " + killer.getName());
+				event.setDeathMessage("ยง7" + player.getName() + " morreu para " + killer.getName());
 				killer.getInventory().addItem(new MakeItem(Material.GOLDEN_APPLE).setId((short) 1).setQuantia(1).build());
 				killer.getInventory().setItem(0, new MakeItem(Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 5).addEnchant(Enchantment.FIRE_ASPECT, 2).addEnchant(Enchantment.DURABILITY, 3).build());
 				killer.getInventory().setHelmet(new MakeItem(Material.DIAMOND_HELMET).addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4).addEnchant(Enchantment.DURABILITY, 3).build());

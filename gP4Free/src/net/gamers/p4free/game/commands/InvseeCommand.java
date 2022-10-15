@@ -33,15 +33,15 @@ public class InvseeCommand extends Command {
 				return false;
 			}
 			if (player.getName() == target.getName()) {
-				player.sendMessage("§cVocê não pode ver seu próprio inventário.");
+				player.sendMessage("Â§cVocÂ§ nÂ§o pode ver seu prÂ§prio inventÂ§rio.");
 				return false;
 			}
 			player.openInventory(target.getInventory());
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[P4Free] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a (nick)");
+		sender.sendMessage("Â§a[P4Free] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a (nick)");
 		return false;
 	}
 }

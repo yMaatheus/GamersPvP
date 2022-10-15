@@ -16,8 +16,8 @@ public class DiscordManager {
 	private static JDA jda;
 	
 	public DiscordManager() throws Exception {
-		JDABuilder jdaBuilder = JDABuilder.createDefault("NzY4Mzk1NDczMTM2Mzg2MDQ4.X4_2DA.2kK1yJcXP7iBCBxgOSQvo612hQE");
-		jdaBuilder.setActivity(Activity.of(ActivityType.STREAMING, "O yMatheus é um lindo!", "https://loja.gamerspvp.net/"));
+		JDABuilder jdaBuilder = JDABuilder.createDefault("");
+		jdaBuilder.setActivity(Activity.of(ActivityType.STREAMING, "O yMatheus ï¿½ um lindo!", "https://loja.gamerspvp.net/"));
 		jda = jdaBuilder.build();
 		new DiscordListener();
 	}
@@ -32,10 +32,10 @@ public class DiscordManager {
 			return;
 		}
 		try {
-			textChannel.sendMessage("Relatório de logs expedido pela central para analise da coordenação: ").addFile(new File(new File(".").getCanonicalPath(), fileName)).queue();
+			textChannel.sendMessage("Relatï¿½rio de logs expedido pela central para analise da coordenaï¿½ï¿½o: ").addFile(new File(new File(".").getCanonicalPath(), fileName)).queue();
 		} catch (Exception e) {
-			System.out.println("[WARN] Não foi possivel enviar o relatório ao Discord.");
-			textChannel.sendMessage("O relatório não teve êxito no envio. O mesmo está salvo no servidor central, entre em contato com o yMatheus_ para obter acesso.").queue();
+			System.out.println("[WARN] Nï¿½o foi possivel enviar o relatï¿½rio ao Discord.");
+			textChannel.sendMessage("O relatï¿½rio nï¿½o teve ï¿½xito no envio. O mesmo estï¿½ salvo no servidor central, entre em contato com o yMatheus_ para obter acesso.").queue();
 		}
 	}
 }

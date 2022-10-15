@@ -23,7 +23,7 @@ public class ShutdownListener implements Listener {
 		if (!(shutdownManager.isClosed())) {
 			return;
 		}
-		event.setKickMessage("§cServidor está reiniciando, Aguarde iniciar para jogar!");
+		event.setKickMessage("Â§cServidor estÂ§ reiniciando, Aguarde iniciar para jogar!");
 		event.setLoginResult(Result.KICK_OTHER);
 	}
 }

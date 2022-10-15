@@ -18,7 +18,7 @@ public class SiteCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		EssentialsManager essentialsManager = instance.getEssentialsManager();
-		sender.sendMessage("§aVisite nosso Site: §f" + essentialsManager.getSite());
+		sender.sendMessage("Â§aVisite nosso Site: Â§f" + essentialsManager.getSite());
 		return false;
 	}
 }

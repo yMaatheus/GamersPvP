@@ -52,7 +52,7 @@ public class Main extends JavaPlugin {
 			this.scoreboardManager = new ScoreboardManager(this);
 			new GlobalListeners(this);
 		} catch (Exception e) {
-			System.out.println("[P4Free] Não foi possivel carregar os sistemas do plugin.");
+			System.out.println("[P4Free] NÂ§o foi possivel carregar os sistemas do plugin.");
 			e.printStackTrace();
 			Bukkit.shutdown();
 			return;

@@ -32,20 +32,20 @@ public class CloseTellCommand extends Command {
 						reason.append(args[i]).append(" ");
 					}
 					essentialsManager.executeCloseTell(playerName, reason.toString());
-					sender.sendMessage("§aVocê fechou o recebimento de mensagens privadas pelo motivo: §f" + reason.toString());
+					sender.sendMessage("Â§aVocÂ§ fechou o recebimento de mensagens privadas pelo motivo: Â§f" + reason.toString());
 					return true;
 				}
 			}
 			if (args[0].equalsIgnoreCase("desativar")) {
 				essentialsManager.removeCloseTell(playerName);
-				sender.sendMessage("§aSuas mensagens privadas foram ativadas com sucesso.");
+				sender.sendMessage("Â§aSuas mensagens privadas foram ativadas com sucesso.");
 				return true;
 			}
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Essentials] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a ativar (motivo)");
-		sender.sendMessage("§7/" + arg + "§a desativar");
+		sender.sendMessage("Â§a[Essentials] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a ativar (motivo)");
+		sender.sendMessage("Â§7/" + arg + "Â§a desativar");
 		return false;
 	}
 }

@@ -33,13 +33,13 @@ public class Mute {
 		MySQL mysql = instance.getMySQL();
 		Bukkit.broadcastMessage("");
 		if (isMuteall()) {
-			Bukkit.broadcastMessage("§c(!) " + this.getPlayerRealName() + " foi silenciado em §lTODOS §cos chat's §cpor " + this.getAuthor());
+			Bukkit.broadcastMessage("Â§c(!) " + this.getPlayerRealName() + " foi silenciado em Â§lTODOS Â§cos chat's Â§cpor " + this.getAuthor());
 		} else {
-			Bukkit.broadcastMessage("§c(!) " + this.getPlayerRealName() + " foi silenciado nos chat's(global, local) §cpor " + this.getAuthor());
+			Bukkit.broadcastMessage("Â§c(!) " + this.getPlayerRealName() + " foi silenciado nos chat's(global, local) Â§cpor " + this.getAuthor());
 		}
-		Bukkit.broadcastMessage("§c(!) Duração: " + TimeManager.getTimeEnd(this.getTime()));
-		Bukkit.broadcastMessage("§c(!) Motivo: " + this.getReason());
-		Bukkit.broadcastMessage("§c(!) Data: " + this.getDate());
+		Bukkit.broadcastMessage("Â§c(!) DuraÂ§Â§o: " + TimeManager.getTimeEnd(this.getTime()));
+		Bukkit.broadcastMessage("Â§c(!) Motivo: " + this.getReason());
+		Bukkit.broadcastMessage("Â§c(!) Data: " + this.getDate());
 		Bukkit.broadcastMessage("");
 		instance.getMutes().put(name, this);
 		String query = "INSERT INTO mutes (Name, PlayerRealName, MuteAll, Reason, Author, Time, Date) VALUES (?, ?, ?, ?, ?, ?, ?);";

@@ -27,7 +27,7 @@ public class PotEditCommand extends Command {
 			return false;
 		}
 		if (!sender.hasPermission("essentials.potedit")){
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		Player player = (Player) sender;
@@ -39,7 +39,7 @@ public class PotEditCommand extends Command {
 		potion3.setItemMeta(potionMeta);
 		potion3.setAmount(64);
 		player.getInventory().addItem(potion3);
-		sender.sendMessage("§aPot editada adicionada ao seu inventário com sucesso.");
+		sender.sendMessage("Â§aPot editada adicionada ao seu inventÂ§rio com sucesso.");
 		return false;
 	}
 }

@@ -32,7 +32,7 @@ public class ServerListener implements Listener {
 		String NPCName = ChatColor.stripColor(event.getNPC().getName());
 		if (NPCName.equalsIgnoreCase("fullpvp")) {
 			if (player.isOp() || (player.hasPermission("gamers.vip"))) {
-				player.sendMessage("§a[Lobby] Verifiquei aqui e você é §lVIP§a! Você acha mesmo que iriamos deixar você em uma fila?! Me Poupe!");
+				player.sendMessage("Â§a[Lobby] Verifiquei aqui e vocÂ§ Â§ Â§lVIPÂ§a! VocÂ§ acha mesmo que iriamos deixar vocÂ§ em uma fila?! Me Poupe!");
 				instance.getCommons().getBungeeChannelAPI().connect(player, NPCName);
 				player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
 				return;
@@ -43,18 +43,18 @@ public class ServerListener implements Listener {
 				return;
 			}
 			if (serverQueue.getQueue().containsKey(player)) {
-				player.sendMessage("§cVocê já faz parte da fila do servidor, Bobinho!");
-				player.sendMessage("§cHmmm, percebi que você é curioso, o seu lugar da fila é: §f#" + serverQueue.getQueue().get(player));
+				player.sendMessage("Â§cVocÂ§ jÂ§ faz parte da fila do servidor, Bobinho!");
+				player.sendMessage("Â§cHmmm, percebi que vocÂ§ Â§ curioso, o seu lugar da fila Â§: Â§f#" + serverQueue.getQueue().get(player));
 				return;
 			}
-			player.sendMessage("§a[Lobby] Entrando na fila...");
+			player.sendMessage("Â§a[Lobby] Entrando na fila...");
 			int position = serverQueue.getQueue().size() +1;
 			serverQueue.getQueue().put(player, position);
-			player.sendMessage("§a[Lobby] Você está na posição: §f#" + String.valueOf(position));
+			player.sendMessage("Â§a[Lobby] VocÂ§ estÂ§ na posiÂ§Â§o: Â§f#" + String.valueOf(position));
 			player.playSound(player.getLocation(), Sound.CLICK, 5F, 5F);
 		} else if (NPCName.equalsIgnoreCase("p4free")) {
 			if (player.isOp() || (player.hasPermission("gamers.vip"))) {
-				player.sendMessage("§a[Lobby] Verifiquei aqui e você é §lVIP§a! Você acha mesmo que iriamos deixar você em uma fila?! Me Poupe!");
+				player.sendMessage("Â§a[Lobby] Verifiquei aqui e vocÂ§ Â§ Â§lVIPÂ§a! VocÂ§ acha mesmo que iriamos deixar vocÂ§ em uma fila?! Me Poupe!");
 				instance.getCommons().getBungeeChannelAPI().connect(player, NPCName);
 				player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
 				return;
@@ -65,14 +65,14 @@ public class ServerListener implements Listener {
 				return;
 			}
 			if (serverQueue.getQueue().containsKey(player)) {
-				player.sendMessage("§cVocê já faz parte da fila do servidor, Bobinho!");
-				player.sendMessage("§cHmmm, percebi que você é curioso, o seu lugar da fila é: §f#" + serverQueue.getQueue().get(player));
+				player.sendMessage("Â§cVocÂ§ jÂ§ faz parte da fila do servidor, Bobinho!");
+				player.sendMessage("Â§cHmmm, percebi que vocÂ§ Â§ curioso, o seu lugar da fila Â§: Â§f#" + serverQueue.getQueue().get(player));
 				return;
 			}
-			player.sendMessage("§a[Lobby] Entrando na fila...");
+			player.sendMessage("Â§a[Lobby] Entrando na fila...");
 			int position = serverQueue.getQueue().size() +1;
 			serverQueue.getQueue().put(player, position);
-			player.sendMessage("§a[Lobby] Você está na posição: §f#" + String.valueOf(position));
+			player.sendMessage("Â§a[Lobby] VocÂ§ estÂ§ na posiÂ§Â§o: Â§f#" + String.valueOf(position));
 			player.playSound(player.getLocation(), Sound.CLICK, 5F, 5F);
 		}
 	}
@@ -92,7 +92,7 @@ public class ServerListener implements Listener {
 			Player player = (Player) event.getWhoClicked();
 			String serverName = ChatColor.stripColor(currentItem.getItemMeta().getDisplayName()).toLowerCase();
 			if (player.isOp() || (player.hasPermission("gamers.vip"))) {
-				player.sendMessage("§a[Lobby] Verifiquei aqui e você é §lVIP§a! Você acha mesmo que iriamos deixar você em uma fila?! Me Poupe!");
+				player.sendMessage("Â§a[Lobby] Verifiquei aqui e vocÂ§ Â§ Â§lVIPÂ§a! VocÂ§ acha mesmo que iriamos deixar vocÂ§ em uma fila?! Me Poupe!");
 				instance.getCommons().getBungeeChannelAPI().connect(player, serverName);
 				player.playSound(player.getLocation(), Sound.LEVEL_UP, 10F, 10F);
 				return;
@@ -102,14 +102,14 @@ public class ServerListener implements Listener {
 				return;
 			}
 			if (serverQueue.getQueue().containsKey(player)) {
-				player.sendMessage("§cVocê já faz parte da fila do servidor, Bobinho!");
-				player.sendMessage("§cHmmm, percebi que você é curioso, o seu lugar da fila é: §f#" + serverQueue.getQueue().get(player));
+				player.sendMessage("Â§cVocÂ§ jÂ§ faz parte da fila do servidor, Bobinho!");
+				player.sendMessage("Â§cHmmm, percebi que vocÂ§ Â§ curioso, o seu lugar da fila Â§: Â§f#" + serverQueue.getQueue().get(player));
 				return;
 			}
-			player.sendMessage("§a[Lobby] Entrando na fila...");
+			player.sendMessage("Â§a[Lobby] Entrando na fila...");
 			int position = serverQueue.getQueue().size() +1;
 			serverQueue.getQueue().put(player, position);
-			player.sendMessage("§a[Lobby] Você está na posição: §f#" + String.valueOf(position));
+			player.sendMessage("Â§a[Lobby] VocÂ§ estÂ§ na posiÂ§Â§o: Â§f#" + String.valueOf(position));
 			player.playSound(player.getLocation(), Sound.CLICK, 5F, 5F);
 		}
 	}
@@ -132,7 +132,7 @@ public class ServerListener implements Listener {
 		if (itemName == null) {
 			return;
 		}
-		if (itemName.contains("§aServidores")) {
+		if (itemName.contains("Â§aServidores")) {
 			player.openInventory(instance.getServerManager().getInventoryServers());
 		}
 	}

@@ -31,27 +31,27 @@ public class TransferCommand extends Command {
 			PlotAPI plotsquared = plotsAddonsManager.getPlotsquared();
 			Plot plot = plotsquared.getPlot(player.getLocation());
 			if (plot == null) {
-				sender.sendMessage("§cVocê não está na localização de uma plot.");
+				sender.sendMessage("Â§cVocÂ§ nÂ§o estÂ§ na localizaÂ§Â§o de uma plot.");
 				return false;
 			}
 			if (args.length == 2) {
 				if (args[0].equalsIgnoreCase("confirmar")) {
 					Player target = Bukkit.getPlayer(args[1]);
 					if (target == null) {
-						sender.sendMessage("§cJogador offline.");
+						sender.sendMessage("Â§cJogador offline.");
 						return false;
 					}
 					if (!(plotsAddonsManager.hasRequestInPlot(plot))) {
-						sender.sendMessage("§cEssa plot não possui um pedido de transferência.");
+						sender.sendMessage("Â§cEssa plot nÂ§o possui um pedido de transferÂ§ncia.");
 						return true;
 					}
 					PlotTransfer plotTransfer = plotsAddonsManager.getTransfer().get(plot);
 					if (!(plotTransfer.getOwner().getName().equalsIgnoreCase(target.getName()))) {
-						sender.sendMessage("§cO jogador informado não abriu um pedido de transferência com essa plot.");
+						sender.sendMessage("Â§cO jogador informado nÂ§o abriu um pedido de transferÂ§ncia com essa plot.");
 						return true;
 					}
 					if (!(plotTransfer.getReceiver().getName().equalsIgnoreCase(player.getName()))) {
-						sender.sendMessage("§cO pedido de transferência não está vigorando para você.");
+						sender.sendMessage("Â§cO pedido de transferÂ§ncia nÂ§o estÂ§ vigorando para vocÂ§.");
 						return true;
 					}
 					int playerPlotCount = plotsquared.getPlayerPlotCount(Bukkit.getWorld("plotworld"), player);
@@ -64,54 +64,54 @@ public class TransferCommand extends Command {
 						}
 					}
 					if (!(hasSpacePlot)) {
-						sender.sendMessage("§cVocê não possui espaço para mais plot's em sua conta.");
+						sender.sendMessage("Â§cVocÂ§ nÂ§o possui espaÂ§o para mais plot's em sua conta.");
 						return true;
 					}
 					plotsAddonsManager.transfer(plot);
-					sender.sendMessage("§aPedido de confirmação aceito, agora você já pode desfrutar de sua plot.");
+					sender.sendMessage("Â§aPedido de confirmaÂ§Â§o aceito, agora vocÂ§ jÂ§ pode desfrutar de sua plot.");
 					return true;
 				}
 			}
 			if (args[0].equalsIgnoreCase("cancelar")) {
 				if (!(plot.isOwner(player.getUniqueId()))) {
-					sender.sendMessage("§cPara cancelar um pedido de transferência é necessário ser dono da plot.");
+					sender.sendMessage("Â§cPara cancelar um pedido de transferÂ§ncia Â§ necessÂ§rio ser dono da plot.");
 					return false;
 				}
 				if (!(plotsAddonsManager.hasRequestInPlot(plot))) {
-					sender.sendMessage("§cVocê não abriu nenhum pedido de transferência com essa plot.");
+					sender.sendMessage("Â§cVocÂ§ nÂ§o abriu nenhum pedido de transferÂ§ncia com essa plot.");
 					return true;
 				}
 				plotsAddonsManager.getTransfer().remove(plot);
-				sender.sendMessage("§aTransferência de plot cancelada com sucesso.");
+				sender.sendMessage("Â§aTransferÂ§ncia de plot cancelada com sucesso.");
 			} else {
 				Player target = Bukkit.getPlayer(args[0]);
 				if (target == null) {
-					sender.sendMessage("§cJogador offline.");
+					sender.sendMessage("Â§cJogador offline.");
 					return false;
 				}
 				if (target.getName().equalsIgnoreCase(playerName)) {
-					sender.sendMessage("§cVocê não pode transferir sua plot para você mesmo.");
+					sender.sendMessage("Â§cVocÂ§ nÂ§o pode transferir sua plot para vocÂ§ mesmo.");
 					return true;
 				}
 				if (!(plot.isOwner(player.getUniqueId()))) {
-					sender.sendMessage("§cPara abrir um pedido de transferência você precisa ser dono da plot.");
+					sender.sendMessage("Â§cPara abrir um pedido de transferÂ§ncia vocÂ§ precisa ser dono da plot.");
 					return false;
 				}
 				if (plotsAddonsManager.hasRequestInPlot(plot)) {
-					sender.sendMessage("Você já abriu um pedido de transferência com essa plot.");
+					sender.sendMessage("VocÂ§ jÂ§ abriu um pedido de transferÂ§ncia com essa plot.");
 					return true;
 				}
 				plotsAddonsManager.openRequestTransference(player, target, plot);
-				sender.sendMessage("§aVocê abriu uma soliciação de transferência, aguarde o outro jogador aceitar.");
-				target.sendMessage("§aFoi aberto um pedido de transferência de plot de " + sender.getName() + " para você.");
+				sender.sendMessage("Â§aVocÂ§ abriu uma soliciaÂ§Â§o de transferÂ§ncia, aguarde o outro jogador aceitar.");
+				target.sendMessage("Â§aFoi aberto um pedido de transferÂ§ncia de plot de " + sender.getName() + " para vocÂ§.");
 			}
 			return true;
 		}
-		sender.sendMessage("§aComandos disponíveis:");
-		String command = "§7/" + arg;
-		sender.sendMessage(command + " §a(player).");
-		sender.sendMessage(command + " §aconfirmar (player).");
-		sender.sendMessage(command + " §acancelar.");
+		sender.sendMessage("Â§aComandos disponÂ§veis:");
+		String command = "Â§7/" + arg;
+		sender.sendMessage(command + " Â§a(player).");
+		sender.sendMessage(command + " Â§aconfirmar (player).");
+		sender.sendMessage(command + " Â§acancelar.");
 		return false;
 	}
 }

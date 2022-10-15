@@ -35,12 +35,12 @@ public class EventoChatManager {
 		Bukkit.broadcastMessage("");
 		Bukkit.broadcastMessage("");
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§8-=-=-=-=-=-=-=- §eEvento Chat§8 -=-=-=-=-=-=-=-");
+		Bukkit.broadcastMessage("Â§8-=-=-=-=-=-=-=- Â§eEvento ChatÂ§8 -=-=-=-=-=-=-=-");
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§eEscreva o resultado da conta: §f" + getMathCalculation());
-		Bukkit.broadcastMessage("§ePremio: §2$§f" + premio);
+		Bukkit.broadcastMessage("Â§eEscreva o resultado da conta: Â§f" + getMathCalculation());
+		Bukkit.broadcastMessage("Â§ePremio: Â§2$Â§f" + premio);
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage("§8-=-=-=-=-=-=-=- §eEvento Chat§8 -=-=-=-=-=-=-=-");
+		Bukkit.broadcastMessage("Â§8-=-=-=-=-=-=-=- Â§eEvento ChatÂ§8 -=-=-=-=-=-=-=-");
 		Bukkit.broadcastMessage("");
 		Bukkit.broadcastMessage("");
 		Bukkit.broadcastMessage("");

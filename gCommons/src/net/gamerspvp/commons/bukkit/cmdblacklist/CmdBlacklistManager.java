@@ -83,7 +83,7 @@ public class CmdBlacklistManager implements Listener {
 				continue;
 			}
 			event.setCancelled(true);
-			event.getPlayer().sendMessage("§fComando desconhecido.");
+			event.getPlayer().sendMessage("Â§fComando desconhecido.");
 			break;
 		}
 	}

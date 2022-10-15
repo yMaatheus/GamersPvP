@@ -21,14 +21,14 @@ public class UnMuteCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("punish.mute"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 0) {
 			String target = args[0];
 			Mute mute = instance.getMutes().get(target.toLowerCase());
 			if (mute == null) {
-				sender.sendMessage("§cEsse jogador não está silenciado.");
+				sender.sendMessage("Â§cEsse jogador nÂ§o estÂ§ silenciado.");
 				return false;
 			}
 			new BukkitRunnable() {
@@ -38,9 +38,9 @@ public class UnMuteCommand extends Command {
 					try {
 						new DatabaseController().executeUnmute(target.toLowerCase(), instance);
 						instance.getMutes().remove(target.toLowerCase());
-						sender.sendMessage("§aPunição revogada com sucesso.");
+						sender.sendMessage("Â§aPuniÂ§Â§o revogada com sucesso.");
 					} catch (Exception e) {
-						sender.sendMessage("Não foi possivel completar a operação.");
+						sender.sendMessage("NÂ§o foi possivel completar a operaÂ§Â§o.");
 						e.printStackTrace();
 					}
 				}
@@ -48,8 +48,8 @@ public class UnMuteCommand extends Command {
 			return true;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[Punish] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + " (nick).");
+		sender.sendMessage("Â§a[Punish] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + " (nick).");
 		sender.sendMessage("");
 		return true;
 	}

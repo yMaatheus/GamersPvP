@@ -42,24 +42,24 @@ public class AuthBukkitListener implements Listener {
 					AuthBukkitManager authManager = instance.getAuthManager();
 					Titles title = new Titles();
 					title.clearTitle(player);
-					title.setTitle("§2§lGAMERSPVP");
+					title.setTitle("Â§2Â§lGAMERSPVP");
 					title.setFadeInTime(1);
 					title.setFadeOutTime(1);
 					title.setStayTime(600);
 					player.playSound(player.getLocation(), Sound.ORB_PICKUP, 10, 1);
 					if (!(authPlayer.isRegistered())) {
-					    title.setSubtitle("§fUtilize /register (senha) (senha)");
-						player.sendMessage("§a[Auth] Efetue seu cadastro utilizando: §f/register (senha) (senha)");
+					    title.setSubtitle("Â§fUtilize /register (senha) (senha)");
+						player.sendMessage("Â§a[Auth] Efetue seu cadastro utilizando: Â§f/register (senha) (senha)");
 					} else {
-						title.setSubtitle("§fUtilize /login (senha)");
-						player.sendMessage("§a[Auth] Efetue seu login utilizando: §f/login (senha)");
+						title.setSubtitle("Â§fUtilize /login (senha)");
+						player.sendMessage("Â§a[Auth] Efetue seu login utilizando: Â§f/login (senha)");
 					}
 					title.send(player);
 					authPlayer.reset();
 					authManager.cache(authPlayer);
 				} catch (SQLException e) {
 					e.printStackTrace();
-					player.kickPlayer("§cDesculpe, não é possivel efetuar login no servidor no momento.");
+					player.kickPlayer("Â§cDesculpe, nÂ§o Â§ possivel efetuar login no servidor no momento.");
 				}
 			}
 		}.runTaskAsynchronously(instance);

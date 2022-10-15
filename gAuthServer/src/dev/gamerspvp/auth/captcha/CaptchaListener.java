@@ -43,7 +43,7 @@ public class CaptchaListener implements Listener {
 			return;
 		}
 		if (captchaPlayer.isConcluded()) {
-			player.sendMessage("§a[Captcha] Bem vindo novamente! Mexi meus pauzinhos e você não vai precisar me fazer novamente, legal né?");
+			player.sendMessage("Â§a[Captcha] Bem vindo novamente! Mexi meus pauzinhos e vocÂ§ nÂ§o vai precisar me fazer novamente, legal nÂ§?");
 			Event captchaEvent = new CaptchaEvent(player);
 			Bukkit.getPluginManager().callEvent(captchaEvent);
 			return;
@@ -67,7 +67,7 @@ public class CaptchaListener implements Listener {
 	
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void onInventoryClickEvent(InventoryClickEvent event) {
-		if (event.getInventory().getTitle().equalsIgnoreCase("§7Clique na cabeça §a§lVERDE")) {
+		if (event.getInventory().getTitle().equalsIgnoreCase("Â§7Clique na cabeÂ§a Â§aÂ§lVERDE")) {
 			event.setCancelled(true);
 			ItemStack currentItem = event.getCurrentItem();
 			if (currentItem == null) {
@@ -84,7 +84,7 @@ public class CaptchaListener implements Listener {
 				return;
 			}
 			if (!(captchaManager.isCaptchaItem(currentItem))) {
-				player.kickPlayer("§cVocê escolheu o captcha errado.\n\nEntre novamente e selecione o bloco verde!");
+				player.kickPlayer("Â§cVocÂ§ escolheu o captcha errado.\n\nEntre novamente e selecione o bloco verde!");
 				return;
 			}
 			if (captchaPlayer.isConcluded()) {
@@ -93,8 +93,8 @@ public class CaptchaListener implements Listener {
 			}
 			captchaPlayer.setConcluded(true);
 			captchaManager.putCache(captchaPlayer);
-			player.sendMessage("\n §aParabéns você passou pelo sistema de §lCAPTCHA§a! Agora efetue o login no servidor. ");
-			player.sendMessage(" §aLogo após isso poderá começar a jogar. Obrigado pela preferência tenha um bom jogo!");
+			player.sendMessage("\n Â§aParabÂ§ns vocÂ§ passou pelo sistema de Â§lCAPTCHAÂ§a! Agora efetue o login no servidor. ");
+			player.sendMessage(" Â§aLogo apÂ§s isso poderÂ§ comeÂ§ar a jogar. Obrigado pela preferÂ§ncia tenha um bom jogo!");
 			player.sendMessage("");
 			new BukkitRunnable() {
 				

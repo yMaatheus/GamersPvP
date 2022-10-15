@@ -74,7 +74,7 @@ public class MiniGladiador {
 			MiniGladiadorManager miniGladiadorManager = instance.getMiniGladiadorManager();
 			clans.remove(clan);
 			if (!(status == statusType.CHAMANDO)) {
-				Bukkit.broadcastMessage(miniGladiadorManager.prefix + "§fClans restantes: §3" + miniGladiadorManager.getClans(this));
+				Bukkit.broadcastMessage(miniGladiadorManager.prefix + "Â§fClans restantes: Â§3" + miniGladiadorManager.getClans(this));
 				miniGladiadorManager.executeCheck();
 			}
 		}

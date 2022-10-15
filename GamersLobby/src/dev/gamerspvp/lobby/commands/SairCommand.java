@@ -40,8 +40,8 @@ public class SairCommand extends Command {
 		player.getInventory().setChestplate(new ItemStack(Material.AIR));
 		player.getActivePotionEffects().clear();
 
-		ItemStack compass = new MakeItem(Material.COMPASS).setName("§eServidores").build();
-		ItemStack stick = new MakeItem(Material.STICK).setName("§cPAU DO PVP").build();
+		ItemStack compass = new MakeItem(Material.COMPASS).setName("Â§eServidores").build();
+		ItemStack stick = new MakeItem(Material.STICK).setName("Â§cPAU DO PVP").build();
 
 		player.getInventory().setItem(4, compass);
 		player.getInventory().setItem(2, stick);

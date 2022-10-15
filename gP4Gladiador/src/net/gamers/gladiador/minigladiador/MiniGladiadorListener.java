@@ -53,7 +53,7 @@ public class MiniGladiadorListener implements Listener {
 				String clanPlayerTag = ClansAPI.getClanTag(clanPlayer.getClan());
 				String clanKillerTag = ClansAPI.getClanTag(clanKiller.getClan());
 				int kills = miniGladiador.getpKills().get(killerName.toLowerCase()) + 1;
-				event.setDeathMessage(prefix + clanPlayerTag + " §f" + playerName + " §7foi morto por " + clanKillerTag + " §f" + killerName + "§8(§f" + kills + "§8)");
+				event.setDeathMessage(prefix + clanPlayerTag + " Â§f" + playerName + " Â§7foi morto por " + clanKillerTag + " Â§f" + killerName + "Â§8(Â§f" + kills + "Â§8)");
 				miniGladiador.getpKills().put(killerName.toLowerCase(), kills);
 			}
 		}
@@ -83,7 +83,7 @@ public class MiniGladiadorListener implements Listener {
 				}
 				if (!(find)) {
 					event.setCancelled(true);
-					player.sendMessage("§cComando bloqueado durante o Evento MiniGladiador.");
+					player.sendMessage("Â§cComando bloqueado durante o Evento MiniGladiador.");
 					return;
 				}
 			}
@@ -92,7 +92,7 @@ public class MiniGladiadorListener implements Listener {
 			for (String command : blockedGlobalCommands) {
 				if ((message.startsWith(command + " ") || (message.equalsIgnoreCase(command)))) {
 					event.setCancelled(true);
-					player.sendMessage("§cComando bloqueado durantea a realização o evento minigladiador.");
+					player.sendMessage("Â§cComando bloqueado durantea a realizaÂ§Â§o o evento minigladiador.");
 					break;
 				}
 			}

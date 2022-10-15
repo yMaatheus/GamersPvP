@@ -20,22 +20,22 @@ public class GuerraCommandManager {
 		GuerraManager guerraManager = instance.getGuerraManager();
 		Guerra guerra = guerraManager.getGuerra();
 		if (!(guerraManager.hasLocations())) {
-			sender.sendMessage("§cDefina as localizações para iniciar o evento.");
+			sender.sendMessage("Â§cDefina as localizaÂ§Â§es para iniciar o evento.");
 			return;
 		}
 		if (guerra != null) {
-			sender.sendMessage("§cO evento guerra já está acontencendo.");
+			sender.sendMessage("Â§cO evento guerra jÂ§ estÂ§ acontencendo.");
 			return;
 		}
 		guerraManager.executeStart();
-		sender.sendMessage("§7Iniciando evento guerra.");
+		sender.sendMessage("Â§7Iniciando evento guerra.");
 	}
 	
 	public void cancel(CommandSender sender) {
 		GuerraManager guerraManager = instance.getGuerraManager();
 		Guerra guerra = guerraManager.getGuerra();
 		if (guerra == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		guerraManager.executeCancel();
@@ -45,34 +45,34 @@ public class GuerraCommandManager {
 		GuerraManager guerraManager = instance.getGuerraManager();
 		Guerra guerra = guerraManager.getGuerra();
 		if (guerra == null) {
-			sender.sendMessage("§cO evento não está acontecendo.");
+			sender.sendMessage("Â§cO evento nÂ§o estÂ§ acontecendo.");
 			return;
 		}
 		statusType status = guerra.getStatus();
 		sender.sendMessage("");
-		sender.sendMessage("§7Status§8: §f" + status);
+		sender.sendMessage("Â§7StatusÂ§8: Â§f" + status);
 		sender.sendMessage("");
-		sender.sendMessage("§7Clans vivos§8: §f" + guerraManager.getClans(guerra));
-		sender.sendMessage("§7Jogadores vivos§8: §f" + guerraManager.getParticipants(guerra));
+		sender.sendMessage("Â§7Clans vivosÂ§8: Â§f" + guerraManager.getClans(guerra));
+		sender.sendMessage("Â§7Jogadores vivosÂ§8: Â§f" + guerraManager.getParticipants(guerra));
 		sender.sendMessage("");
-		sender.sendMessage("§7Quantidade clans vivos§8: §f" + guerraManager.getClans());
-		sender.sendMessage("§7Quantidade jogadores vivos§8: §f" + guerraManager.getPlayers());
+		sender.sendMessage("Â§7Quantidade clans vivosÂ§8: Â§f" + guerraManager.getClans());
+		sender.sendMessage("Â§7Quantidade jogadores vivosÂ§8: Â§f" + guerraManager.getPlayers());
 		sender.sendMessage("");
 	}
 	
 	public void sendHelpCommands(CommandSender sender, String arg) {
 		sender.sendMessage("");
-		sender.sendMessage("§a[Guerra] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a sair");
-		sender.sendMessage("§7/" + arg + "§a top");
-		sender.sendMessage("§7/" + arg + "§a ajuda");
+		sender.sendMessage("Â§a[Guerra] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a sair");
+		sender.sendMessage("Â§7/" + arg + "Â§a top");
+		sender.sendMessage("Â§7/" + arg + "Â§a ajuda");
 		if (sender.hasPermission("guerra.admin")) {
 			sender.sendMessage("");
-			sender.sendMessage("§7/" + arg + "§a iniciar");
-			sender.sendMessage("§7/" + arg + "§a forcedeathmatch");
-			sender.sendMessage("§7/" + arg + "§a parar");
-			sender.sendMessage("§7/" + arg + "§a set (spawn | saida | deathmatch)");
-			sender.sendMessage("§7/" + arg + "§a info");
+			sender.sendMessage("Â§7/" + arg + "Â§a iniciar");
+			sender.sendMessage("Â§7/" + arg + "Â§a forcedeathmatch");
+			sender.sendMessage("Â§7/" + arg + "Â§a parar");
+			sender.sendMessage("Â§7/" + arg + "Â§a set (spawn | saida | deathmatch)");
+			sender.sendMessage("Â§7/" + arg + "Â§a info");
 		}
 		sender.sendMessage("");
 	}

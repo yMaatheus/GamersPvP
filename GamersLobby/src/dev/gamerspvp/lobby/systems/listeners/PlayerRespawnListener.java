@@ -33,8 +33,8 @@ public class PlayerRespawnListener implements Listener {
 		player.setFoodLevel(20);
 		player.setGameMode(GameMode.ADVENTURE);
 		player.setAllowFlight(false);
-		ItemStack compass = new MakeItem(Material.COMPASS).setName("§eServidores").build();
-		ItemStack stick = new MakeItem(Material.STICK).setName("§cPAU DO PVP").build();
+		ItemStack compass = new MakeItem(Material.COMPASS).setName("Â§eServidores").build();
+		ItemStack stick = new MakeItem(Material.STICK).setName("Â§cPAU DO PVP").build();
 
 		player.getInventory().setItem(4, compass);
 		player.getInventory().setItem(2, stick);

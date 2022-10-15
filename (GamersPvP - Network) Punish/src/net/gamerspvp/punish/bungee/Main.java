@@ -77,17 +77,17 @@ public class Main extends Plugin {
 							Ban ban = gson.fromJson(message, Ban.class);
 							ban.compute(instance);
 							getProxy().broadcast(new TextComponent(""));
-							getProxy().broadcast(new TextComponent("§c(!) " + ban.getPlayerRealName() + " foi banido §l" + ban.getType()));
-							getProxy().broadcast(new TextComponent("§c(!) Autor: " + ban.getAuthor()));
-							// if (ban.getType().equalsIgnoreCase("TEMPORÁRIO")){getProxy().broadcast(new
-							// TextComponent("§c(!) Duração: " + TimeManager.getTimeEnd(ban.getTime())));}
-							getProxy().broadcast(new TextComponent("§c(!) Motivo: " + ban.getReason()));
-							getProxy().broadcast(new TextComponent("§c(!) Data: " + ban.getDate()));
+							getProxy().broadcast(new TextComponent("Â§c(!) " + ban.getPlayerRealName() + " foi banido Â§l" + ban.getType()));
+							getProxy().broadcast(new TextComponent("Â§c(!) Autor: " + ban.getAuthor()));
+							// if (ban.getType().equalsIgnoreCase("TEMPORÂ§RIO")){getProxy().broadcast(new
+							// TextComponent("Â§c(!) DuraÂ§Â§o: " + TimeManager.getTimeEnd(ban.getTime())));}
+							getProxy().broadcast(new TextComponent("Â§c(!) Motivo: " + ban.getReason()));
+							getProxy().broadcast(new TextComponent("Â§c(!) Data: " + ban.getDate()));
 							getProxy().broadcast(new TextComponent(""));
 							if (getProxy().getPlayer(ban.getPlayerRealName()) != null) {
 								ProxiedPlayer proxiedPlayer = getProxy().getPlayer(ban.getPlayerRealName());
 								String format = null;
-								if (ban.getType().equalsIgnoreCase("TEMPORÁRIO")) {
+								if (ban.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
 									format = getBanFormat(true).replace("@type", ban.getType())
 											.replace("@time", TimeManager.getTimeEnd(ban.getTime()))
 											.replace("@reason", ban.getReason()).replace("@author", ban.getAuthor())
@@ -103,15 +103,15 @@ public class Main extends Plugin {
 						if (channel.equalsIgnoreCase("kick")) {
 							Kick kick = new Gson().fromJson(message, Kick.class);
 							if (getProxy().getPlayer(kick.getPlayerRealName()) == null) {
-								getProxy().getPlayer(kick.getAuthor()).sendMessage(new TextComponent("§c" + kick.getPlayerRealName() + " não foi encontrado."));
+								getProxy().getPlayer(kick.getAuthor()).sendMessage(new TextComponent("Â§c" + kick.getPlayerRealName() + " nÂ§o foi encontrado."));
 								return;
 							}
 							if (getProxy().getPlayer(kick.getPlayerRealName()) != null) {
 								ProxiedPlayer proxiedPlayer = getProxy().getPlayer(kick.getPlayerRealName());
 								getProxy().broadcast(new TextComponent(""));
-								getProxy().broadcast(new TextComponent("§c(!) " + kick.getPlayerRealName() + " foi expulso por " + kick.getAuthor()));
-								getProxy().broadcast(new TextComponent("§c(!) Motivo: " + kick.getReason()));
-								getProxy().broadcast(new TextComponent("§c(!) Data: " + kick.getDate()));
+								getProxy().broadcast(new TextComponent("Â§c(!) " + kick.getPlayerRealName() + " foi expulso por " + kick.getAuthor()));
+								getProxy().broadcast(new TextComponent("Â§c(!) Motivo: " + kick.getReason()));
+								getProxy().broadcast(new TextComponent("Â§c(!) Data: " + kick.getDate()));
 								getProxy().broadcast(new TextComponent(""));
 								String format = getKickFormat().replace("@reason", kick.getReason()).replace("@author", kick.getAuthor()).replace("@date", kick.getDate());
 								proxiedPlayer.disconnect(new TextComponent(format));
@@ -121,18 +121,18 @@ public class Main extends Plugin {
 							Banip banip = new Gson().fromJson(message, Banip.class);
 							banip.compute(instance);
 							getProxy().broadcast(new TextComponent(""));
-							getProxy().broadcast(new TextComponent("§c(!) O Ip(***.***.***.***) foi banido §l" + banip.getType()));
-							getProxy().broadcast(new TextComponent("§c(!) Autor: " + banip.getAuthor()));
-							// if (banip.getType().equalsIgnoreCase("TEMPORÁRIO")) {getProxy().broadcast(new
-							// TextComponent("§c(!) Duração: " + TimeManager.getTimeEnd(banip.getTime())));}
-							getProxy().broadcast(new TextComponent("§c(!) Motivo: " + banip.getReason()));
-							getProxy().broadcast(new TextComponent("§c(!) Data: " + banip.getDate()));
+							getProxy().broadcast(new TextComponent("Â§c(!) O Ip(***.***.***.***) foi banido Â§l" + banip.getType()));
+							getProxy().broadcast(new TextComponent("Â§c(!) Autor: " + banip.getAuthor()));
+							// if (banip.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {getProxy().broadcast(new
+							// TextComponent("Â§c(!) DuraÂ§Â§o: " + TimeManager.getTimeEnd(banip.getTime())));}
+							getProxy().broadcast(new TextComponent("Â§c(!) Motivo: " + banip.getReason()));
+							getProxy().broadcast(new TextComponent("Â§c(!) Data: " + banip.getDate()));
 							getProxy().broadcast(new TextComponent(""));
 							if (!getProxy().getPlayers().isEmpty()) {
 								for (ProxiedPlayer proxiedPlayer : getProxy().getPlayers()) {
 									if (proxiedPlayer.getAddress().getHostString().equalsIgnoreCase(banip.getIp())) {
 										String format;
-										if (banip.getType().equalsIgnoreCase("TEMPORÁRIO")) {
+										if (banip.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
 											format = getBanIPFormat(true).replace("@ip", banip.getIp())
 													.replace("@type", banip.getType())
 													.replace("@time", TimeManager.getTimeEnd(banip.getTime()))
@@ -161,9 +161,9 @@ public class Main extends Plugin {
 	public String getBanIPFormat(boolean temporary) {
 		String format;
 		if (temporary) {
-			format = "§c§lGAMERSPVP\n\n§cSeu §lIP§c(@ip) está banido §lTEMPORÁRIAMENTE §cdo servidor.\n§cTempo: §f@time\n§cMotivo: §f@reason\n§cPor: §f@author\n\n§fEm @date";
+			format = "Â§cÂ§lGAMERSPVP\n\nÂ§cSeu Â§lIPÂ§c(@ip) estÂ§ banido Â§lTEMPORÂ§RIAMENTE Â§cdo servidor.\nÂ§cTempo: Â§f@time\nÂ§cMotivo: Â§f@reason\nÂ§cPor: Â§f@author\n\nÂ§fEm @date";
 		} else {
-			format = "§c§lGAMERSPVP\n\n§c§cSeu §lIP§c(@ip) está banido §l@type §cdo servidor.\n§cMotivo: §f@reason\n§cPor: §f@author\n\n§fEm @date";
+			format = "Â§cÂ§lGAMERSPVP\n\nÂ§cÂ§cSeu Â§lIPÂ§c(@ip) estÂ§ banido Â§l@type Â§cdo servidor.\nÂ§cMotivo: Â§f@reason\nÂ§cPor: Â§f@author\n\nÂ§fEm @date";
 		}
 		return format;
 	}
@@ -171,15 +171,15 @@ public class Main extends Plugin {
 	public String getBanFormat(boolean temporary) {
 		String format;
 		if (temporary) {
-			format = "§c§lGAMERSPVP\n\n§cVocê está banido §lTEMPORÁRIAMENTE §cdo servidor.\n§cTempo: §f@time\n§cMotivo: §f@reason\n§cPor: §f@author\n\n§fEm @date";
+			format = "Â§cÂ§lGAMERSPVP\n\nÂ§cVocÂ§ estÂ§ banido Â§lTEMPORÂ§RIAMENTE Â§cdo servidor.\nÂ§cTempo: Â§f@time\nÂ§cMotivo: Â§f@reason\nÂ§cPor: Â§f@author\n\nÂ§fEm @date";
 		} else {
-			format = "§c§lGAMERSPVP\n\n§cVocê está banido §l@type §cdo servidor.\n§cMotivo: §f@reason\n§cPor: §f@author\n\n§fEm @date";
+			format = "Â§cÂ§lGAMERSPVP\n\nÂ§cVocÂ§ estÂ§ banido Â§l@type Â§cdo servidor.\nÂ§cMotivo: Â§f@reason\nÂ§cPor: Â§f@author\n\nÂ§fEm @date";
 		}
 		return format;
 	}
 	
 	public String getKickFormat() {
-		String format = "§c§lGAMERSPVP\n\n§cVocê foi expulso do servidor\n§cMotivo: §f@reason\n§cPor: §f@author\n\n§fEm @date";
+		String format = "Â§cÂ§lGAMERSPVP\n\nÂ§cVocÂ§ foi expulso do servidor\nÂ§cMotivo: Â§f@reason\nÂ§cPor: Â§f@author\n\nÂ§fEm @date";
 		return format;
 	}
 

@@ -26,7 +26,7 @@ public class AuthCommand extends Command {
 	@Override
 	public void execute(CommandSender sender, String[] args) {
 		if (!(sender.hasPermission("auth.admin"))) {
-			sender.sendMessage(new TextComponent("§cSem permissão."));
+			sender.sendMessage(new TextComponent("Â§cSem permissÂ§o."));
 			return;
 		}
 		if (args.length > 1) {
@@ -43,7 +43,7 @@ public class AuthCommand extends Command {
 								String password = args[2];
 								AuthPlayer authPlayer = authProxyManager.getAuthPlayer(playerName);
 								if (authPlayer != null) {
-									sender.sendMessage(new TextComponent("§cEssa conta já possui registro."));
+									sender.sendMessage(new TextComponent("Â§cEssa conta jÂ§ possui registro."));
 									return;
 								}
 								String hashedPassword = authProxyManager.passwordEncrypt(password);
@@ -59,14 +59,14 @@ public class AuthCommand extends Command {
 								pstmt.close();
 								ProxiedPlayer proxiedPlayer = instance.getProxy().getPlayer(playerName);
 								if (proxiedPlayer != null) {
-									proxiedPlayer.disconnect(new TextComponent("§cEssa conta acaba de ser registrada!"));
+									proxiedPlayer.disconnect(new TextComponent("Â§cEssa conta acaba de ser registrada!"));
 								}
-								sender.sendMessage(new TextComponent("§aA conta foi registrada com sucesso!"));
+								sender.sendMessage(new TextComponent("Â§aA conta foi registrada com sucesso!"));
 							} else if (args[0].equalsIgnoreCase("mudarsenha")) {
 								String password = args[2];
 								AuthPlayer authPlayer = authProxyManager.getAuthPlayer(playerName);
 								if (authPlayer == null) {
-									sender.sendMessage(new TextComponent("§cEssa conta não possui registro no servidor."));
+									sender.sendMessage(new TextComponent("Â§cEssa conta nÂ§o possui registro no servidor."));
 									return;
 								}
 								String hashedPassword = authProxyManager.passwordEncrypt(password);
@@ -79,15 +79,15 @@ public class AuthCommand extends Command {
 								pstmt.close();
 								ProxiedPlayer proxiedPlayer = instance.getProxy().getPlayer(playerName);
 								if (proxiedPlayer != null) {
-									proxiedPlayer.disconnect(new TextComponent("§cEssa conta acaba de ter a senha alterada!"));
+									proxiedPlayer.disconnect(new TextComponent("Â§cEssa conta acaba de ter a senha alterada!"));
 								}
-								sender.sendMessage(new TextComponent("§aSenha da conta alterada com sucesso."));
+								sender.sendMessage(new TextComponent("Â§aSenha da conta alterada com sucesso."));
 							}
 						}
 						if ((args[0].equalsIgnoreCase("unregister")) || (args[0].equalsIgnoreCase("desregistrar"))) {
 							AuthPlayer authPlayer = authProxyManager.getAuthPlayer(playerName);
 							if (authPlayer == null) {
-								sender.sendMessage(new TextComponent("§cEssa conta não possui registro no servidor."));
+								sender.sendMessage(new TextComponent("Â§cEssa conta nÂ§o possui registro no servidor."));
 								return;
 							}
 							String query = "DELETE FROM auth WHERE name=?";
@@ -98,12 +98,12 @@ public class AuthCommand extends Command {
 					        pstmt.close();
 					        ProxiedPlayer proxiedPlayer = instance.getProxy().getPlayer(playerName);
 							if (proxiedPlayer != null) {
-								proxiedPlayer.disconnect(new TextComponent("§cEssa conta acaba de ser desregistrada!"));
+								proxiedPlayer.disconnect(new TextComponent("Â§cEssa conta acaba de ser desregistrada!"));
 							}
-							sender.sendMessage(new TextComponent("§aA conta foi desregistrada com sucesso!"));
+							sender.sendMessage(new TextComponent("Â§aA conta foi desregistrada com sucesso!"));
 						}
 					} catch (SQLException e) {
-						sender.sendMessage(new TextComponent("§cDesculpe, mas não foi possivel efetuar a operação."));
+						sender.sendMessage(new TextComponent("Â§cDesculpe, mas nÂ§o foi possivel efetuar a operaÂ§Â§o."));
 						e.printStackTrace();
 					}
 				}
@@ -111,10 +111,10 @@ public class AuthCommand extends Command {
 			return;
 		}
 		sender.sendMessage(new TextComponent(""));
-		sender.sendMessage(new TextComponent("§a[Auth] Comandos disponíveis:"));
-		sender.sendMessage(new TextComponent("§7/auth §aregistrar (jogador) (senha)"));
-		sender.sendMessage(new TextComponent("§7/auth §amudarsenha (jogador) (senha)"));
-		sender.sendMessage(new TextComponent("§7/auth §adesregistrar (jogador)"));
+		sender.sendMessage(new TextComponent("Â§a[Auth] Comandos disponÂ§veis:"));
+		sender.sendMessage(new TextComponent("Â§7/auth Â§aregistrar (jogador) (senha)"));
+		sender.sendMessage(new TextComponent("Â§7/auth Â§amudarsenha (jogador) (senha)"));
+		sender.sendMessage(new TextComponent("Â§7/auth Â§adesregistrar (jogador)"));
 		sender.sendMessage(new TextComponent(""));
 		return;
 	}

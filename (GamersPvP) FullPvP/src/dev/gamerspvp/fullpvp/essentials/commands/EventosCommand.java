@@ -18,15 +18,15 @@ public class EventosCommand extends Command {
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		sender.sendMessage(instance.getEssentialsManager().getEventos());
 		/*sender.sendMessage("");
-		sender.sendMessage("§aTarefas automáticas: ");
+		sender.sendMessage("Â§aTarefas automÂ§ticas: ");
 		sender.sendMessage("");
-		sender.sendMessage("§eDiariamente §8- §a06:00§f, §a17:00§f, §a01:00 §8- §fReinicio");
-		sender.sendMessage("§eDiariamente §8- §a09:00§f, §a16:00 §8- §fEvento Parkour");
-		sender.sendMessage("§eDiariamente §8- §a09:20§f, §a16:20 §8- §fEvento Corrida");
-		sender.sendMessage("§eDiariamente §8- §a09:30§f, §a16:30 §8- §fEvento Guerreiro");
-		sender.sendMessage("§eDiariamente §8- §a10:30§f, §a14:30§f, §a18:30 §8- §fEvento Fight");
-		sender.sendMessage("§eDiariamente §8- §a15:00§f, §a19:30 §8- §fEvento MiniGladiador");
-		sender.sendMessage("§eSexta §8- §a19:30 §8- §fEvento Gladiador");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a06:00Â§f, Â§a17:00Â§f, Â§a01:00 Â§8- Â§fReinicio");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a09:00Â§f, Â§a16:00 Â§8- Â§fEvento Parkour");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a09:20Â§f, Â§a16:20 Â§8- Â§fEvento Corrida");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a09:30Â§f, Â§a16:30 Â§8- Â§fEvento Guerreiro");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a10:30Â§f, Â§a14:30Â§f, Â§a18:30 Â§8- Â§fEvento Fight");
+		sender.sendMessage("Â§eDiariamente Â§8- Â§a15:00Â§f, Â§a19:30 Â§8- Â§fEvento MiniGladiador");
+		sender.sendMessage("Â§eSexta Â§8- Â§a19:30 Â§8- Â§fEvento Gladiador");
 		sender.sendMessage("");*/
 		return false;
 	}

@@ -36,7 +36,7 @@ public class PostLogin implements Listener {
 					String format = null;
 					if (mysql.hasIpBanned(ip, true, true)) {
 						Banip banip = mysql.getBanip();
-						if (banip.getType().equalsIgnoreCase("TEMPORÁRIO")) {
+						if (banip.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
 							format = instance.getBanIPFormat(true).replace("@ip", banip.getIp()).replace("@type", banip.getType()).replace("@time", TimeManager.getTimeEnd(banip.getTime())).replace("@reason", banip.getReason()).replace("@author", banip.getAuthor()).replace("@date", banip.getDate());
 							if (System.currentTimeMillis() >= banip.getTime()) {
 								mysql.executeUnbanIP(banip.getIp(), true);
@@ -48,7 +48,7 @@ public class PostLogin implements Listener {
 						player.disconnect(new TextComponent(format));
 					} else if (mysql.hasBanned(name, true, true)) {
 						Ban ban = mysql.getBan();
-						if (ban.getType().equalsIgnoreCase("TEMPORÁRIO")) {
+						if (ban.getType().equalsIgnoreCase("TEMPORÂ§RIO")) {
 							format = instance.getBanFormat(true).replace("@type", ban.getType()).replace("@time", TimeManager.getTimeEnd(ban.getTime())).replace("@reason", ban.getReason()).replace("@author", ban.getAuthor()).replace("@date", ban.getDate());
 							if (System.currentTimeMillis() >= ban.getTime()) {
 								mysql.executeUnban(ban.getName(), true);
@@ -60,7 +60,7 @@ public class PostLogin implements Listener {
 						player.disconnect(new TextComponent(format));
 					}
 				} catch (SQLException e) {
-					player.disconnect(new TextComponent("§cDesculpe, mas não é possivel fazer conexão com o servidor."));
+					player.disconnect(new TextComponent("Â§cDesculpe, mas nÂ§o Â§ possivel fazer conexÂ§o com o servidor."));
 					e.printStackTrace();
 				}
 			}

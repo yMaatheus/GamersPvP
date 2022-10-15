@@ -37,7 +37,7 @@ public class ClearCommand extends Command {
 			target.getInventory().setChestplate(null);
 			target.getInventory().setLeggings(null);
 			target.getInventory().setBoots(null);
-			player.sendMessage("§aInventário de " + target.getName() + " limpo com sucesso.");
+			player.sendMessage("Â§aInventÂ§rio de " + target.getName() + " limpo com sucesso.");
 			return true;
 		}
 		if (!(sender.hasPermission("gamers.moderador"))) {
@@ -50,7 +50,7 @@ public class ClearCommand extends Command {
 		player.getInventory().setChestplate(null);
 		player.getInventory().setLeggings(null);
 		player.getInventory().setBoots(null);
-		player.sendMessage("§aInventário limpo com sucesso.");
+		player.sendMessage("Â§aInventÂ§rio limpo com sucesso.");
 		return true;
 	}
 }

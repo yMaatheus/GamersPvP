@@ -37,7 +37,7 @@ public class GlobalListeners implements Listener {
 	@EventHandler
 	public void onProxyPingEvent(ProxyPingEvent event) {
 		//definir quantos jogadores tem em todos os bungee's online
-		//sistema de motd e manutenção
+		//sistema de motd e manutenÂ§Â§o
 		ServerPing response = event.getResponse();
 		NetworkOptions networkOptions = instance.getNetworkOptions();
 		Maintenance maintenance = networkOptions.getMaintenance();
@@ -48,7 +48,7 @@ public class GlobalListeners implements Listener {
 		} else {
 			response.setDescriptionComponent(new TextComponent(networkOptions.getMotdMaintenance()));
 			response.getVersion().setProtocol(1);
-			response.getVersion().setName("§cManutenção");
+			response.getVersion().setName("Â§cManutenÂ§Â§o");
 			
 			response.getPlayers().setSample(networkOptions.getPlayerPingListMaintenance());
 		}
@@ -58,8 +58,8 @@ public class GlobalListeners implements Listener {
 	@EventHandler
 	public void onPostLoginEvent(PostLoginEvent event) {
 		ProxiedPlayer proxiedPlayer = event.getPlayer();
-		String header = "\n§2§lGAMERS\n§f    " + serverIp + "\n";
-		String footer = "\n§2Discord:§f " + discord + "\n\n§2Adquira cash em nossa loja, acesse:§f " + site;
+		String header = "\nÂ§2Â§lGAMERS\nÂ§f    " + serverIp + "\n";
+		String footer = "\nÂ§2Discord:Â§f " + discord + "\n\nÂ§2Adquira cash em nossa loja, acesse:Â§f " + site;
 		proxiedPlayer.setTabHeader(new TextComponent(header), new TextComponent(footer));
 	}
 	
@@ -67,14 +67,14 @@ public class GlobalListeners implements Listener {
 	public void onPreLoginEvent(PreLoginEvent event) {
 		if (timestamp > System.currentTimeMillis()) {
 			event.setCancelled(true);
-			event.setCancelReason(new TextComponent("§cMuitos jogadores estão tentando conectar no momento, tente novamente!"));
+			event.setCancelReason(new TextComponent("Â§cMuitos jogadores estÂ§o tentando conectar no momento, tente novamente!"));
 			return;
 		}
 		String name = event.getConnection().getName();
 		int length = name.length();
 		if (length < 3 || length > 16 || !name.matches("[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_]+")) {
 			event.setCancelled(true);
-			event.setCancelReason(new TextComponent("§cSeu nome de usuário não é permitido no servidor."));
+			event.setCancelReason(new TextComponent("Â§cSeu nome de usuÂ§rio nÂ§o Â§ permitido no servidor."));
 			return;
 		}
 		timestamp = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(1);

@@ -23,7 +23,7 @@ public class ReportListener implements Listener {
 	
 	@EventHandler
 	public void onInventoryClickEvent(InventoryClickEvent event) {
-		if (event.getInventory().getTitle().equalsIgnoreCase("ง7Reports")) {
+		if (event.getInventory().getTitle().equalsIgnoreCase("ยง7Reports")) {
 			event.setCancelled(true);
 			ItemStack currentItem = event.getCurrentItem();
 			if (currentItem == null) {

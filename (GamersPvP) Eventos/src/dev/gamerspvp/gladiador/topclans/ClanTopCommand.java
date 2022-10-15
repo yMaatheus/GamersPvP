@@ -21,7 +21,7 @@ public class ClanTopCommand extends Command {
 	@Override
 	public boolean execute(CommandSender sender, String arg, String[] args) {
 		if (!(sender.hasPermission("clantop.admin"))) {
-			sender.sendMessage("§cSem permissão.");
+			sender.sendMessage("Â§cSem permissÂ§o.");
 			return false;
 		}
 		if (args.length > 0) {
@@ -36,7 +36,7 @@ public class ClanTopCommand extends Command {
 							String clanTag = args[1];
 							if (args[0].equalsIgnoreCase("set")) {
 								if (args.length < 2) {
-									sender.sendMessage("§7/" + arg + "§a set (clan) (valor)");
+									sender.sendMessage("Â§7/" + arg + "Â§a set (clan) (valor)");
 									return;
 								}
 								int wins = Integer.parseInt(args[2]);
@@ -47,15 +47,15 @@ public class ClanTopCommand extends Command {
 								}
 								clanTop.setWins(wins);
 								clanTop.update(clanTopManager, instance);
-								sender.sendMessage("§aO Clan §f" + clanTag + " §aagora possui §f" + wins + " §avitórias!");
+								sender.sendMessage("Â§aO Clan Â§f" + clanTag + " Â§aagora possui Â§f" + wins + " Â§avitÂ§rias!");
 							} else if (args[0].equalsIgnoreCase("delete")) {
 								ClanTop clanTop = clanTopManager.getClan(clanTag);
 								if (clanTop == null) {
-									sender.sendMessage("§cClan não encontrado no top clans.");
+									sender.sendMessage("Â§cClan nÂ§o encontrado no top clans.");
 									return;
 								}
 								clanTopManager.delete(clanTop.getClan());
-								sender.sendMessage("§f" + clanTag + " §adeletado do top clans.");
+								sender.sendMessage("Â§f" + clanTag + " Â§adeletado do top clans.");
 							}
 						}
 						if (args[0].equalsIgnoreCase("reset")) {
@@ -63,7 +63,7 @@ public class ClanTopCommand extends Command {
 							stmt.execute("DELETE FROM clanTop;");
 							stmt.execute("VACUUM");
 							stmt.close();
-							sender.sendMessage("§aClanTop foi resetado com sucesso.");
+							sender.sendMessage("Â§aClanTop foi resetado com sucesso.");
 						}
 						clanTopManager.updateTop();
 					} catch (Exception e) {
@@ -74,10 +74,10 @@ public class ClanTopCommand extends Command {
 			return false;
 		}
 		sender.sendMessage("");
-		sender.sendMessage("§a[ClanTop] Comandos disponíveis:");
-		sender.sendMessage("§7/" + arg + "§a reset");
-		sender.sendMessage("§7/" + arg + "§a set (clan) (valor)");
-		sender.sendMessage("§7/" + arg + "§a delete (clan)");
+		sender.sendMessage("Â§a[ClanTop] Comandos disponÂ§veis:");
+		sender.sendMessage("Â§7/" + arg + "Â§a reset");
+		sender.sendMessage("Â§7/" + arg + "Â§a set (clan) (valor)");
+		sender.sendMessage("Â§7/" + arg + "Â§a delete (clan)");
 		sender.sendMessage("");
 		return false;
 	}

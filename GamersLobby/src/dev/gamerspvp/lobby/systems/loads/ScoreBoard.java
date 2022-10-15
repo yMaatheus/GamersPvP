@@ -17,23 +17,23 @@ public class ScoreBoard {
 	public void build(Player p){
 		Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective obj = sb.registerNewObjective("score", "dummy");
-		obj.setDisplayName("§2§lGAMERSPVP");
+		obj.setDisplayName("Â§2Â§lGAMERSPVP");
 		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 		
 		Objective health = sb.registerNewObjective("vida", "health");
 		char s = '\u2764';
-		health.setDisplayName("§c" + s);
+		health.setDisplayName("Â§c" + s);
 		health.setDisplaySlot(DisplaySlot.BELOW_NAME);
 		
 		LineAdder ld = new LineAdder(sb, obj);
 		
-		ld.addLine("", "§2", "", 6);
-		ld.addLine("", " §fLobby: §7", "Loading...", 5);
-		ld.addLine("", " §fFullPvP: §7", "Loading...", 4);
-		ld.addLine("", "§1", "", 3);
-		ld.addLine("", " §fNetwork: §7", "§7Loading...", 2);
-		ld.addLine("", "§0", "", 1);
-		ld.addLine("", " §fmc.gamerspvp.net", "", 0);
+		ld.addLine("", "Â§2", "", 6);
+		ld.addLine("", " Â§fLobby: Â§7", "Loading...", 5);
+		ld.addLine("", " Â§fFullPvP: Â§7", "Loading...", 4);
+		ld.addLine("", "Â§1", "", 3);
+		ld.addLine("", " Â§fNetwork: Â§7", "Â§7Loading...", 2);
+		ld.addLine("", "Â§0", "", 1);
+		ld.addLine("", " Â§fmc.gamerspvp.net", "", 0);
 		
 		p.setScoreboard(sb);
 		

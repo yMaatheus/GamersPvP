@@ -23,6 +23,6 @@ public class ServerStatus {
 	}
 	
 	public enum statusServer {
-		ONLINE, MANUTEN«√O, OFFLINE;
+		ONLINE, MANUTEN√á√ÉO, OFFLINE;
 	}
 }

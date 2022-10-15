@@ -67,7 +67,7 @@ public class CaptchaManager {
 	}
 	
 	private Inventory loadInventory() {
-		Inventory inventory = Bukkit.createInventory(null, 36, "§7Clique na cabeça §a§lVERDE");
+		Inventory inventory = Bukkit.createInventory(null, 36, "Â§7Clique na cabeÂ§a Â§aÂ§lVERDE");
 		for (int i = 0; i < 36; i++) {
 			inventory.setItem(i, skullGray);
 		}
@@ -81,7 +81,7 @@ public class CaptchaManager {
 	}
 	
 	private MakeItem skull(String owner) {
-		return new MakeItem(Material.SKULL_ITEM).setSkullOwner(owner).setName("§a").addFlags(ItemFlag.HIDE_ATTRIBUTES);
+		return new MakeItem(Material.SKULL_ITEM).setSkullOwner(owner).setName("Â§a").addFlags(ItemFlag.HIDE_ATTRIBUTES);
 	}
 	
 	private int randomPosition() {
