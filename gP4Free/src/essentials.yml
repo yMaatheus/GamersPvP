@@ -1,0 +1,44 @@
+# Lista de containers (tipos de inventarios) : https://pastebin.com/raw/x0eEJJpw
+# Lista de IDs da 1.8: https://www.minecraftinfo.com/idlist.htm
+spawnWorld: ''
+Recursos:
+  bloquearCama: true
+  bloquearSubirVeiculos: true
+  bloquearUsarNameTag: true
+  bloquearPassarDaBorda: true
+  bloquearExplodirItens: true
+  bloquearDerreterGeloENeve: true
+  bloquearQuebrarPlantacoesPulando: true
+  desativarDanoDeCactus: true
+  desativarCicloDoDia: true
+  desativarMobsNaturais: true
+  desativarPropagacaoFogo: true
+  desativarQuedaDeFolhas: true
+  desativarQuedaBigorna: true
+  desativarEscorrerAguaLava: true
+  desativarChuva: true
+  bigornaInfinita: false
+  ativarCorBigorna: true #essentials.vip
+  ativarCorPlacas: true #essentials.vip
+  bloquearCairVoid: true
+  bloquearMobsPegaremFogoParaSol: false
+  desativarFome: true
+  bloquearCriarPortais: true
+  bloquearTeleportPorPortais: true
+  bloquearAbrirContainers:
+  - DISPENSER
+  - DROPPER
+  - HOPPER
+  bloquearShiftEmContainers:
+  - ANVIL
+  - BEACON
+  - DISPENSER
+  - DROPPER
+  - HOPPER
+  bloquearCraft:
+  - 333
+  - 321
+  - 416
+  - 328
+  bloquearNicks: #colocar em minusculo
+  - adminshop

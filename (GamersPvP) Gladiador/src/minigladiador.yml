@@ -1,0 +1,21 @@
+membrosMaximosPorClan: 20
+minJogadores: 2
+minClans: 2
+premio: 1000000
+ganhadores: []
+chamando:
+  avisos: 10 #Quantidade de chamadas
+  tempoEntreAvisos: 10
+iniciando:
+  avisos: 3 #Quantidade de chamadas
+  tempoEntreAvisos: 10
+deathmatch:
+  avisos: 3
+  tempoEntreAvisos: 20
+  forceDeathmatchtime: 3600
+  clans: 4 #quantidade maxima de clans para iniciar deathmatch automaticamente (Caso tenha mais clans que isso apenas será iniciado deathmatch quando passar o tempo especificado acima)
+kit: ''
+helmet: ''
+chestplate: ''
+leggings: ''
+boots: ''

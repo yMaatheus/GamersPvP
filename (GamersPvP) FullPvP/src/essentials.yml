@@ -1,0 +1,56 @@
+site: 'https://loja.gamerspvp.net'
+discord: 'https://discord.gamerspvp.net'
+spawnWorld: 'FullPvP'
+eventos:
+- ''
+- '&aTarefas automáticas: '
+- ''
+- '&eDiariamente &8- &a06:00&f, &a17:00&f, &a01:00 &8- &fReinicio'
+- '&eDiariamente &8- &a09:00&f, &a16:00 &8- &fEvento Parkour'
+- '&eDiariamente &8- &a09:20&f, &a16:20 &8- &fEvento Corrida'
+- '&eDiariamente &8- &a09:30&f, &a16:30 &8- &fEvento Guerreiro'
+- '&eDiariamente &8- &a10:30&f, &a14:30&f, &a18:30 &8- &fEvento Fight'
+- '&eDiariamente &8- &a15:00&f, &a19:30 &8- &fEvento MiniGladiador'
+- '&eSexta &8- &a19:30 &8- &fEvento Gladiador'
+- ''
+mensagemEntrar:
+- '&a&m-----------------------------------------'
+- '&a&o> &7Seja bem vindo &f%player% &7ao &a&lFULLPVP&a!'
+- '&a&o> &7Você pode usar o &a/site &7para ver nosso site'
+- '&a&o> &7No momento temos &a%online% &7jogadores online'
+- '&a&o> &7Tenha um otimo jogo!'
+- '&a&m-----------------------------------------'
+motd:
+- '&2&lGAMERSPVP &7- &a&lFULLPVP &f1.8.x'
+maintanceMotd:
+- '&2&lGAMERSPVP &7- &a&lFULLPVP &f1.8.x'
+- '&cServidor em manutenção!'
+Fly:
+ vipWorlds:
+ - 'fullpvp'
+ - 'plotworld'
+ - 'vip'
+Tablist:
+ header:
+ - ''
+ - '&2&lGAMERSPVP'
+ - ''
+ - '&f    mc.gamerspvp.net'
+ - ''
+ footer:
+ - ''
+ - '&2Discord:&f https://discord.gamerspvp.net'
+ - ''
+ - ''
+ - '&2Adquira cash em nossa loja, acesse:&f https://loja.gamerspvp.net'
+BlockPlaceInWorld:
+ PvP:
+ - 326
+ - 327
+ - 8
+ - 9
+ - 10
+ - 11
+ - 69
+ - 54
+ - 146

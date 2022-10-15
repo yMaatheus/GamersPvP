@@ -1,0 +1,5 @@
+name: gGladiador
+version: 1.0
+author: yMatheus_
+main: net.gamers.gladiador.Main
+depend: [SimpleClans]

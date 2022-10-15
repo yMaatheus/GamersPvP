@@ -1,0 +1,115 @@
+default: 'Membro'
+Groups:
+ Diretor:
+  preffix: '&4[Diretor] '
+  rank: 100
+  vip: false
+  permissions:
+  - gamers.diretor
+  - gamers.coordenador
+  - gamers.admin
+  - gamers.moderador
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Coordenador:
+  preffix: '&3[Coordenador] '
+  rank: 101
+  vip: false
+  permissions:
+  - gamers.coordenador
+  - gamers.admin
+  - gamers.moderador
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Admin:
+  preffix: '&c[Admin] '
+  rank: 102
+  vip: false
+  permissions:
+  - gamers.admin
+  - gamers.moderador
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ ModeradorGC:
+  preffix: '&5[ModGC] '
+  rank: 103
+  vip: false
+  permissions:
+  - gamers.moderadorgc
+  - gamers.moderador
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Moderador:
+  preffix: '&9[Mod] '
+  rank: 104
+  vip: false
+  permissions:
+  - gamers.moderador
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Ajudante:
+  preffix: '&3[Ajudante] '
+  rank: 105
+  vip: true
+  permissions:
+  - gamers.ajudante
+  - gamers.staff
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Youtuber:
+  preffix: '&c[YT] '
+  rank: 106
+  vip: true
+  permissions:
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Master:
+  preffix: '&a[VipMaster] '
+  rank: 107
+  vip: true
+  permissions:
+  - gamers.master
+  - gamers.zeus
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Zeus:
+  preffix: '&b[VipZeus] '
+  rank: 108
+  vip: true
+  permissions:
+  - gamers.zeus
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Pro:
+  preffix: '&6[VipPro] '
+  rank: 109
+  vip: true
+  permissions:
+  - gamers.pro
+  - gamers.vip
+  - gamers.membro
+ Membro:
+  preffix: '&7'
+  rank: 999
+  vip: false
+  permissions:
+  - gamers.membro

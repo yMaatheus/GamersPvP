@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/API/SimpleClans-2.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/API/paperSpigot188R3-Redis-JDA.jar"/>
+	<classpathentry kind="lib" path="C:/API/lombok.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gCommons"/>
+	<classpathentry kind="lib" path="E:/API/LegendChat.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,10 @@
+MySQL:
+ user: 'root'
+ host: 'localhost'
+ database: 'gamerspvp'
+ password: 'password'
+ port: 3306
+Redis:
+ host: 'localhost'
+ password: 'password'
+ port: 6379

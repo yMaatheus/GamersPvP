@@ -1,0 +1,5 @@
+name: gGladiador
+version: 1.0
+author: yMatheus_
+main: dev.gamerspvp.gladiador.Main
+depend: [Vault, SimpleClans]

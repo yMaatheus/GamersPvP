@@ -1,0 +1,11 @@
+MySQL:
+ user: 'root'
+ host: '158.69.153.222'
+ database: 'gamerspvp'
+ password: 'adm2019'
+ port: 3306
+Redis:
+ host: '158.69.153.222'
+ password: 'tRzfAMyCB2aQ'
+ port: 6379
+ database: 1

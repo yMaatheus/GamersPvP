@@ -1,0 +1,4 @@
+main: net.gamers.p4free.Main
+name: gP4Free
+version: 1.0
+depend: [gCommons]

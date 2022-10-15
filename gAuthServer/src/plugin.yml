@@ -1,0 +1,5 @@
+name: gAuth
+author: yMatheus_
+version: 1.0
+main: dev.gamerspvp.auth.Main
+depend: [gCommons]

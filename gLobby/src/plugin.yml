@@ -1,0 +1,4 @@
+main: net.gamers.lobby.Main
+name: gLobby
+version: 1.0
+depend: [gCommons, Citizens]

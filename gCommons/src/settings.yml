@@ -1,0 +1,5 @@
+server: 'serverName' #Coloque o identificador do servidor (igual ao do bungeecord)
+reciveMessages: true #Recebimento de mensagens de outros servidores pelo Redis
+ipWhitelist:
+  active: true
+  debug: true

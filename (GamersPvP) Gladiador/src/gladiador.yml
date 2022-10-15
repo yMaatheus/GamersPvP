@@ -1,0 +1,16 @@
+membrosMaximosPorClan: 25
+minJogadores: 2
+minClans: 2
+premio: 1000000
+gladiadores: []
+chamando:
+  avisos: 10 #Quantidade de chamadas
+  tempoEntreAvisos: 10
+iniciando:
+  avisos: 3 #Quantidade de chamadas
+  tempoEntreAvisos: 10
+deathmatch:
+  avisos: 6
+  tempoEntreAvisos: 10
+  forceDeathmatchtime: 3600
+  clans: 4 #quantidade maxima de clans para iniciar deathmatch automaticamente (Caso tenha mais clans que isso apenas será iniciado deathmatch quando passar o tempo especificado acima)

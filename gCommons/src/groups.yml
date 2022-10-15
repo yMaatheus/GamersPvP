@@ -1,0 +1,12 @@
+grupos:
+  Diretor:
+    prefixo: '&4[Diretor] '
+    position: 100
+    aliases:
+    - diretor
+    - dono
+    - owner
+    - master
+    - ceo
+    permissions:
+    - tag.diretor

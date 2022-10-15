@@ -1,0 +1,20 @@
+default: 'Membro'
+Groups:
+ Diretor:
+  preffix: '&4[Diretor] '
+  rank: 100
+  vip: false
+  permissions:
+  - gamers.diretor
+ Coordenador:
+  preffix: '&3[Coordenador] '
+  rank: 101
+  vip: false
+  permissions:
+  - gamers.coordenador
+ Membro:
+  preffix: '&7'
+  rank: 999
+  vip: false
+  permissions:
+  - gamers.membro

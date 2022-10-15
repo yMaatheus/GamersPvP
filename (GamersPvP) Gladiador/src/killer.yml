@@ -1,0 +1,9 @@
+minJogadores: 2
+premio: 1000000
+ganhador: 'yMatheus_'
+chamando:
+  avisos: 10 #Quantidade de chamadas
+  tempoEntreAvisos: 10
+iniciando:
+  avisos: 3 #Quantidade de chamadas
+  tempoEntreAvisos: 10

@@ -1,0 +1,5 @@
+name: gPlotsAddons
+version: 1.0
+author: yMatheus_
+main: dev.gamerspvp.plotsaddons.Main
+depend: [PlotSquared]
